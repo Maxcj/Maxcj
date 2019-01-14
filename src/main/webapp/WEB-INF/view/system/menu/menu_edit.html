@@ -10,17 +10,11 @@
                 <div class="col-sm-6 b-r">
                     <#input id="name" name="名称" value="${menu.name}" underline="true" />
                     <#input id="code" name="菜单编号" value="${menu.code}" underline="true" />
-                    <#input id="pcodeName" name="父级编号" value="${menu.pcodeName}" underline="true"
-                    hidden="pcode" readonly="readonly" hiddenValue="${menu.pcode}"
-                    clickFun="MenuInfoDlg.showMenuSelectTree(); return false;"
-                    style="background-color: #ffffff !important;"
-                    selectFlag="true" selectId="pcodeTreeDiv" selectTreeId="pcodeTree" selectStyle="width:244px
-                    !important;"/>
+                    <#input id="pcodeName" name="父级编号" value="${menu.pcodeName}" underline="true" hidden="pcode" readonly="readonly" hiddenValue="${menu.pcode}" clickFun="MenuInfoDlg.showMenuSelectTree(); return false;" style="background-color: #ffffff !important;" selectFlag="true" selectId="pcodeTreeDiv" selectTreeId="pcodeTree" selectStyle="width:244px !important;"/>
                     <#select id="ismenu" name="是否是菜单">
                     <option value="1">是</option>
                     <option value="0">不是</option>
-                </
-                #select>
+                </#select>
 
             </div>
             <div class="col-sm-6">

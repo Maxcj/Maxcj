@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="GROUP_BY_SEVERITY" value="true" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="99e22b7a-f775-4f8b-bef8-2e17b3c2a100" name="Default Changelist" comment="">
+    <list default="true" id="e0eb607e-6407-49f4-9444-f1ed2b275b93" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Maxcj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/maxcj/MaxcjApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/maxcj/MaxcjApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/overview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/activity/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/activity/activity.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/overview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/view/overview.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/view/overview.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,276 +19,112 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-646944845">
+    <session id="273184050">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.20" value="2" />
-          <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="LICENSE" value="1" />
-          <entry key="btl" value="1" />
-          <entry key="class" value="20" />
-          <entry key="css" value="5" />
-          <entry key="factories" value="2" />
-          <entry key="gif" value="9" />
-          <entry key="html" value="101" />
-          <entry key="ico" value="2" />
-          <entry key="java" value="198" />
-          <entry key="js" value="42" />
-          <entry key="md" value="2" />
-          <entry key="png" value="19" />
-          <entry key="properties" value="2" />
-          <entry key="sql" value="1" />
-          <entry key="swf" value="1" />
-          <entry key="tag" value="15" />
-          <entry key="tag_tips" value="1" />
-          <entry key="xml" value="30" />
-          <entry key="yml" value="9" />
+          <entry key="html" value="7" />
+          <entry key="java" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="20" />
-          <entry key="CSS" value="5" />
-          <entry key="HTML" value="101" />
-          <entry key="Image" value="30" />
-          <entry key="JAVA" value="198" />
-          <entry key="JSP" value="15" />
-          <entry key="JavaScript" value="42" />
-          <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Properties" value="2" />
-          <entry key="SQL" value="1" />
-          <entry key="SWF" value="1" />
-          <entry key="XML" value="30" />
-          <entry key="YAML" value="9" />
-          <entry key="spring.factories" value="2" />
+          <entry key="HTML" value="7" />
+          <entry key="JAVA" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="class" value="5" />
-          <entry key="css" value="7" />
-          <entry key="html" value="523" />
-          <entry key="java" value="659" />
-          <entry key="js" value="2" />
-          <entry key="tag" value="14" />
-          <entry key="xml" value="101" />
-          <entry key="yml" value="33" />
+          <entry key="html" value="6" />
+          <entry key="java" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CLASS" value="5" />
-          <entry key="CSS" value="7" />
-          <entry key="HTML" value="523" />
-          <entry key="JAVA" value="659" />
-          <entry key="JSP" value="14" />
-          <entry key="JavaScript" value="2" />
-          <entry key="SQL" value="5" />
-          <entry key="XML" value="96" />
-          <entry key="YAML" value="33" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="88298702">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="15" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.13" value="2" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.18" value="3" />
-          <entry key="project.open.time.19" value="2" />
-          <entry key="project.open.time.21" value="1" />
-          <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.25" value="1" />
-          <entry key="project.opened" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="bpmn" value="7" />
-          <entry key="class" value="7" />
-          <entry key="gitattributes" value="1" />
-          <entry key="gitignore" value="1" />
-          <entry key="html" value="29" />
-          <entry key="java" value="126" />
-          <entry key="js" value="23" />
-          <entry key="md" value="1" />
-          <entry key="png" value="1" />
-          <entry key="properties" value="2" />
-          <entry key="sql" value="3" />
-          <entry key="tag" value="6" />
-          <entry key="xml" value="35" />
-          <entry key="yml" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="BPMN_EDITOR" value="7" />
-          <entry key="CLASS" value="7" />
-          <entry key="HTML" value="29" />
-          <entry key="Image" value="1" />
-          <entry key="JAVA" value="126" />
-          <entry key="JSP" value="6" />
-          <entry key="JavaScript" value="23" />
-          <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Properties" value="2" />
-          <entry key="SQL" value="3" />
-          <entry key="XML" value="35" />
-          <entry key="YAML" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="12" />
-          <entry key="ft" value="7" />
-          <entry key="html" value="494" />
-          <entry key="java" value="1758" />
-          <entry key="js" value="290" />
-          <entry key="md" value="44" />
-          <entry key="txt" value="109" />
-          <entry key="xml" value="368" />
-          <entry key="yml" value="72" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="494" />
-          <entry key="JAVA" value="1758" />
-          <entry key="JavaScript" value="290" />
-          <entry key="Markdown" value="44" />
-          <entry key="PLAIN_TEXT" value="121" />
-          <entry key="SQL" value="19" />
-          <entry key="VTL" value="7" />
-          <entry key="XML" value="349" />
-          <entry key="YAML" value="72" />
+          <entry key="HTML" value="6" />
+          <entry key="JAVA" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="JavaScript File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>stylefeng.guns</find>
-      <find>temp</find>
-      <find>activity</find>
-      <find>junt</find>
-      <find>list</find>
-      <find>dept</find>
-      <find>guns</find>
-      <find>kaptcha</find>
-      <find>plus</find>
-      <find>mysql</find>
-      <find>bao</find>
-      <find>deve</find>
-      <find>tool</find>
-      <find>本周</find>
-      <find>save</find>
-      <find>test</find>
-      <find>spring-boot-configuration-processor</find>
-      <find>user.js</find>
-      <find>fengshuonan</find>
-      <find>@author fengshuonan</find>
-      <find>\/\*\*\n \* Copyright 2018\-2020 stylefeng \&amp; fengshuonan \(https\:\/\/gitee\.com\/stylefeng\)\n \* \&lt;p\&gt;\n \* Licensed under the Apache License\, Version 2\.0 \(the \&quot;License\&quot;\)\;\n \* you may not use this file except in compliance with the License\.\n \* You may obtain a copy of the License at\n \* \&lt;p\&gt;\n \* http\:\/\/www\.apache\.org\/licenses\/LICENSE\-2\.0\n \* \&lt;p\&gt;\n \* Unless required by applicable law or agreed to in writing\, software\n \* distributed under the License is distributed on an \&quot;AS IS\&quot; BASIS\,\n \* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND\, either express or implied\.\n \* See the License for the specific language governing permissions and\n \* limitations under the License\.\n \*\/</find>
-      <find>主页</find>
-      <find>Guns</find>
-      <find>社团信息化管理系统</find>
-      <find>5.1</find>
-      <find>week_hart</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>@author Maxcj</replace>
-      <replace />
-    </replaceStrings>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/MaxcjApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/notice/notice_add.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/notice/notice.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Maxcj &lt;903283542@qq.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/warpper/UserWarpper.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/dept/dept.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/core/common/constant/factory/IConstantFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/core/common/constant/factory/ConstantFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/ActivityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/IActivityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/ActivityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/log/log.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/modular/system/activity/activity.js" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/config/properties/GunsProperties.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cn/maxcj/system/test.bpmn" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/core/shiro/service/impl/PermissionCheckServiceServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/GunsApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/warpper/ActivityWarpper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/mapping/ActivityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/MenuServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/modular/overview.js" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/resources/processes/test.bpmn" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/config/SMSConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/config/SmsConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/config/datasource/SingleDataSourceConfig.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cn/maxcj/system/SmsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/code/code.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/MaxcjServletInitializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/MaxcjApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/sms/SendSms.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/user/my_club_user.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/UserMgrController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/DeptController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/modular/system/user/user.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/DeptMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/IDeptService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/DictServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/DeptServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cn/maxcj/system/DeptTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/mapping/DeptMapper.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/IActivityStatisticsService.java" />
-        <option value="$PROJECT_DIR$/src/test/java/cn/maxcj/system/ActivityTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/ActivityController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/ActivityStatisticsMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/ActivityStatisticsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/mapping/ActivityStatisticsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/ActivityStatisticsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/overview.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/activity/activity.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/overview.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_edit.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_add.html" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/maxcj/MaxcjApplication.java" />
       </list>
     </option>
   </component>
@@ -296,74 +134,20 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-    <option name="enabledProfiles">
-      <list>
-        <option value="local" />
-      </list>
-    </option>
-    <option name="disabledProfiles">
-      <list>
-        <option value="dev" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Maxcj" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Maxcj" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="Maxcj" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="218" />
     <option name="y" value="72" />
     <option name="width" value="1569" />
     <option name="height" value="909" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Ali-Check</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
-      <flattenPackages ProjectPane="false" />
-      <abbreviatePackageNames ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -371,45 +155,95 @@
               <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
               <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="maxcj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Maxcj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maxcj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="notice" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="user&#9;FILE&#9;file://F:/Code/Maxcj/src/main/webapp/static/modular/system/user/user.js&#10;over&#9;FILE&#9;file://F:/Code/Maxcj/src/main/webapp/static/js/overview.js&#10;ac&#9;FILE&#9;file://F:/Code/Maxcj/src/main/java/cn/maxcj/modular/system/dao/mapping/ActivityStatisticsMapper.xml&#10;Mapp&#9;FILE&#9;file://F:/Code/Maxcj/src/main/java/cn/maxcj/modular/system/dao/mapping/ActivityMapper.xml&#10;acti&#9;FILE&#9;file://F:/Code/Maxcj/src/main/java/cn/maxcj/modular/system/dao/mapping/ActivityMapper.xml&#10;user_info&#9;FILE&#9;file://F:/Code/Maxcj/src/main/webapp/static/modular/system/user/user_info.js&#10;dept&#9;FILE&#9;file://F:/Code/Maxcj/src/main/java/cn/maxcj/modular/system/dao/mapping/DeptMapper.xml&#10;usercon&#9;FILE&#9;file://F:/Code/Maxcj/src/main/java/cn/maxcj/modular/system/controller/UserMgrController.java&#10;logMa&#9;FILE&#9;file://F:/Code/Maxcj/src/main/java/cn/maxcj/modular/system/dao/mapping/OperationLogMapper.xml&#10;log.&#9;FILE&#9;file://F:/Code/Maxcj/src/main/webapp/static/modular/system/log/log.js&#10;user.js&#9;FILE&#9;file://F:/Code/Maxcj/src/main/webapp/static/modular/system/user/user.js&#10;activity.js&#9;FILE&#9;file://F:/Code/Maxcj/src/main/webapp/static/modular/system/activity/activity.js&#10;stylefeng&#9;FILE&#9;file://F:/Code/guns/src/test/java/cn/stylefeng" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Code\Maxcj\src\main\webapp\WEB-INF\view\system\user" />
-      <recent name="F:\Code\Maxcj\sql" />
-      <recent name="F:\Code\guns\src\main\webapp\static\img" />
-      <recent name="F:\Code\guns\src\main\webapp\static\js\plugins\echarts" />
-      <recent name="F:\Code\guns\src\main\java" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Code\Maxcj\src\main\webapp\static\js" />
-      <recent name="F:\Code\guns\src\main\webapp\static\js\plugins\echarts" />
-      <recent name="F:\Code\guns\src\main\webapp\WEB-INF\view" />
-    </key>
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -424,564 +258,117 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="MaxcjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="MaxcjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Maxcj" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cn.maxcj.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.maxcj.MaxcjApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.MaxcjApplication" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SpringBootOptions">
-    <option name="showAdditionalConfigNotification" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="99e22b7a-f775-4f8b-bef8-2e17b3c2a100" name="Default Changelist" comment="" />
-      <created>1544708560220</created>
+      <changelist id="e0eb607e-6407-49f4-9444-f1ed2b275b93" name="Default Changelist" comment="" />
+      <created>1547435778683</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1544708560220</updated>
-      <workItem from="1544708563685" duration="358000" />
-      <workItem from="1544750732360" duration="10718000" />
-      <workItem from="1545012204056" duration="1327000" />
-      <workItem from="1545113592789" duration="6931000" />
-      <workItem from="1545181462589" duration="18821000" />
-      <workItem from="1545268551217" duration="9509000" />
-      <workItem from="1545288673104" duration="6118000" />
-      <workItem from="1545296831076" duration="768000" />
-      <workItem from="1545299035809" duration="920000" />
-      <workItem from="1545354842741" duration="653000" />
-      <workItem from="1545355540435" duration="2315000" />
-      <workItem from="1545493716208" duration="1628000" />
-      <workItem from="1545495395816" duration="345000" />
-      <workItem from="1545495773888" duration="239000" />
-      <workItem from="1545631950440" duration="10483000" />
-      <workItem from="1545806061182" duration="1345000" />
-      <workItem from="1545815804968" duration="1258000" />
-      <workItem from="1546922349934" duration="383000" />
-      <workItem from="1547111371588" duration="3182000" />
-      <workItem from="1547170472073" duration="21259000" />
-      <workItem from="1547264262346" duration="2191000" />
-      <workItem from="1547435079590" duration="84000" />
+      <updated>1547435778683</updated>
+      <workItem from="1547435780219" duration="826000" />
     </task>
-    <task id="LOCAL-00001" summary="upload code">
-      <created>1545299812494</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1545299812494</updated>
-    </task>
-    <task id="LOCAL-00002" summary="添加首页社团活动统计代码">
-      <created>1545644855108</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1545644855109</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Add Readme">
-      <created>1545645133675</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1545645133675</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add qcloudsms">
-      <created>1547114543513</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1547114543513</updated>
-    </task>
-    <task id="LOCAL-00005" summary="init project and Add qcloudsms">
-      <created>1547187931654</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1547187931654</updated>
-    </task>
-    <task id="LOCAL-00006" summary="test fold">
-      <created>1547188016912</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1547188016912</updated>
-    </task>
-    <task id="LOCAL-00007" summary="添加首页图表信息显示代码">
-      <created>1547200736678</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1547200736678</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="ActivityTest_getall - 2019.01.11 at 15h 28m 52s.xml">
-      <configuration name="ActivityTest.getall" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ActivityTest_getall - 2019.01.11 at 15h 32m 56s.xml">
-      <configuration name="ActivityTest.getall" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ActivityTest_getall - 2019.01.11 at 15h 44m 51s.xml">
-      <configuration name="ActivityTest.getall" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ActivityTest_getall - 2019.01.11 at 15h 45m 31s.xml">
-      <configuration name="ActivityTest.getall" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DeptTest_listTest - 2019.01.11 at 15h 45m 51s.xml">
-      <configuration name="DeptTest.listTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DictTest_editTest - 2019.01.11 at 15h 46m 03s.xml">
-      <configuration name="DictTest.editTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ActivityTest_getall - 2019.01.11 at 15h 48m 50s.xml">
-      <configuration name="ActivityTest.getall" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ActivityTest_getall - 2019.01.11 at 15h 51m 16s.xml">
-      <configuration name="ActivityTest.getall" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ActivityTest_getall - 2019.01.11 at 16h 04m 35s.xml">
-      <configuration name="ActivityTest.getall" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ActivityTest_getall - 2019.01.11 at 17h 39m 45s.xml">
-      <configuration name="ActivityTest.getall" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100835000" />
+    <option name="totallyTimeSpent" value="826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49935484" visible="true" weight="0.19669509" />
-      <window_info id="Structure" order="1" sideWeight="0.50064516" side_tool="true" weight="0.34658715" />
-      <window_info id="Web" order="2" sideWeight="0.50064516" side_tool="true" weight="0.34658715" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="BPMN Editor" order="5" weight="0.32995737" />
+      <window_info id="Web" side_tool="true" />
+      <window_info id="Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Problems" />
+      <window_info anchor="bottom" id="Messages" weight="0.329718" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.2537961" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.329718" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.39804772" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.39479393" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49946696" weight="0.3557484" />
-      <window_info anchor="bottom" id="Java Enterprise" order="13" />
-      <window_info anchor="bottom" id="Problems" order="14" />
-      <window_info anchor="bottom" id="Dependency Viewer" order="15" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Inspection Results" order="16" visible="true" weight="0.329718" />
+      <window_info anchor="right" id="BPMNPalette" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Bean Validation" order="4" weight="0.32995737" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.21268657" />
-      <window_info anchor="right" id="BPMNPalette" order="7" weight="0.10127932" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="upload code" />
-    <MESSAGE value="添加首页社团活动统计代码" />
-    <MESSAGE value="Add Readme" />
-    <MESSAGE value="Add qcloudsms" />
-    <MESSAGE value="init project and Add qcloudsms" />
-    <MESSAGE value="test fold" />
-    <MESSAGE value="添加首页图表信息显示代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加首页图表信息显示代码" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand>
-      <path>
-        <item name="guns" type="b2602c69:ProjectViewProjectNode" />
-        <item name="guns" type="462c0819:PsiDirectoryNode" />
-      </path>
-    </expand>
-    <select />
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring-devtools.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+        <state relative-caret-position="408">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/sms/SendSms.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/notice/notice_add.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/notice/notice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/notice/notice_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/user/user_view.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/menu/menu_add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/user/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/user/user_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="153">
+          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/MaxcjApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/mapping/RelationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/RoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/OperationLogMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/RelationMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/MenuMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="68" column="7" lean-forward="true" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/modular/system/user/user_info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1764">
-          <caret line="158" column="11" lean-forward="true" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/mapping/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="70" column="77" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/mapping/RoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/DictServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="94" column="13" lean-forward="true" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/IDictService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/mapping/DeptMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="58" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="45" column="49" lean-forward="true" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/user/my_club_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="77" selection-start-line="15" selection-start-column="77" selection-end-line="15" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/modular/system/activity/activity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-416">
-          <caret line="61" column="43" lean-forward="true" selection-start-line="61" selection-start-column="43" selection-end-line="61" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/ActivityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="81" lean-forward="true" selection-start-line="22" selection-start-column="81" selection-end-line="22" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/IDeptService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/DeptServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/DeptMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/DeptController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/maxcj/system/DeptTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="55" column="28" lean-forward="true" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/maxcj/system/DictTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="31" column="46" lean-forward="true" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/IActivityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="62" lean-forward="true" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-support/2.3/mybatis-plus-support-2.3.jar!/com/baomidou/mybatisplus/service/IService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/model/ActivityStatistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-590">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/ActivityServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/BlackboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/UserMgrController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3536">
-          <caret line="40" column="11" lean-forward="true" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/ActivityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1073">
-          <caret line="101" column="13" lean-forward="true" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/cn/maxcj/system/ActivityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/controller/ActivityStatisticsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/IActivityStatisticsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="82" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/ActivityStatisticsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/dao/mapping/ActivityStatisticsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="61" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/system/activity/activity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/maxcj/modular/system/service/impl/ActivityStatisticsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="62" lean-forward="true" selection-start-line="26" selection-start-column="62" selection-end-line="26" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/noticelist.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="148" column="14" selection-start-line="148" selection-start-column="14" selection-end-line="148" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/overview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/modular/system/user/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-302">
-          <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -991,17 +378,6 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="Copyright.UI">
-        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
