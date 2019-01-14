@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.maxcj.modular.system.dao.ActivityStatisticsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.maxcj.modular.system.model.ActivityStatistics">
+        <result column="club_id" property="clubId"/>
+        <result column="club_name" property="clubName"/>
+        <result column="common_num" property="commonNum"/>
+        <result column="great_num" property="greatNum"/>
+        <result column="total" property="total"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        club_id, club_name, common_num, great_num, total
+    </sql>
+
+    <!-- 查询社团所有的活动统计 -->
+    <select id="activityNum" resultType="map">
+        select * from activity_statistics
+    </select>
+
+    <select id="weekActivityNum" resultType="map">
+        select comm.weekday,comm.common_activity,gre.great_activity,(comm.common_activity + gre.great_activity) as total_activity
+         from (
+            -- 常规活动
+            SELECT a.date,a.weekday,count(b.activity_id) as common_activity from (
+            SELECT  DATE(subdate(curdate(),date_format(curdate(),'%w')-1)) as date,'周一' as weekday
+            union all
+            SELECT  DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 1 day)),'周二'
+            union all
+            SELECT  DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 2 day)),'周三'
+            union all
+            SELECT  DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 3 day)),'周四'
+            union all
+            SELECT  DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 4 day)),'周五'
+            union all
+            SELECT DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 5 day)),'周六'
+            union all
+            SELECT DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 6 day)),'周日') a
+            LEFT JOIN (select * from sys_activity a where a.activity_state >= "5" and a.activity_category = "1") b
+            ON DATE_FORMAT(a.date, '%Y-%m-%d') = DATE_FORMAT(b.activity_start_time, '%Y-%m-%d')
+            GROUP BY a.date,a.weekday) comm,(
+            SELECT a.date,a.weekday,count(b.activity_id) as great_activity from (
+            SELECT  DATE(subdate(curdate(),date_format(curdate(),'%w')-1)) as date,'周一' as weekday
+            union all
+            SELECT  DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 1 day)),'周二'
+            union all
+            SELECT  DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 2 day)),'周三'
+            union all
+            SELECT  DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 3 day)),'周四'
+            union all
+            SELECT  DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 4 day)),'周五'
+            union all
+            SELECT DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 5 day)),'周六'
+            union all
+            SELECT DATE(DATE_ADD(subdate(curdate(),date_format(curdate(),'%w')-1), interval 6 day)),'周日') a
+            LEFT JOIN (select * from sys_activity a where a.activity_state >= "5" and a.activity_category = "2") b
+            ON DATE_FORMAT(a.date, '%Y-%m-%d') = DATE_FORMAT(b.activity_start_time, '%Y-%m-%d')
+            GROUP BY a.date,a.weekday) gre
+        where comm.weekday = gre.weekday
+    </select>
+
+    <select id="getview" resultType="map">
+        select
+            (select count(DISTINCT st.id) from sys_dept st where st.pid = "38") as club_num,
+            (SELECT COUNT(DISTINCT u.id) from sys_user u where u.account != 'admin') as user_num,
+            (SELECT COUNT(DISTINCT a.activity_id) from sys_activity a where a.activity_state >= "5") as activity_num,
+            (SELECT COUNT(DISTINCT a.activity_id) from sys_activity a where a.activity_state >= "5" and a.activity_start_time BETWEEN (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) DAY)) and (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) - 6 DAY))) as week_activity_num,
+            (SELECT COUNT(DISTINCT a.activity_id) from sys_activity a where a.activity_state >= "5" and a.activity_category = "1" and a.activity_start_time BETWEEN (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) DAY)) and (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) - 6 DAY))) as week_common_num,
+            (SELECT COUNT(DISTINCT a.activity_id) from sys_activity a where a.activity_state >= "5" and a.activity_category = "2" and a.activity_start_time BETWEEN (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) DAY)) and (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) - 6 DAY))) as week_great_num
+        from dual
+    </select>
+</mapper>

@@ -1,0 +1,37 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                    <#input id="activityId" name="活动id" underline="true"/>
+                    <#input id="activityCategory" name="活动类别(1:常规,2:重大,3:其他)" underline="true"/>
+                    <#input id="activityName" name="活动名称" underline="true"/>
+                    <#input id="activityPlace" name="活动地点" underline="true"/>
+                    <#input id="activityStartTime" name="活动开始时间"/>
+                </div>
+
+                <div class="col-sm-6">
+                    <#input id="activityEndTime" name="活动结束时间" underline="true"/>
+                    <#input id="activityClub" name="活动发起社团" underline="true"/>
+                    <#input id="activityPerson" name="活动负责人" underline="true"/>
+                    <#input id="activityCreatTime" name="活动发起时间" underline="true"/>
+                    <#input id="activityState" name="活动状态(1:发起,2:审批中,3:同意发起,-1:拒绝发起,4:未开始,5:进行中,6:反馈,7:结束)"
+                    underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check"
+                    clickFun="ActivityInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="ActivityInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/activity/activity_info.js"></script>
+@}
