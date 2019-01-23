@@ -43,21 +43,6 @@ MgrUser.check = function () {
 };
 
 /**
- * 点击添加管理员
- */
-MgrUser.openAddMgr = function () {
-    var index = layer.open({
-        type: 2,
-        title: '添加管理员',
-        area: ['800px', '560px'], //宽高
-        fix: false, //不固定
-        maxmin: true,
-        content: Feng.ctxPath + '/mgr/user_add'
-    });
-    this.layerIndex = index;
-};
-
-/**
  * 点击修改按钮时
  * @param userId 管理员id
  */
@@ -112,54 +97,6 @@ MgrUser.delMgrUser = function () {
     }
 };
 
-/**
- * 导出人员
- */
-MgrUser.expUsers = function () {
-    var ajax = new $ax(Feng.ctxPath + "/mgr/exp", function () {
-        Feng.success("导出成功!");
-        MgrUser.table.refresh();
-    }, function (data) {
-        Feng.error("导出失败!" + data.responseJSON.message + "!");
-    });
-};
-
-
-/**
- * 冻结用户账户
- * @param userId
- */
-MgrUser.freezeAccount = function () {
-    if (this.check()) {
-        var userId = this.seItem.id;
-        var ajax = new $ax(Feng.ctxPath + "/mgr/freeze", function (data) {
-            Feng.success("冻结成功!");
-            MgrUser.table.refresh();
-        }, function (data) {
-            Feng.error("冻结失败!" + data.responseJSON.message + "!");
-        });
-        ajax.set("userId", userId);
-        ajax.start();
-    }
-};
-
-/**
- * 解除冻结用户账户
- * @param userId
- */
-MgrUser.unfreeze = function () {
-    if (this.check()) {
-        var userId = this.seItem.id;
-        var ajax = new $ax(Feng.ctxPath + "/mgr/unfreeze", function (data) {
-            Feng.success("解除冻结成功!");
-            MgrUser.table.refresh();
-        }, function (data) {
-            Feng.error("解除冻结失败!");
-        });
-        ajax.set("userId", userId);
-        ajax.start();
-    }
-}
 
 /**
  * 重置密码
@@ -208,7 +145,7 @@ MgrUser.onClickDept = function (e, treeId, treeNode) {
 
 $(function () {
     var defaultColunms = MgrUser.initColumn();
-    var table = new BSTable("managerTable", "/mgr/list", defaultColunms);
+    var table = new BSTable("managerTable", "/mgr/myclub", defaultColunms);
     table.setPaginationType("client");
     MgrUser.table = table.init();
     var ztree = new $ZTree("deptTree", "/dept/tree");

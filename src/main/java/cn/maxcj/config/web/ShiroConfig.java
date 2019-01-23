@@ -154,7 +154,7 @@ public class ShiroConfig {
         shiroFilter.setUnauthorizedUrl("/global/error");
 
         /**
-         * 覆盖默认的user拦截器(默认拦截器解决不了ajax请求 session超时的问题,若有更好的办法请及时反馈作者)
+         * 覆盖默认的user拦截器(默认拦截器解决不了ajax请求 session超时的问题)
          */
         HashMap<String, Filter> myFilters = new HashMap<>();
         myFilters.put("user", new GunsUserFilter());

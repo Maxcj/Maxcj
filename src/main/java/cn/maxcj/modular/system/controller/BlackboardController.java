@@ -35,7 +35,7 @@ public class BlackboardController extends BaseController {
     }
 
     @RequestMapping("")
-    public String overview(Model model) {
+    public String overview() {
         /*List<Map<String, Object>> notices = noticeService.list(null);
         model.addAttribute("noticeList", notices);*/
         return "/overview.html";

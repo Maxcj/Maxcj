@@ -75,4 +75,10 @@
         from sys_user where account = #{account} and status != 3
     </select>
 
+    <select id="selectUsersbydeptid" resultType="map">
+        select
+        <include refid="Base_Column_List_With_Pwd"/>
+        from sys_user where deptid = #{deptid}
+    </select>
+
 </mapper>

@@ -33,6 +33,9 @@ public interface IUserService extends IService<User> {
      */
     List<Map<String, Object>> selectUsers(DataScope dataScope, String name, String beginTime, String endTime, Integer deptid);
 
+
+    List<Map<String, Object>> selectUsersbydeptid(Integer deptid);
+
     /**
      * 设置用户的角色
      */

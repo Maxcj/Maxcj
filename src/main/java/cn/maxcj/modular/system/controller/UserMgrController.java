@@ -1,6 +1,5 @@
 package cn.maxcj.modular.system.controller;
 
-import cn.maxcj.modular.system.transfer.UserDto;
 import cn.maxcj.config.properties.GunsProperties;
 import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.common.annotion.Permission;
@@ -15,6 +14,7 @@ import cn.maxcj.core.shiro.ShiroUser;
 import cn.maxcj.modular.system.factory.UserFactory;
 import cn.maxcj.modular.system.model.User;
 import cn.maxcj.modular.system.service.IUserService;
+import cn.maxcj.modular.system.transfer.UserDto;
 import cn.maxcj.modular.system.warpper.UserWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import cn.stylefeng.roses.core.datascope.DataScope;
@@ -179,6 +179,43 @@ public class UserMgrController extends BaseController {
     }
 
     /**
+     *
+     * @param deptid
+     * @return
+     */
+    @RequestMapping("/myclub")
+    @ResponseBody
+    public Object getMyClubUser(@RequestParam(required = false) String name, @RequestParam(required = false) String beginTime, @RequestParam(required = false) String endTime, @RequestParam(required = false) Integer deptid){
+        String roleNames = "1,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20";
+        String stroleNames = "22.23.24.25.26.27.28.29";
+        if (ShiroKit.isAdmin() || ShiroKit.hasAnyRoles(roleNames)) {
+            System.out.println("=========================isAdmin");
+            List<Map<String, Object>> users = userService.selectUsers(null, name, beginTime, endTime, deptid);
+            return new UserWarpper(users).wrap();
+        }else /*if (ShiroKit.hasAnyRoles(stroleNames)) */{
+            //TODO
+            //DataScope dataScope = new DataScope(ShiroKit.getDeptDataScope());
+            List<Map<String, Object>> users = userService.selectUsersbydeptid(ShiroKit.getUser().deptId);
+            System.out.println(users);
+            return new UserWarpper(users).wrap();
+        }
+        //return  null;
+    }
+
+    /**
+     *  导出人员
+     * @return
+     */
+    @RequestMapping("/exp")
+    @BussinessLog(value = "导出人员", key = "userid", dict = UserDict.class)
+    @ResponseBody
+    public Object expUsers(){
+        List<Map<String, Object>> expusers = userService.selectUsersbydeptid(ShiroKit.getUser().deptId);
+        return new UserWarpper(expusers).wrap();
+    }
+
+
+    /**
      * 添加管理员
      */
     @RequestMapping("/add")
@@ -324,6 +361,8 @@ public class UserMgrController extends BaseController {
         return SUCCESS_TIP;
     }
 
+
+
     /**
      * 分配角色
      */
@@ -376,6 +415,10 @@ public class UserMgrController extends BaseController {
         } else {
             throw new ServiceException(BizExceptionEnum.NO_PERMITION);
         }
-
     }
+
+
+
+
+
 }

@@ -28,13 +28,14 @@ spring:
     multipart:
       max-request-size: 100MB
       max-file-size: 100MB
+  flowable:
+    async-executor-activate: false
 
 mybatis-plus:
   typeAliasesPackage: cn.maxcj.modular.system.model
 
 log:
   path: guns-logs
-
 
 
 ---
@@ -46,6 +47,8 @@ spring:
     username: root
     password: admin
     filters: wall,mergeStat
+
+
 
 #多数据源情况的配置
 guns:

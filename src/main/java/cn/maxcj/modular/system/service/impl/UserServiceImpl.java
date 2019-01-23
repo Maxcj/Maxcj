@@ -38,6 +38,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     }
 
     @Override
+    public List<Map<String, Object>> selectUsersbydeptid(Integer deptid) {
+        return this.baseMapper.selectUsersbydeptid(deptid);
+    }
+
+    @Override
     public int setRoles(Integer userId, String roleIds) {
         return this.baseMapper.setRoles(userId, roleIds);
     }

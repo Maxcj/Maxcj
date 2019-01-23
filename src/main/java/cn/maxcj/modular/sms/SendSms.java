@@ -48,6 +48,7 @@ public class SendSms {
      * @return boolean
      * @throws Exception
      */
+
     public boolean sendSms(String phoneNum, String realName, String clubName, String thing, String state) throws Exception {
         String[] phoneNumbers = {phoneNum};
         String[] params = {realName, clubName, thing, state};

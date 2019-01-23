@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author Maxcj
  */
-@SpringBootApplication(exclude = WebAutoConfiguration.class)
+@SpringBootApplication(exclude = {WebAutoConfiguration.class})
 public class MaxcjApplication {
 
     private final static Logger logger = LoggerFactory.getLogger(MaxcjApplication.class);
