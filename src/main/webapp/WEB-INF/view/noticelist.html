@@ -4,11 +4,16 @@
         <div class="col-sm-12">
             @for(notice in noticeList){
             <div class="alert alert-success alert-dismissable">
-                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                <span><strong id="createtime">${trim(notice.createtime,'yyyy-MM-dd')}</strong><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></span>
                 ${notice.content}
             </div>
             @}
         </div>
     </div>
 </div>
+
+<script>
+    $('#createtime').substr(0,16);
+</script>
+
 @}

@@ -26,7 +26,7 @@ public interface DeptMapper extends BaseMapper<Dept> {
 
     /**
      * 获取隶属社团的ztree的节点列表
-     *
+     * @param deptId
      * @return
      */
     List<ZTreeNode> clubtree(Integer deptId);

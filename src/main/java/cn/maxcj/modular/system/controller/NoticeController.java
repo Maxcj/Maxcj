@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -70,12 +71,12 @@ public class NoticeController extends BaseController {
     /**
      * 跳转到首页通知
      */
-    @RequestMapping("/hello")
+    /*@RequestMapping("/hello")
     public String hello() {
         List<Map<String, Object>> notices = noticeService.list(null);
         super.setAttr("noticeList", notices);
         return "/noticelist.html";
-    }
+    }*/
 
     /**
      * 获取通知列表
@@ -134,6 +135,12 @@ public class NoticeController extends BaseController {
         old.setContent(notice.getContent());
         old.updateById();
         return SUCCESS_TIP;
+    }
+
+    @RequestMapping("/getNum")
+    @ResponseBody
+    public Integer getNoticeNum(){
+        return this.noticeService.noticNum();
     }
 
 }

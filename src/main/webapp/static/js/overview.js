@@ -1,3 +1,17 @@
+function noticeNum() {
+    $.ajax({
+        url: "/notice/getNum",
+        dataType: "json",
+        async: false,
+        success: function (data) {
+            console.log(data);
+            $("#noticeNum_id").text(data+"");
+            console.log("==");
+        }
+    });
+};
+
+
 //活动总计
 function activityTotal() {
     $.ajax({
@@ -62,6 +76,8 @@ function getview() {
 
 
 function echarts_data() {
+    noticeNum();
+
     getview();
     /*本周活动数量统计*/
     var dashboard_week = document.getElementById("dashboard-week");

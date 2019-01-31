@@ -12,7 +12,6 @@ import java.io.Serializable;
  * 被修改的bean临时存放的地方
  *
  * @author Maxcj
- * @date 2017-03-31 11:19
  */
 @Component
 @Scope(scopeName = WebApplicationContext.SCOPE_SESSION)

@@ -148,7 +148,10 @@ $(function () {
     var table = new BSTable("managerTable", "/mgr/myclub", defaultColunms);
     table.setPaginationType("client");
     MgrUser.table = table.init();
-    var ztree = new $ZTree("deptTree", "/dept/tree");
+    var ztree = new $ZTree("deptTree", "/dept/clubtree");
+
     ztree.bindOnClick(MgrUser.onClickDept);
     ztree.init();
+    //将顶级这一目录从树形结构中删除
+    $('span:contains("顶级")').parent().parent().remove();
 });

@@ -23,4 +23,10 @@ public interface NoticeMapper extends BaseMapper<Notice> {
      */
     List<Map<String, Object>> list(@Param("condition") String condition);
 
+    /**
+     * 统计通知总条数
+     * @return
+     */
+    Integer noticeNum();
+
 }

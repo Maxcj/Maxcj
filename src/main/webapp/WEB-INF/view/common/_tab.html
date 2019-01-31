@@ -14,9 +14,8 @@
                                width="64px" height="64px"/></span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
-                       <span class="block m-t-xs"><strong class="font-bold">${shiro.getUser().name}</strong></span>
-                        <span class="text-muted text-xs block">${shiro.getUser().roleNames[0]}<b
-                                class="caret"></b></span>
+                            <span class="block m-t-xs"><strong class="font-bold">${shiro.getUser().name}</strong></span>
+                            <span class="text-muted text-xs block">${shiro.getUser().roleNames}<b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu m-t-xs">
@@ -37,6 +36,9 @@
                 <a class="J_menuItem" href="${ctxPath}${title.url}" name="tabMenuItem">
                     <i class="fa ${title.icon}"></i>
                     <span class="nav-label">${title.name}</span>
+                    @if(strutil.contain (title.name,"通知")){
+                        <div id="noticeNum_id" class="label label-warning pull-right">noticeNum</div>
+                    @}
                 </a>
             </li>
             @}else{

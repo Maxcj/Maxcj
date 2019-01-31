@@ -89,6 +89,13 @@ Dept.delete = function () {
 };
 
 /**
+ * 导出所有的部门
+ */
+Dept.exp = function () {
+    //TODO
+}
+
+/**
  * 查询部门列表
  */
 Dept.search = function () {

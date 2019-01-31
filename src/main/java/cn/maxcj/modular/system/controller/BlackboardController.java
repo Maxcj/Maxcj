@@ -40,4 +40,11 @@ public class BlackboardController extends BaseController {
         model.addAttribute("noticeList", notices);*/
         return "/overview.html";
     }
+
+    @RequestMapping("/contacts")
+    public String contacts(){
+        return "/contacts.html";
+    }
+
+
 }

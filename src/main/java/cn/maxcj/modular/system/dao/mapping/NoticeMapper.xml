@@ -20,4 +20,8 @@
         order by createtime DESC
     </select>
 
+    <select id="noticeNum" resultType="java.lang.Integer">
+        SELECT COUNT(n.id) as noticeNum from sys_notice n
+    </select>
+
 </mapper>

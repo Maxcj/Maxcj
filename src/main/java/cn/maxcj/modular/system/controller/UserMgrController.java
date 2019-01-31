@@ -178,28 +178,12 @@ public class UserMgrController extends BaseController {
         }
     }
 
-    /**
-     *
-     * @param deptid
-     * @return
-     */
+
     @RequestMapping("/myclub")
     @ResponseBody
-    public Object getMyClubUser(@RequestParam(required = false) String name, @RequestParam(required = false) String beginTime, @RequestParam(required = false) String endTime, @RequestParam(required = false) Integer deptid){
-        String roleNames = "1,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20";
-        String stroleNames = "22.23.24.25.26.27.28.29";
-        if (ShiroKit.isAdmin() || ShiroKit.hasAnyRoles(roleNames)) {
-            System.out.println("=========================isAdmin");
-            List<Map<String, Object>> users = userService.selectUsers(null, name, beginTime, endTime, deptid);
-            return new UserWarpper(users).wrap();
-        }else /*if (ShiroKit.hasAnyRoles(stroleNames)) */{
-            //TODO
-            //DataScope dataScope = new DataScope(ShiroKit.getDeptDataScope());
-            List<Map<String, Object>> users = userService.selectUsersbydeptid(ShiroKit.getUser().deptId);
-            System.out.println(users);
-            return new UserWarpper(users).wrap();
-        }
-        //return  null;
+    public Object getMyClubUser(){
+        List<Map<String, Object>> users = userService.selectUsers(null, null, null, null, ShiroKit.getUser().deptId);
+        return new UserWarpper(users).wrap();
     }
 
     /**

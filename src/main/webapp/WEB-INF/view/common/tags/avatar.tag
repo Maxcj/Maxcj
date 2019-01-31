@@ -21,7 +21,7 @@ id : 头像的id
         <i class="fa fa-upload"></i>&nbsp;上传
     </div>
 </div>
-<input type="hidden" id="${id}" value="${avatarImg!}"/>
+    <input type="hidden" id="${id}" value="${avatarImg!}"/>
 </div>
 @if(isNotEmpty(underline) && underline == 'true'){
 <div class="hr-line-dashed"></div>

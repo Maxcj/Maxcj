@@ -8,6 +8,7 @@ import cn.maxcj.core.common.constant.factory.ConstantFactory;
 import cn.maxcj.core.common.exception.BizExceptionEnum;
 import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.core.log.LogObjectHolder;
+import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.modular.system.model.Dept;
 import cn.maxcj.modular.system.service.IDeptService;
 import cn.maxcj.modular.system.warpper.DeptWarpper;
@@ -79,6 +80,19 @@ public class DeptController extends BaseController {
         tree.add(ZTreeNode.createParent());
         return tree;
     }
+
+
+    /**
+     * 获取部门的tree列表
+     */
+    @RequestMapping(value = "/clubtree")
+    @ResponseBody
+    public List<ZTreeNode> clubtree() {
+        List<ZTreeNode> tree = this.deptService.clubtree(ShiroKit.getUser().deptId);
+        tree.add(ZTreeNode.createParent());
+        return tree;
+    }
+
 
     /**
      * 新增部门

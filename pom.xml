@@ -47,6 +47,12 @@
             <groupId>cn.stylefeng.roses</groupId>
             <artifactId>kernel-core</artifactId>
             <version>1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <groupId>mysql</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -155,12 +161,12 @@
             <version>${swagger.version}</version>
         </dependency>
 
+        <!--腾讯云发送短信-->
         <dependency>
             <groupId>com.github.qcloudsms</groupId>
             <artifactId>qcloudsms</artifactId>
             <version>1.0.6</version>
         </dependency>
-
 
         <!--jwt token-->
         <dependency>
@@ -168,6 +174,23 @@
             <artifactId>jjwt</artifactId>
             <version>${jwt.version}</version>
         </dependency>
+
+        <!--Activiti工作流引擎-->
+        <!--<dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring-boot-starter-basic</artifactId>
+            <version>5.22.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>javax.mail</artifactId>
+                    <groupId>com.sun.mail</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>mybatis</artifactId>
+                    <groupId>org.mybatis</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>-->
 
 
         <!--需要分布式session的话需要放开注释-->
@@ -179,8 +202,6 @@
         <!--<groupId>org.springframework.boot</groupId>-->
         <!--<artifactId>spring-boot-starter-data-redis</artifactId>-->
         <!--</dependency>-->
-
-
     </dependencies>
 
     <build>
@@ -240,18 +261,6 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-        </profile>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <spring.active>dev</spring.active>
-            </properties>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <spring.active>test</spring.active>
-            </properties>
         </profile>
         <profile>
             <id>produce</id>

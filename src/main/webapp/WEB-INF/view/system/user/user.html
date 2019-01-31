@@ -67,8 +67,12 @@
                                     <#button name="角色分配" icon="fa-user-secret" clickFun="MgrUser.roleAssign()"
                                     space="true"/>
                                     @}
-                                    @if(shiro.hasPermission("/mgr/setRole")){
-                                    <#button name="导出人员" icon="fa-external-link" clickFun="MgrUser.expUsers()"
+                                    @if(shiro.hasPermission("/mgr/exp")){
+                                    <#button name="导出人员" icon="fa-level-up" clickFun="MgrUser.expUsers()"
+                                    space="true"/>
+                                    @}
+                                    @if(shiro.hasPermission("/mgr/imp")){
+                                    <#button name="导入人员" icon="fa-level-down" clickFun="MgrUser.impUsers()"
                                     space="true"/>
                                     @}
                                 </div>
