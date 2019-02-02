@@ -51,4 +51,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public User getByAccount(String account) {
         return this.baseMapper.getByAccount(account);
     }
+
+    @Override
+    public List<Map<String, Object>> selectSheLian() {
+        return this.baseMapper.selectSheLian();
+    }
 }

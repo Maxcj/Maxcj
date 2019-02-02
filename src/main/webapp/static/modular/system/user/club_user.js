@@ -28,6 +28,22 @@ MgrUser.initColumn = function () {
     return columns;
 };
 
+
+/**
+ * 点击添加
+ */
+MgrUser.openAddMgr = function () {
+    var index = layer.open({
+        type: 2,
+        title: '添加人员',
+        area: ['800px', '560px'], //宽高
+        fix: false, //不固定
+        maxmin: true,
+        content: Feng.ctxPath + '/mgr/user_add'
+    });
+    this.layerIndex = index;
+};
+
 /**
  * 检查是否选中
  */
@@ -42,6 +58,7 @@ MgrUser.check = function () {
     }
 };
 
+
 /**
  * 点击修改按钮时
  * @param userId 管理员id
@@ -55,22 +72,6 @@ MgrUser.openChangeUser = function () {
             fix: false, //不固定
             maxmin: true,
             content: Feng.ctxPath + '/mgr/user_edit/' + this.seItem.id
-        });
-        this.layerIndex = index;
-    }
-};
-/**
- * 点击角色分配
- */
-MgrUser.roleAssign = function () {
-    if (this.check()) {
-        var index = layer.open({
-            type: 2,
-            title: '角色分配',
-            area: ['300px', '400px'], //宽高
-            fix: false, //不固定
-            maxmin: true,
-            content: Feng.ctxPath + '/mgr/role_assign/' + this.seItem.id
         });
         this.layerIndex = index;
     }
@@ -97,6 +98,32 @@ MgrUser.delMgrUser = function () {
     }
 };
 
+
+
+
+/**
+ * 导出人员
+ */
+MgrUser.expUsers = function () {
+    var ajax = new $ax(Feng.ctxPath + "/mgr/exp", function () {
+        Feng.success("导出成功!");
+        //MgrUser.table.refresh();
+    }, function (data) {
+        Feng.error("导出失败!" + data.responseJSON.message + "!");
+    });
+};
+
+/**
+ * 导入人员
+ */
+MgrUser.expUsers = function () {
+    var ajax = new $ax(Feng.ctxPath + "/mgr/imp", function () {
+        Feng.success("导入成功!");
+        MgrUser.table.refresh();
+    }, function (data) {
+        Feng.error("导入成功!" + data.responseJSON.message + "!");
+    });
+};
 
 /**
  * 重置密码

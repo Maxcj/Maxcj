@@ -8,7 +8,6 @@ import java.util.*;
 /**
  * @author Maxcj
  * @Description 菜单的节点
- * @date 2016年12月6日 上午11:34:17
  */
 public class MenuNode implements Comparable {
 

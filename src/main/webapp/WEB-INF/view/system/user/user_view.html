@@ -17,36 +17,21 @@
                                 <div class="row">
                                     <div class="col-sm-6 b-r">
                                         <#avatar id="avatar" name="头像" underline="true" avatarImg="${user.avatar}"/>
-
-                                        <#input id="account" name="账户" underline="true" value="${user.account}"
-                                        disabled="disabled" />
-
+                                        <#input id="account" name="账户" underline="true" value="${user.account}" disabled="disabled" />
                                         <#select id="sex" name="性别" underline="true" value="${user.sex}">
-                                        <option value="1">男</option>
-                                        <option value="2">女</option>
-                                    </#select>
-
-                                    <#input id="roleid" name="角色" underline="true" value="${roleName}"
-                                    disabled="disabled"/>
-
-                                    <#input id="email" name="邮箱" type="email" value="${user.email}"/>
+                                            <option value="1">男</option>
+                                            <option value="2">女</option>
+                                        </#select>
+                                    <#input id="roleid" name="角色" underline="true" value="${roleName}" disabled="disabled"/>
+                                    <#input id="email" name="QQ邮箱" type="email" value="${user.email}" />
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div id="driverInfoContent">
                                         <#input id="name" name="姓名" underline="true" value="${user.name}"/>
-
-                                        <#input id="birthday" name="出生日期" underline="true" type="text"
-                                        value="${user.birthday}"/>
-
-                                        <#input id="citySel" name="部门/社团" underline="true" readonly="readonly"
-                                        value="${deptName}" disabled="disabled"
-                                        hidden="deptid" hiddenValue="${user.deptid}"
-                                        clickFun="UserInfoDlg.showInfoDeptSelectTree(); return false;"
-                                        selectFlag="true" selectId="menuContent" selectTreeId="treeDemo"
-                                        selectStyle="width:250px !important;"/>
-
-                                        <#input id="phone" name="电话" value="${user.phone}"/>
+                                        <#input id="birthday" name="出生日期" underline="true" type="text" value="${user.birthday}"/>
+                                        <#input id="citySel" name="部门/社团" underline="true" readonly="readonly" value="${deptName}" disabled="disabled" hidden="deptid" hiddenValue="${user.deptid}" clickFun="UserInfoDlg.showInfoDeptSelectTree(); return false;" selectFlag="true" selectId="menuContent" selectTreeId="treeDemo" selectStyle="width:250px !important;"/>
+                                        <#input id="phone" name="电话" value="${user.phone}" />
                                     </div>
                                 </div>
                             </div>
@@ -59,8 +44,7 @@
 
                             <div class="row btn-group-m-t">
                                 <div class="col-sm-10">
-                                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check"
-                                    clickFun="UserInfoDlg.editSubmit()"/>
+                                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="UserInfoDlg.editSubmit()"/>
                                 </div>
                             </div>
                         </div>

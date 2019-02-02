@@ -2,29 +2,27 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <!-- js渲染从这开始，每个div为一个模块 -->
+        @for(users in shelian){
         <div class="col-sm-3">
             <div class="contact-box">
                     <div class="col-sm-4">
                         <div class="text-center">
                             <img alt="image" class="img-circle m-t-xs img-responsive" src="${ctxPath}/static/img/avatar.png">
-                            <div class="m-t-xs font-bold">职务</div>
+                            <div class="m-t-xs font-bold">${users.simplename}</div>
                         </div>
                     </div>
                     <div class="col-sm-8">
-                        <h3><strong>姓名</strong></h3>
-                        <p><i class="fa fa-intersex"></i>&nbsp;&nbsp;男</p>
-                        <p><i class="fa fa-qq"></i>&nbsp;&nbsp;12345</p>
-                        <p><i class="fa fa-phone"></i>&nbsp;&nbsp;123445</p>
+                        <h3><strong>${users.name}</strong></h3>
+                        <p><i class="fa fa-intersex"></i>&nbsp;&nbsp;${users.sexName}</p>
+                        <p><i class="fa fa-qq"></i>&nbsp;&nbsp;${users.email}</p>
+                        <p><i class="fa fa-phone"></i>&nbsp;&nbsp;${users.phone}</p>
                     </div>
                     <div class="clearfix"></div>
             </div>
         </div>
+        @}
     </div>
 </div>
-
-<!-- 自定义js -->
-<script src="${ctxPath}/static/js/content.js?v=1.0.0"></script>
-
 
 
 <script>

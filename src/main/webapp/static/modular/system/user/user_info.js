@@ -46,6 +46,16 @@ var UserInfoDlg = {
                     message: '两次密码不一致'
                 },
             }
+        },
+        email: {
+            notEmpty: {
+                message: 'QQ号码不能为空'
+            }
+        },
+        phone: {
+            notEmpty: {
+                message: '电话号码不能为空'
+            }
         }
     }
 };

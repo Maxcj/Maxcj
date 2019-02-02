@@ -46,4 +46,10 @@ public interface IUserService extends IService<User> {
      */
     User getByAccount(String account);
 
+    /**
+     * 查询社联人员
+     * @return
+     */
+    List<Map<String, Object>> selectSheLian();
+
 }

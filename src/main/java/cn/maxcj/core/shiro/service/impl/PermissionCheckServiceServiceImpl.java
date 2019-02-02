@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * 权限自定义检查
  */
 @Service
-@Transactional(readOnly = true)
+@Transactional(readOnly = true, rollbackFor = Exception.class)
 public class PermissionCheckServiceServiceImpl implements PermissionCheckService {
 
     @Override

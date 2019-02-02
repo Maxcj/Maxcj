@@ -81,4 +81,8 @@
         from sys_user where deptid = #{deptid}
     </select>
 
+    <select id="selectSheLian" resultType="map">
+        select d.simplename,u.name,u.sex, u.email, u.phone from sys_user u left join sys_dept d on u.deptid = d.id WHERE u.status != 3 and d.pid = 24 ORDER BY d.simplename
+    </select>
+
 </mapper>

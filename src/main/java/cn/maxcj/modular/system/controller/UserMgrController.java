@@ -178,7 +178,17 @@ public class UserMgrController extends BaseController {
         }
     }
 
+    /*public Object getSheLian(){
+        List<Map<String, Object>> users = userService.selectUsers(null, null, null, null, null);
+        return new UserWarpper(users).wrap();
+    }*/
 
+
+
+    /**
+     * 跳转到社团管理人员界面
+     * @return
+     */
     @RequestMapping("/myclub")
     @ResponseBody
     public Object getMyClubUser(){

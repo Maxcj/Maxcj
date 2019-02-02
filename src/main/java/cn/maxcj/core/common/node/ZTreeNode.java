@@ -5,19 +5,33 @@ package cn.maxcj.core.common.node;
  * jquery ztree 插件的节点
  *
  * @author Maxcj
- * @date 2017年2月17日 下午8:25:14
  */
 public class ZTreeNode {
 
-    private Long id;         //节点id
+    /**
+     * 节点id
+     */
+    private Long id;
 
-    private Long pId;        //父节点id
+    /**
+     * 父节点id
+     */
+    private Long pId;
 
-    private String name;     //节点名称
+    /**
+     * 节点名称
+     */
+    private String name;
 
-    private Boolean open;    //是否打开节点
+    /**
+     * 是否打开节点
+     */
+    private Boolean open;
 
-    private Boolean checked; //是否被选中
+    /**
+     * 是否被选中
+     */
+    private Boolean checked;
 
     public Long getId() {
         return id;

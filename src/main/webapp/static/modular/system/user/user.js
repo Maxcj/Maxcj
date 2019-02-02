@@ -48,7 +48,7 @@ MgrUser.check = function () {
 MgrUser.openAddMgr = function () {
     var index = layer.open({
         type: 2,
-        title: '添加管理员',
+        title: '添加人员',
         area: ['800px', '560px'], //宽高
         fix: false, //不固定
         maxmin: true,
@@ -65,7 +65,7 @@ MgrUser.openChangeUser = function () {
     if (this.check()) {
         var index = layer.open({
             type: 2,
-            title: '编辑管理员',
+            title: '编辑人员',
             area: ['800px', '450px'], //宽高
             fix: false, //不固定
             maxmin: true,
@@ -118,11 +118,26 @@ MgrUser.delMgrUser = function () {
 MgrUser.expUsers = function () {
     var ajax = new $ax(Feng.ctxPath + "/mgr/exp", function () {
         Feng.success("导出成功!");
-        MgrUser.table.refresh();
+        //MgrUser.table.refresh();
     }, function (data) {
         Feng.error("导出失败!" + data.responseJSON.message + "!");
     });
 };
+
+/**
+ * 导入人员
+ */
+MgrUser.expUsers = function () {
+    var ajax = new $ax(Feng.ctxPath + "/mgr/imp", function () {
+        Feng.success("导入成功!");
+        MgrUser.table.refresh();
+    }, function (data) {
+        Feng.error("导入成功!" + data.responseJSON.message + "!");
+    });
+};
+
+
+
 
 
 /**

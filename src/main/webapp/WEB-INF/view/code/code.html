@@ -32,12 +32,7 @@
                                     <#input id="moduleName" name="模块名称" value="${params.moduleName}"/>
                                 </div>
                                 <div class="col-sm-3">
-                                    <#input id="parentMenuName" name="父级菜单名称" underline="false"
-                                    value="${params.parentMenuName}"
-                                    hidden="pid" readonly="readonly"
-                                    clickFun="Code.showMenuSelectTree(); return false;"
-                                    style="background-color: #ffffff !important;"
-                                    selectFlag="true" selectId="pcodeTreeDiv" selectTreeId="pcodeTree" selectStyle=""/>
+                                    <#input id="parentMenuName" name="父级菜单名称" underline="false" value="${params.parentMenuName}" hidden="pid" readonly="readonly" clickFun="Code.showMenuSelectTree(); return false;" style="background-color: #ffffff !important;" selectFlag="true" selectId="pcodeTreeDiv" selectTreeId="pcodeTree" selectStyle=""/>
                                 </div>
                             </div>
 
@@ -54,26 +49,20 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <button id="genBtn" type="button" class="btn btn-primary mr10"
-                                            onclick="Code.generate()">
+                                    <button id="genBtn" type="button" class="btn btn-primary mr10" onclick="Code.generate()">
                                         <span style="padding: 5px 20px;">生成</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div style="padding-top: 10px; overflow: hidden"
-                             class="container-fluid">
+                        <div style="padding-top: 10px; overflow: hidden" class="container-fluid">
                             <div class="col-md-12">
                                 <div class="row admin-form">
                                     <div class="col-md-3 col-md-offset-3">
                                         <h2>数据表</h2>
-                                        <div class="list-group" id="tableList"
-                                             data-bind="foreach: tables"
-                                             style="height: 500px; overflow-y: scroll">
+                                        <div class="list-group" id="tableList" data-bind="foreach: tables" style="height: 500px; overflow-y: scroll">
                                             @for(table in tables!){
-                                            <a href="javascript:void(0)" class="list-group-item"
-                                               tableName="${table.tableName}"
-                                               onclick="Code.selectTable('${table.tableName}')">${table.tableName}-${table.tableComment}</a>
+                                            <a href="javascript:void(0)" class="list-group-item" tableName="${table.tableName}" onclick="Code.selectTable('${table.tableName}')">${table.tableName}-${table.tableComment}</a>
                                             @}
                                         </div>
                                     </div>
@@ -82,8 +71,7 @@
                                         <div class="list-group" id="templateList"
                                              style="height: 500px; overflow-y: scroll">
                                             @for(template in templates!){
-                                            <a href="javascript:void(0)" class="list-group-item" key="${template.key}"
-                                               onclick="Code.selectTemplate('${template.key}')">${template.desc}</a>
+                                            <a href="javascript:void(0)" class="list-group-item" key="${template.key}" onclick="Code.selectTemplate('${template.key}')">${template.desc}</a>
                                             @}
                                         </div>
                                     </div>

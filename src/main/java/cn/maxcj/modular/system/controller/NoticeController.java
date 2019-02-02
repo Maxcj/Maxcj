@@ -71,12 +71,12 @@ public class NoticeController extends BaseController {
     /**
      * 跳转到首页通知
      */
-    /*@RequestMapping("/hello")
+    @RequestMapping("/hello")
     public String hello() {
         List<Map<String, Object>> notices = noticeService.list(null);
         super.setAttr("noticeList", notices);
         return "/noticelist.html";
-    }*/
+    }
 
     /**
      * 获取通知列表

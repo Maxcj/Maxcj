@@ -15,7 +15,6 @@ import java.util.Map;
  * </p>
  *
  * @author Maxcj
- * @since 2017-07-11
  */
 public interface UserMapper extends BaseMapper<User> {
 
@@ -67,4 +66,10 @@ public interface UserMapper extends BaseMapper<User> {
      * @return
      */
     List<Map<String, Object>> selectUsersbydeptid(@Param("deptid") Integer deptid);
+
+    /**
+     * 查询社联人员
+     * @return
+     */
+    List<Map<String, Object>> selectSheLian();
 }
