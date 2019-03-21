@@ -16,7 +16,7 @@
     <name>Maxcj</name>
     <description>社团信息化管理系统</description>
 
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,6 +30,7 @@
         <ehcache.core.version>2.6.11</ehcache.core.version>
         <mysql-connector-java.version>8.0.11</mysql-connector-java.version>
         <jwt.version>0.9.0</jwt.version>
+        <qcloudsms.version>1.0.6</qcloudsms.version>
 
     </properties>
 
@@ -165,7 +166,7 @@
         <dependency>
             <groupId>com.github.qcloudsms</groupId>
             <artifactId>qcloudsms</artifactId>
-            <version>1.0.6</version>
+            <version>${qcloudsms.version}</version>
         </dependency>
 
         <!--jwt token-->
@@ -175,22 +176,6 @@
             <version>${jwt.version}</version>
         </dependency>
 
-        <!--Activiti工作流引擎-->
-        <!--<dependency>
-            <groupId>org.activiti</groupId>
-            <artifactId>activiti-spring-boot-starter-basic</artifactId>
-            <version>5.22.0</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>javax.mail</artifactId>
-                    <groupId>com.sun.mail</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>mybatis</artifactId>
-                    <groupId>org.mybatis</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
 
         <!-- EasyPoi 用于导入导出功能 -->
         <dependency>
@@ -213,6 +198,12 @@
             <groupId>cn.afterturn</groupId>
             <artifactId>easypoi-annotation</artifactId>
             <version>3.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.0.1.RELEASE</version>
         </dependency>
 
 

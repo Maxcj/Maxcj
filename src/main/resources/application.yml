@@ -9,6 +9,7 @@ guns:
   session-invalidate-time: 1800     #session失效时间(只在单机环境下生效，多机环境在SpringSessionConfig类中配置) 单位：秒
   session-validation-interval: 900  #多久检测一次失效的session(只在单机环境下生效) 单位：秒
 
+
 beetl:
   resource-auto-check: true       #热加载beetl模板，开发时候用
 
@@ -37,6 +38,7 @@ mybatis-plus:
 log:
   path: logs
 
+
 ---
 
 spring:
@@ -44,7 +46,7 @@ spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/maxcj?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
     username: Maxcj
-    password: zhong0508
+    password: ZhongCJ0508@
     filters: wall,mergeStat
 
 ---

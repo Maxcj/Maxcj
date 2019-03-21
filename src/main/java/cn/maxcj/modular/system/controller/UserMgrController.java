@@ -1,5 +1,8 @@
 package cn.maxcj.modular.system.controller;
 
+import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
+import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.maxcj.config.properties.GunsProperties;
 import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.common.annotion.Permission;
@@ -25,6 +28,7 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -203,9 +207,16 @@ public class UserMgrController extends BaseController {
     @RequestMapping("/exp")
     @BussinessLog(value = "导出人员", key = "userid", dict = UserDict.class)
     @ResponseBody
-    public Object expUsers(){
-        List<Map<String, Object>> expusers = userService.selectUsersbydeptid(ShiroKit.getUser().deptId);
-        return new UserWarpper(expusers).wrap();
+    public String expUsers(ModelMap map){
+        List<Map<String, Object>> list = userService.selectUsersbydeptid(ShiroKit.getUser().deptId);
+        UserWarpper expusers = new UserWarpper(list).wrap();
+
+        ExportParams params = new ExportParams("测试导出人员", "测试", ExcelType.XSSF);
+        params.setFreezeCol(2);
+        map.put(NormalExcelConstants.DATA_LIST, list);
+        map.put(NormalExcelConstants.CLASS, User.class);
+        map.put(NormalExcelConstants.PARAMS, params);
+        return NormalExcelConstants.EASYPOI_EXCEL_VIEW;
     }
 
 

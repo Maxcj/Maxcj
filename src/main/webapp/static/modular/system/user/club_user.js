@@ -99,32 +99,6 @@ MgrUser.delMgrUser = function () {
 };
 
 
-
-
-/**
- * 导出人员
- */
-MgrUser.expUsers = function () {
-    var ajax = new $ax(Feng.ctxPath + "/mgr/exp", function () {
-        Feng.success("导出成功!");
-        //MgrUser.table.refresh();
-    }, function (data) {
-        Feng.error("导出失败!" + data.responseJSON.message + "!");
-    });
-};
-
-/**
- * 导入人员
- */
-MgrUser.expUsers = function () {
-    var ajax = new $ax(Feng.ctxPath + "/mgr/imp", function () {
-        Feng.success("导入成功!");
-        MgrUser.table.refresh();
-    }, function (data) {
-        Feng.error("导入成功!" + data.responseJSON.message + "!");
-    });
-};
-
 /**
  * 重置密码
  */
@@ -152,7 +126,27 @@ MgrUser.resetSearch = function () {
     $("#endTime").val("");
 
     MgrUser.search();
-}
+};
+
+MgrUser.expUsers = function () {
+    var ajax = new $ax(Feng.ctxPath + "/mgr/exp", function () {
+        Feng.success("导出成功!");
+    }, function (data) {
+        Feng.error("导出失败!" + data.responseJSON.message + "!");
+    });
+};
+
+/**
+ * 导入人员
+ */
+MgrUser.impUsers = function () {
+    var ajax = new $ax(Feng.ctxPath + "/mgr/imp", function () {
+        Feng.success("导入成功!");
+        MgrUser.table.refresh();
+    }, function (data) {
+        Feng.error("导入成功!" + data.responseJSON.message + "!");
+    });
+};
 
 MgrUser.search = function () {
     var queryData = {};
@@ -163,7 +157,7 @@ MgrUser.search = function () {
     queryData['endTime'] = $("#endTime").val();
 
     MgrUser.table.refresh({query: queryData});
-}
+};
 
 MgrUser.onClickDept = function (e, treeId, treeNode) {
     MgrUser.deptid = treeNode.id;

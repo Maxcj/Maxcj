@@ -19,20 +19,21 @@
         <result column="status" property="status"/>
         <result column="createtime" property="createtime"/>
         <result column="version" property="version"/>
+        <result column="academy" property="academy"/>
     </resultMap>
 
     <sql id="Base_Column_List">
 		id, account, name, birthday, sex, email, avatar,
 		phone, roleid,
 		deptid, status,
-		createtime, version
+		createtime, version, academy
 	</sql>
 
     <sql id="Base_Column_List_With_Pwd">
 		id, account, name, birthday,password, sex, email, avatar,
 		phone, roleid,salt,
 		deptid, status,
-		createtime, version
+		createtime, version, academy
 	</sql>
 
     <select id="selectUsers" resultType="map">
@@ -82,7 +83,7 @@
     </select>
 
     <select id="selectSheLian" resultType="map">
-        select d.simplename,u.name,u.sex, u.email, u.phone from sys_user u left join sys_dept d on u.deptid = d.id WHERE u.status != 3 and d.pid = 24 ORDER BY d.simplename
+        select d.simplename,u.name,u.sex, u.email, u.phone, u.academy from sys_user u left join sys_dept d on u.deptid = d.id WHERE u.status != 3 and d.pid = 24 ORDER BY d.simplename
     </select>
 
 </mapper>
