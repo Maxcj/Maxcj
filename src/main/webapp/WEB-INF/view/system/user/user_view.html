@@ -13,7 +13,7 @@
 
                                 <input type="hidden" id="id" value="${user.id}">
                                 <input type="hidden" id="sexValue" value="${user.sex}">
-
+                                <input type="hidden" id="academyValue" value="${user.academy}">
                                 <div class="row">
                                     <div class="col-sm-6 b-r">
                                         <#avatar id="avatar" name="头像" underline="true" avatarImg="${user.avatar}"/>
@@ -31,7 +31,23 @@
                                         <#input id="name" name="姓名" underline="true" value="${user.name}"/>
                                         <#input id="birthday" name="出生日期" underline="true" type="text" value="${user.birthday}"/>
                                         <#input id="citySel" name="部门/社团" underline="true" readonly="readonly" value="${deptName}" disabled="disabled" hidden="deptid" hiddenValue="${user.deptid}" clickFun="UserInfoDlg.showInfoDeptSelectTree(); return false;" selectFlag="true" selectId="menuContent" selectTreeId="treeDemo" selectStyle="width:250px !important;"/>
-                                        <#input id="phone" name="电话" value="${user.phone}" />
+                                        <#input id="phone" name="电话" value="${user.phone}" underline="true" />
+                                        <#select id="academy" name="所在学院" underline="true" value="${user.academy}">
+                                            <option value="1">马克思主义学院</option>
+                                            <option value="2">农业与生物技术学院</option>
+                                            <option value="3">法学院</option>
+                                            <option value="4">文学院</option>
+                                            <option value="5">外国语学院</option>
+                                            <option value="6">商学院</option>
+                                            <option value="7">教育学院</option>
+                                            <option value="8">音乐舞蹈学院</option>
+                                            <option value="9">美术与设计学院</option>
+                                            <option value="10">数学与金融学院</option>
+                                            <option value="11">能源与机电工程学院</option>
+                                            <option value="12">信息学院</option>
+                                            <option value="13">材料与环境工程学院</option>
+                                            <option value="14">创新创业学院</option>
+                                        </#select>
                                     </div>
                                 </div>
                             </div>

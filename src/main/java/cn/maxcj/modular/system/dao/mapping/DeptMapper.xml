@@ -39,13 +39,39 @@
 		where id = #{deptId}
     </select>
 
+    <select id="sheliantree" resultType="cn.maxcj.core.common.node.ZTreeNode">
+        select id,pid as pId,simplename as name from sys_dept
+        WHERE pid = "24"
+    </select>
+
     <select id="list" resultType="map">
-        select * from sys_dept
+        select * from sys_dept where pid in ('0','24', '38')
         <if test="condition != null and condition != ''">
-            where simplename like CONCAT('%',#{condition},'%') or fullname like CONCAT('%',#{condition},'%')
+            and simplename like CONCAT('%',#{condition},'%') or fullname like CONCAT('%',#{condition},'%')
         </if>
-        where pid in ('0','24', '38')
         order by num ASC
     </select>
 
+    <select id="clublist" resultType="map">
+        select * from sys_dept where pid = "38"
+        <if test="condition != null and condition != ''">
+            and simplename like CONCAT('%',#{condition},'%') or fullname like CONCAT('%',#{condition},'%')
+        </if>
+
+    </select>
+
+    <select id="clublistWithcategoryId" parameterType="java.lang.Integer" resultType="map">
+        select * from sys_dept d LEFT JOIN sys_clubinfo i ON d.id = i.deptid
+        where d.pid = "38" and i.club_category = #{categoryId}
+        <if test="condition != null and condition != ''">
+            and d.simplename like CONCAT('%',#{condition},'%') or d.fullname like CONCAT('%',#{condition},'%')
+        </if>
+    </select>
+
+    <select id="allclub" resultType="map">
+        select * from sys_dept d LEFT JOIN sys_clubinfo i ON d.id = i.deptid where d.pid = "38"
+        <if test="condition != null and condition != ''">
+            and d.simplename like CONCAT('%',#{condition},'%') or d.fullname like CONCAT('%',#{condition},'%')
+        </if>
+    </select>
 </mapper>

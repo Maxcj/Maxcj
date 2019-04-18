@@ -72,4 +72,12 @@ public interface UserMapper extends BaseMapper<User> {
      * @return
      */
     List<Map<String, Object>> selectSheLian();
+
+
+    /**
+     * 查询是否为社联人员
+     * @param userId
+     * @return
+     */
+    Integer isSheLian(Integer userId);
 }

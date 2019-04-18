@@ -31,7 +31,7 @@ import static cn.stylefeng.roses.core.util.HttpContext.getIp;
  * 登录控制器
  *
  * @author Maxcj
- * @Date 2017年1月10日 下午8:25:24
+ * @Date 2019年1月10日 下午8:25:24
  */
 @Controller
 public class LoginController extends BaseController {
@@ -43,7 +43,7 @@ public class LoginController extends BaseController {
     private IUserService userService;
 
     /**
-     * 跳转到主页
+     * 跳转到后台主页
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
@@ -69,6 +69,8 @@ public class LoginController extends BaseController {
         return "/index.html";
     }
 
+
+
     /**
      * 跳转到登录页面
      */
@@ -80,6 +82,7 @@ public class LoginController extends BaseController {
             return "/login.html";
         }
     }
+
 
     /**
      * 点击登录执行的动作

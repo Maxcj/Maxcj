@@ -1,5 +1,10 @@
 package cn.maxcj.modular.system.controller;
 
+import cn.maxcj.core.common.node.ZTreeNode;
+import cn.maxcj.core.shiro.ShiroKit;
+import cn.maxcj.modular.system.model.User;
+import cn.maxcj.modular.system.service.IDeptService;
+import cn.maxcj.modular.system.service.IUserService;
 import cn.maxcj.modular.system.warpper.ActivityWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import org.springframework.stereotype.Controller;
@@ -13,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import cn.maxcj.modular.system.model.Activity;
 import cn.maxcj.modular.system.service.IActivityService;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -31,12 +37,23 @@ public class ActivityController extends BaseController {
     @Autowired
     private IActivityService activityService;
 
+
+
     /**
-     * 跳转到社团活动首页
+     * 跳转到所有社团活动首页
      */
     @RequestMapping("")
     public String index() {
         return PREFIX + "activity.html";
+    }
+
+    /**
+     * 跳转到自己本社团的活动首页
+     * @return
+     */
+    @RequestMapping("/club")
+    public String club() {
+        return PREFIX + "club_activity.html";
     }
 
     /**
@@ -69,11 +86,40 @@ public class ActivityController extends BaseController {
     }
 
     /**
+     * 获取活动的tree列表
+     */
+    @RequestMapping(value = "/tree")
+    @ResponseBody
+    public List<ZTreeNode> tree() {
+        Integer deptid = ShiroKit.getUser().getDeptId();
+        List<ZTreeNode> tree = this.activityService.tree(deptid);
+        tree.add(ZTreeNode.createParent());
+        return tree;
+    }
+
+
+
+    /**
+     * 获取社团活动列表
+     */
+    @RequestMapping(value = "/clublist")
+    @ResponseBody
+    public Object club_list(String condition) {
+        Integer deptid =  ShiroKit.getUser().getDeptId();
+        List<Map<String, Object>> activity_list = this.activityService.activity_clublist(deptid, condition);
+        return super.warpObject(new ActivityWarpper(activity_list));
+    }
+
+    /**
      * 新增社团活动
      */
     @RequestMapping(value = "/add")
     @ResponseBody
     public Object add(Activity activity) {
+        activity.setActivityClub(ShiroKit.getUser().getDeptId().toString());
+        activity.setActivityPerson(ShiroKit.getUser().getId());
+        activity.setActivityCreatTime(new Date());
+        activity.setActivityState(1);
         activityService.insert(activity);
         return SUCCESS_TIP;
     }
@@ -94,6 +140,7 @@ public class ActivityController extends BaseController {
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Activity activity) {
+        System.out.println(activity.toString());
         activityService.updateById(activity);
         return SUCCESS_TIP;
     }

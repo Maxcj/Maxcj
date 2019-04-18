@@ -41,16 +41,15 @@ public class GunsUserFilter extends AccessControlFilter {
 
     /**
      * Returns <code>true</code> if the request is a
-     * {@link #isLoginRequest(javax.servlet.ServletRequest, javax.servlet.ServletResponse) loginRequest} or
-     * if the current {@link #getSubject(javax.servlet.ServletRequest, javax.servlet.ServletResponse) subject}
+     * {@link #isLoginRequest(ServletRequest, ServletResponse) loginRequest} or
+     * if the current {@link #getSubject(ServletRequest, ServletResponse) subject}
      * is not <code>null</code>, <code>false</code> otherwise.
      *
      * @return <code>true</code> if the request is a
-     * {@link #isLoginRequest(javax.servlet.ServletRequest, javax.servlet.ServletResponse) loginRequest} or
-     * if the current {@link #getSubject(javax.servlet.ServletRequest, javax.servlet.ServletResponse) subject}
+     * {@link #isLoginRequest(ServletRequest, ServletResponse) loginRequest} or
+     * if the current {@link #getSubject(ServletRequest, ServletResponse) subject}
      * is not <code>null</code>, <code>false</code> otherwise.
      */
-    @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         if (isLoginRequest(request, response)) {
             return true;
@@ -63,11 +62,10 @@ public class GunsUserFilter extends AccessControlFilter {
 
     /**
      * This default implementation simply calls
-     * {@link #saveRequestAndRedirectToLogin(javax.servlet.ServletRequest, javax.servlet.ServletResponse) saveRequestAndRedirectToLogin}
+     * {@link #saveRequestAndRedirectToLogin(ServletRequest, ServletResponse) saveRequestAndRedirectToLogin}
      * and then immediately returns <code>false</code>, thereby preventing the chain from continuing so the redirect may
      * execute.
      */
-    @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         HttpServletRequest httpServletRequest = WebUtils.toHttp(request);
         HttpServletResponse httpServletResponse = WebUtils.toHttp(response);

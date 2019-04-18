@@ -1,5 +1,6 @@
 package cn.maxcj.modular.system.service;
 
+import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.modular.system.model.Activity;
 import com.baomidou.mybatisplus.service.IService;
 
@@ -16,8 +17,11 @@ import java.util.Map;
  */
 public interface IActivityService extends IService<Activity> {
 
-    public List<Map<String, Object>> activity_list(String condition);
+    List<Map<String, Object>> activity_list(String condition);
 
-    public Map<Integer, Integer> club_activityNum(String condition);
+    Map<Integer, Integer> club_activityNum(String condition);
 
+    List<ZTreeNode> tree(Integer deptId);
+
+    List<Map<String, Object>> activity_clublist(Integer deptid, String condition);
 }

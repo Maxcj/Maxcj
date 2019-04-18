@@ -13,7 +13,7 @@ import java.util.Map;
  * 用户管理的包装类
  *
  * @author Maxcj
- * @date 2017年2月13日 下午10:47:03
+ * @date 2018年12月13日 下午10:47:03
  */
 public class UserWarpper extends BaseControllerWrapper {
 
@@ -39,6 +39,7 @@ public class UserWarpper extends BaseControllerWrapper {
         map.put("roleName", ConstantFactory.me().getRoleName((String) map.get("roleid")));
         map.put("deptName", ConstantFactory.me().getDeptName((Integer) map.get("deptid")));
         map.put("statusName", ConstantFactory.me().getStatusName((Integer) map.get("status")));
+        map.put("academy",ConstantFactory.me().getUserAcademy((Integer)map.get("academy")));
     }
 
 }

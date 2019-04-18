@@ -2,11 +2,19 @@
 <div class="container-fluid" style="padding: 0 !important;">
     <div class="row">
         <div class="col-sm-12">
-            @for(notice in noticeList){
-            <div class="alert alert-success alert-dismissable">
-                <span><strong id="createtime">${trim(notice.createtime,'yyyy-MM-dd')}</strong><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></span>
-                ${notice.content}
-            </div>
+            @if(noticeList != null){
+                @for(notice in noticeList){
+                <div class="alert alert-success alert-dismissable">
+                    <span><strong id="createtime">${trim(notice.createtime,'yyyy-MM-dd')}</strong><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></span>
+                    ${notice.content}
+                </div>
+                @}
+            @}
+            @if(noticeList == null){
+                <div class="alert alert-success alert-dismissable">
+                    <span><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></span>
+                    暂无数据
+                </div>
             @}
         </div>
     </div>

@@ -3,13 +3,13 @@ package cn.maxcj.core.common.constant.factory;
 
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.StrUtil;
-import cn.maxcj.modular.system.dao.*;
-import cn.maxcj.modular.system.model.*;
 import cn.maxcj.core.common.constant.cache.Cache;
 import cn.maxcj.core.common.constant.cache.CacheKey;
 import cn.maxcj.core.common.constant.state.ManagerStatus;
 import cn.maxcj.core.common.constant.state.MenuStatus;
 import cn.maxcj.core.log.LogObjectHolder;
+import cn.maxcj.modular.system.dao.*;
+import cn.maxcj.modular.system.model.*;
 import cn.stylefeng.roses.core.util.SpringContextHolder;
 import cn.stylefeng.roses.core.util.ToolUtil;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * 常量的生产工厂
  *
- * @author Maxcj
+ * @author fengshuonan
  * @date 2017年2月13日 下午10:55:21
  */
 @Component
@@ -36,6 +36,7 @@ public class ConstantFactory implements IConstantFactory {
     private DictMapper dictMapper = SpringContextHolder.getBean(DictMapper.class);
     private UserMapper userMapper = SpringContextHolder.getBean(UserMapper.class);
     private MenuMapper menuMapper = SpringContextHolder.getBean(MenuMapper.class);
+    private ActivityMapper activityMapper = SpringContextHolder.getBean(ActivityMapper.class);
     private NoticeMapper noticeMapper = SpringContextHolder.getBean(NoticeMapper.class);
 
     public static IConstantFactory me() {
@@ -332,7 +333,6 @@ public class ConstantFactory implements IConstantFactory {
         }
         return parentDeptIds;
     }
-
     @Override
     public String getActivity_category(Integer categoryCode) {
         return getDictsByName("活动类别", categoryCode);
@@ -343,5 +343,24 @@ public class ConstantFactory implements IConstantFactory {
         return getDictsByName("一个活动的状态", stateCode);
     }
 
+    @Override
+    public String getUserAcademy(Integer academyCode) {
+        return getDictsByName("学院名称", academyCode);
+    }
+
+    @Override
+    public String getFinance(Integer finance_catory) {
+        return getDictsByName("社团财务类型", finance_catory);
+    }
+
+    @Override
+    public String getClub_category(Integer category) {
+        return getDictsByName("社团类别", category);
+    }
+
+    @Override
+    public String getActivityName(Integer activity_id) {
+        return activityMapper.getActivityName(activity_id);
+    }
 
 }

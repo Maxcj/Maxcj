@@ -26,7 +26,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * web 配置类
  *
- * @author Maxcj
+ * @author fengshuonan
  * @date 2016年11月12日 下午5:03:32
  */
 @Configuration

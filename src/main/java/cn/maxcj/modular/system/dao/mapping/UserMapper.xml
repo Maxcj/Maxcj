@@ -86,4 +86,8 @@
         select d.simplename,u.name,u.sex, u.email, u.phone, u.academy from sys_user u left join sys_dept d on u.deptid = d.id WHERE u.status != 3 and d.pid = 24 ORDER BY d.simplename
     </select>
 
+    <select id="isSheLian" resultType="int">
+        SELECT d.pid from sys_user u LEFT JOIN sys_dept d on u.deptid = d.id WHERE u.id = #{userId}
+    </select>
+
 </mapper>

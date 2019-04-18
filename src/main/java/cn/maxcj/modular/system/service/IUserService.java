@@ -52,4 +52,12 @@ public interface IUserService extends IService<User> {
      */
     List<Map<String, Object>> selectSheLian();
 
+    /**
+     * 查询是否为社联人员
+     * @param userId
+     * @return
+     */
+    Integer isSheLian(Integer userId);
+
+
 }

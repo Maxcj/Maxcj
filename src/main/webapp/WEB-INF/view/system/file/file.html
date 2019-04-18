@@ -15,9 +15,11 @@
                         </div>
                     </div>
                     <div class="file-manager">
+                        @if(shiro.hasPermission("/blackboard/file/add")){
                          <div class="hr-line-dashed"></div>
                                 <button class="btn btn-primary btn-block">上传文件</button>
                             <div class="hr-line-dashed"></div>
+                        @}
                         <h5>分类</h5>
                         <ul class="folder-list" style="padding: 0">
                             <li><a href="file_manager.html"><i class="fa fa-file-o"></i> 文件</a>

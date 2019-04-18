@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>欢迎页面</title>
+		<link rel="stylesheet" type="text/css" href="${ctxPath}/static/modular/system/welcome/ResetStyle.css"/>
+		<script src="${ctxPath}/static/js/jquery.min.js?v=2.1.4"></script>
+		<script src="${ctxPath}/static/modular/system/welcome/Ani.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="${ctxPath}/static/modular/system/welcome/Style.css"/>
+		<link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+		<script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
+		<!--<script src="${ctxPath}/static/js/plugins/validate/bootstrapValidator.min.js"></script>
+		<script src="${ctxPath}/static/js/common/Feng.js"></script>
+		<script type="text/javascript" src="${ctxPath}/static/js/plugins/wangEditor/wangEditor.js"></script>
+		<script src="${ctxPath}/static/modular/system/message/message_info.js"></script>-->
+        <style>
+            .aui {
+                color: #FFFFFF;
+            }
+
+            a:hover,a:visited {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+        </style>
+
+	</head>
+	<body>
+		<img class="bg" src="${ctxPath}/static/modular/system/welcome/bg.png">
+		<div class="wrap">
+			<div class="main">
+				<div class="header">
+					<div class="headerTitle clearfix">
+						<div class="PageTitle" style="width: 100px"><img src="${ctxPath}/static/modular/system/welcome/logo.png"></div>
+						<div  class="logo"><img style="width: 200px" src="${ctxPath}/static/modular/system/welcome/font.png"></div>
+						<!--<div class="Msearch">
+							<input placeholder="搜索" id="search_input" type="text" />
+							<button type="button"><img src="${ctxPath}/static/modular/system/welcome/searchicon.png"></button>
+						</div>-->
+					</div>
+					<img class="headerPost" src="${ctxPath}/static/modular/system/welcome/pcbanner.png"/>
+				</div>
+				<div class="MVArea">
+					<div class="MVAreaNav">
+						<ul class="SlectList">
+							<li onclick="getClubWithCategoryId(0);">全部社团</li>
+							<li onclick="getClubWithCategoryId(1);">体育竞技类</li>
+							<li onclick="getClubWithCategoryId(2);">文化艺术类</li>
+							<li onclick="getClubWithCategoryId(3);">兴趣拓展类</li>
+							<li onclick="getClubWithCategoryId(4);">学术服务类</li>
+							<li onclick="getClubWithCategoryId(5);">理论实践类</li>
+							<li>|</li>
+							<li onclick="getNotice();">公告</li>
+							<!--<li onclick="goMessage();">留言板</li>-->
+							<li>|</li>
+							<li><a href="/login">登录</a></li>
+							<li><a href="/register">注册</a></li>
+						</ul>
+						<div class="search">
+							<input placeholder="搜索" type="text" id="search" />
+							<button type="button"><img src="${ctxPath}/static/modular/system/welcome/searchicon.png"></button>
+						</div>
+					</div>
+					<div class="container clearfix">
+						<div class="showPage clearfix" id="club_wall">
+							<!--<div class="col">
+								<div class="imgShow">
+									<img class="imgShowBg" src="${ctxPath}/static/modular/system/welcome/1.png" />
+									<div class="imgShowHover"><a href="###" class="imgShowLink"></a></div>
+								</div>
+								<div class="movieTitle"><a href="###">全程高能神剪辑：一眼难尽的2014</a></div>
+								<div class="colBottom">
+									
+									<span>18小时以前</span>
+								</div>
+							</div>-->
+						</div>
+						<div class="showPage clearfix">2</div>
+						<div class="showPage clearfix">3</div>
+						<div class="showPage clearfix">4</div>
+						<div class="showPage clearfix">5</div>
+					</div>
+					<!--<div class="containerFooter">
+						<div href="###" class="border1px forward footButton">上一页</div>
+						<a href="###" class="border1px ordinal footButton">1</a>
+						<a href="###" class="border1px ordinal footButton">2</a>
+						<a href="###" class="border1px ordinal footButton">3</a>
+						<a href="###" class="border1px ordinal footButton">4</a>
+						<a href="###" class="border1px ordinal footButton">5</a>
+						<div class="goToPage">第<input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="2">页</div>
+						<div href="###" class="border1px GObutton footButton">GO</div>
+						<div href="###" class="border1px next footButton">下一页</div>
+					</div>-->
+				</div>
+				<div class="Footer">&copy; 2018 <a  href="http://maxcj.cn" target="_blank">Maxcj</a></div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		$(function(){
+			all();
+		});
+
+		/**
+		 * 查询所有社团
+		 */
+		function all(){
+			var html = '';
+			$("#club_wall").html(html);
+			var condition = $("#search").val();
+			console.log("search="+condition);
+			$.ajax({
+				url: "/welcome/clublist",
+				dataType: "json",
+				data : condition,
+				async: true,
+				success: function (data) {
+					console.log(data);
+					if (data != null && data.length > 0) {
+						for (var i = 0; i < data.length; i++){
+							html += '<div class="col">' +
+                                        '<div class="imgShow">' +
+                                            '<img class="imgShowBg" src="${ctxPath}/static/modular/system/welcome/1.png" />' +
+                                            '<div class="imgShowHover">' +
+                                                '<a class="aui" href="/welcome/clubdetil/'+data[i].id+'" target="_blank" class="imgShowLink"></a>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<div class="movieTitle">' +
+                                            '<a class="aui" href="/welcome/clubdetil/'+data[i].id+'" target="_blank">'+data[i].fullname+'</a>' +
+                                        '</div>' +
+									'</div>';
+						}
+					}else {
+						html+='<div style="text-align: center;color: #FFFFFF">暂未找到社团</div>';
+					}
+					$("#club_wall").html(html);
+				}
+			});
+		}
+
+		/**
+		 * 分类获取社团列表
+		 */
+		function getClubWithCategoryId(categoryId){
+		    if (categoryId == 0){
+                all();
+            } else {
+                var html = '';
+                $("#club_wall").html(html);
+                var condition = $("#search").value;
+                console.log("search="+condition);
+                $.ajax({
+                    url: "/welcome/clublist/category/"+categoryId,
+                    dataType: "json",
+                    data : {categoryId,condition},
+                    async: true,
+                    success: function (data) {
+                        console.log(data);
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++){
+                                html += '<div class="col">' +
+                                        '<div class="imgShow">' +
+                                        '<img class="imgShowBg" src="${ctxPath}/static/modular/system/welcome/1.png" />' +
+                                        '<div class="imgShowHover">' +
+                                        '<a class="aui" href="/welcome/clubdetil/'+data[i].id+'" target="_blank" class="imgShowLink"></a>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '<div class="movieTitle">' +
+                                        '<a class="aui" href="/welcome/clubdetil/'+data[i].id+'" target="_blank">'+data[i].fullname+'</a>' +
+                                        '</div>' +
+                                        '</div>';
+                            }
+                        }else {
+                            html+='<div style="text-align: center;color: #FFFFFF">暂未找到社团</div>';
+                        }
+                        $("#club_wall").html(html);
+                    }
+                });
+            }
+		}
+
+		/**
+		 * 查看社团详情
+		 */
+		function viewClubDetil(clubId) {
+
+		}
+
+		/**
+		 * 公告
+		 */
+		function getNotice() {
+			var html = '';
+			$("#club_wall").html(html);
+			$.ajax({
+				url: "/welcome/list",
+				dataType: "json",
+				async: true,
+				success: function (data) {
+					console.log(data);
+					if (data != null && data.length > 0) {
+						for (var i = 0; i < data.length; i++){
+							html += '<div class="container-fluid" style="padding: 0 !important;">' +
+										'<div class="row">' +
+											'<div class="col-sm-12">' +
+												'<div class="alert alert-success alert-dismissable" style="width: 95%">' +
+													'<span>' +
+														'<strong id="createtime">'+data[i].createtime+'</strong>' +
+														'<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
+													'</span>' + data[i].content +
+												'</div>' +
+											'</div>' +
+										'</div>' +
+									'</div>';
+						}
+					}else {
+						html += '<div class="container-fluid" style="padding: 0 !important;">' +
+									'<div class="row">' +
+										'<div class="col-sm-12">' +
+											'<div class="alert alert-success alert-dismissable">' +
+												'<span>' +
+													'<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>' +
+												'</span>暂无数据' +
+											'</div>' +
+										'</div>' +
+									'</div>' +
+								'</div>';
+					}
+					$("#club_wall").html(html);
+				}
+			});
+		}
+
+		/**
+		 * 留言板
+		 */
+		/*function goMessage() {
+			var html = '<div class="ibox float-e-margins"><div class="ibox-content"><div class="form-horizontal" id="messageInfoForm"><div class="row"><div class="form-group"><div class="col-sm-6"><input id="username" name="姓名" underline="true"/></div><div class="col-sm-6"><input id="title" name="留言标题" underline="true"/></div></div><div class="form-group"><label class="col-sm-1 control-label">内容</label><div class="col-sm-11"><div id="editor" class="editorHeight"></div></div></div></div><div class="row btn-group-m-t"><div class="col-sm-10"><button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="MessageInfoDlg.addSubmit()"/><button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="MessageInfoDlg.close()"/></div></div></div></div></div>';
+			$("#club_wall").html(html);
+		}*/
+
+	</script>
+</html>

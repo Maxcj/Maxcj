@@ -4,11 +4,9 @@ import cn.maxcj.modular.system.model.ActivityStatistics;
 import cn.maxcj.modular.system.dao.ActivityStatisticsMapper;
 import cn.maxcj.modular.system.service.IActivityStatisticsService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 

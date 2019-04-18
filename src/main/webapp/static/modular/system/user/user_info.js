@@ -49,7 +49,12 @@ var UserInfoDlg = {
         },
         email: {
             notEmpty: {
-                message: 'QQ号码不能为空'
+                message: 'QQ邮箱不能为空'
+            }
+        },
+        academy: {
+            notEmpty: {
+                message: '所在学院不能为空'
             }
         },
         phone: {
@@ -178,7 +183,7 @@ UserInfoDlg.hideDeptSelectTree = function () {
  */
 UserInfoDlg.collectData = function () {
     this.set('id').set('account').set('sex').set('password').set('avatar')
-        .set('email').set('name').set('birthday').set('rePassword').set('deptid').set('phone');
+        .set('email').set('name').set('birthday').set('rePassword').set('deptid').set('phone').set('academy');
 };
 
 /**
@@ -286,6 +291,7 @@ $(function () {
 
     //初始化性别选项
     $("#sex").val($("#sexValue").val());
+    $("#academy").val($("#academyValue").val());
 
     var ztree = new $ZTree("treeDemo", "/dept/tree");
     ztree.bindOnClick(UserInfoDlg.onClickDept);
@@ -296,5 +302,4 @@ $(function () {
     var avatarUp = new $WebUpload("avatar");
     avatarUp.setUploadBarId("progressBar");
     avatarUp.init();
-
 });

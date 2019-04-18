@@ -34,8 +34,28 @@ public interface IDeptService extends IService<Dept> {
      */
     List<ZTreeNode> clubtree(Integer deptId);
 
+    List<ZTreeNode> sheliantree();
+
     /**
      * 获取所有部门列表
      */
     List<Map<String, Object>> list(String condition);
+
+    /**
+     * 获取所有社团
+     * @param condition
+     * @return
+     */
+    List<Map<String, Object>> clublist(String condition);
+
+    /**
+     * 获取某类社团
+     * @param categoryId
+     * @param condition
+     * @return
+     */
+    List<Map<String, Object>> clublist(Integer categoryId, String condition);
+
+
+    List<Map<String, Object>> allclub(String condition);
 }

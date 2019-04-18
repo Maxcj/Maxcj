@@ -18,8 +18,8 @@ LoginLog.initColumn = function () {
         {title: '日志名称', field: 'logname', align: 'center', valign: 'middle', sortable: true},
         {title: '用户名称', field: 'userName', align: 'center', valign: 'middle'},
         {title: '时间', field: 'createtime', align: 'center', valign: 'middle', sortable: true},
-        {title: '具体消息', field: 'message', align: 'center', valign: 'middle', sortable: true},
-        {title: 'ip', field: 'ip', align: 'center', valign: 'middle', sortable: true}];
+        {title: '具体消息', field: 'message', visible: true, align: 'center', valign: 'middle', sortable: true},
+        {title: 'ip', field: 'ip', visible: false, align: 'center', valign: 'middle', sortable: true}];
 };
 
 /**
@@ -76,8 +76,8 @@ function init() {
     var BootstrapTable = $.fn.bootstrapTable.Constructor;
     BootstrapTable.prototype.onSort = function (event) {
         var $this = event.type === "keypress" ? $(event.currentTarget) : $(event.currentTarget).parent(),
-            $this_ = this.$header.find('th').eq($this.index()),
-            sortName = this.header.sortNames[$this.index()];
+            $this_ = this.$header.find('th').eq($this.welcome()),
+            sortName = this.header.sortNames[$this.welcome()];
 
         this.$header.add(this.$header_).find('span.order').remove();
 

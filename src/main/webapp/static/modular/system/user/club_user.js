@@ -20,7 +20,8 @@ MgrUser.initColumn = function () {
         {title: '姓名', field: 'name', align: 'center', valign: 'middle', sortable: true},
         {title: '性别', field: 'sexName', align: 'center', valign: 'middle', sortable: true},
         {title: '角色', field: 'roleName', align: 'center', valign: 'middle', sortable: true},
-        {title: '部门', field: 'deptName', align: 'center', valign: 'middle', sortable: true},
+        {title: '部门/社团', field: 'deptName', align: 'center', valign: 'middle', sortable: true},
+        {title: '所在学院', field: 'academy', align: 'center', valign: 'middle', sortable: true},
         {title: '邮箱', field: 'email', align: 'center', valign: 'middle', sortable: true},
         {title: '电话', field: 'phone', align: 'center', valign: 'middle', sortable: true},
         {title: '创建时间', field: 'createtime', align: 'center', valign: 'middle', sortable: true},
@@ -128,17 +129,16 @@ MgrUser.resetSearch = function () {
     MgrUser.search();
 };
 
-MgrUser.expUsers = function () {
+/*MgrUser.expUsers = function () {
     var ajax = new $ax(Feng.ctxPath + "/mgr/exp", function () {
         Feng.success("导出成功!");
     }, function (data) {
         Feng.error("导出失败!" + data.responseJSON.message + "!");
     });
-};
+};*/
 
 /**
  * 导入人员
- */
 MgrUser.impUsers = function () {
     var ajax = new $ax(Feng.ctxPath + "/mgr/imp", function () {
         Feng.success("导入成功!");
@@ -146,7 +146,7 @@ MgrUser.impUsers = function () {
     }, function (data) {
         Feng.error("导入成功!" + data.responseJSON.message + "!");
     });
-};
+};*/
 
 MgrUser.search = function () {
     var queryData = {};

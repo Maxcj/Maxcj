@@ -10,18 +10,39 @@
         <result column="content" property="content"/>
         <result column="createtime" property="createtime"/>
         <result column="creater" property="creater"/>
+        <result column="isshelian" property="isshelian"/>
+        <result column="deptid" property="deptid"/>
     </resultMap>
 
+    <sql id="Base_Column_List">
+		id, title, type, content, createtime, creater, isshelian, deptid
+	</sql>
+
     <select id="list" resultType="map">
-        select * from sys_notice
+        select
+        <include refid="Base_Column_List"/>
+         from sys_notice
+        where isshelian = 1
         <if test="condition != null and condition != ''">
-            where title like CONCAT('%',#{condition},'%') or content like CONCAT('%',#{condition},'%')
+            and title like CONCAT('%',#{condition},'%') or content like CONCAT('%',#{condition},'%')
         </if>
         order by createtime DESC
     </select>
 
     <select id="noticeNum" resultType="java.lang.Integer">
         SELECT COUNT(n.id) as noticeNum from sys_notice n
+    </select>
+
+    <select id="clublist" resultType="map">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+            sys_notice n
+        WHERE
+            n.isshelian = 0
+        AND n.deptid = #{deptId}
+        ORDER BY
+            n.createtime DESC
     </select>
 
 </mapper>

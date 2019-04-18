@@ -56,4 +56,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     public List<Map<String, Object>> selectSheLian() {
         return this.baseMapper.selectSheLian();
     }
+
+    @Override
+    public Integer isSheLian(Integer userId) {
+        return this.baseMapper.isSheLian(userId);
+    }
 }

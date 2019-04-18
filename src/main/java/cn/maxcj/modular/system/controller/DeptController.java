@@ -9,8 +9,13 @@ import cn.maxcj.core.common.exception.BizExceptionEnum;
 import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.core.log.LogObjectHolder;
 import cn.maxcj.core.shiro.ShiroKit;
+import cn.maxcj.modular.system.model.Apply;
 import cn.maxcj.modular.system.model.Dept;
+import cn.maxcj.modular.system.model.User;
+import cn.maxcj.modular.system.service.IApplyService;
 import cn.maxcj.modular.system.service.IDeptService;
+import cn.maxcj.modular.system.service.IUserService;
+import cn.maxcj.modular.system.warpper.ClubWarpper;
 import cn.maxcj.modular.system.warpper.DeptWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import cn.stylefeng.roses.core.util.ToolUtil;
@@ -23,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +46,20 @@ public class DeptController extends BaseController {
 
     @Autowired
     private IDeptService deptService;
+
+    @Autowired
+    private IUserService userService;
+
+    @Autowired
+    private IApplyService applyService;
+
+    /**
+     * 跳转到社团一览页面
+     */
+    @RequestMapping("/club")
+    public String allclub() {
+        return PREFIX + "allclub.html";
+    }
 
     /**
      * 跳转到部门管理首页
@@ -122,6 +142,18 @@ public class DeptController extends BaseController {
     }
 
     /**
+     * 获取所有的社团（包括社团信息）
+     * @param condition
+     * @return
+     */
+    @RequestMapping(value = "/allclub")
+    @ResponseBody
+    public Object allclub(String condition) {
+        List<Map<String, Object>> list = this.deptService.allclub(condition);
+        return super.warpObject(new ClubWarpper(list));
+    }
+
+    /**
      * 部门详情
      */
     @RequestMapping(value = "/detail/{deptId}")
@@ -148,6 +180,26 @@ public class DeptController extends BaseController {
     }
 
     /**
+     * 加入社团
+     */
+    @BussinessLog(value = "加入社团", key = "deptId", dict = DeptDict.class)
+    @RequestMapping(value = "/apply")
+    @ResponseBody
+    public Object apply(@RequestParam Integer deptId) {
+        User user = userService.getByAccount(ShiroKit.getUser().getAccount());
+        //判断是否加入过社团
+        if (user.getDeptid() != null){
+            return null;
+        }
+        Apply apply = new Apply();
+        apply.setUserid(user.getId());
+        apply.setDeptid(deptId);
+        apply.setApplytime(new Date());
+        applyService.insert(apply);
+        return SUCCESS_TIP;
+    }
+
+    /**
      * 删除部门
      */
     @BussinessLog(value = "删除部门", key = "deptId", dict = DeptDict.class)
@@ -155,12 +207,9 @@ public class DeptController extends BaseController {
     @Permission
     @ResponseBody
     public Object delete(@RequestParam Integer deptId) {
-
         //缓存被删除的部门名称
         LogObjectHolder.me().set(ConstantFactory.me().getDeptName(deptId));
-
         deptService.deleteDept(deptId);
-
         return SUCCESS_TIP;
     }
 

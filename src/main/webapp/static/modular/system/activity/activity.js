@@ -13,7 +13,7 @@ var Activity = {
  */
 Activity.initColumn = function () {
     return [
-        {field: 'selectItem', radio: true},
+        {field: 'selectItem', radio: true, visible: false},
         {title: '活动id', field: 'activity_id', visible: false, align: 'center', valign: 'middle'},
         {title: '活动发起社团', field: 'deptName', visible: true, align: 'center', valign: 'middle'},
         {title: '活动名称', field: 'activity_name', visible: true, align: 'center', valign: 'middle'},

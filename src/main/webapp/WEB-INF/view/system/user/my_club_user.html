@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-lg-2 col-sm-3">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading">组织机构</div>
+                                    <div class="panel-heading">我的社团/部门</div>
                                     <div class="panel-body dept-tree">
                                         <ul id="deptTree" class="ztree"></ul>
                                     </div>
@@ -55,14 +55,6 @@
                                     @if(shiro.hasPermission("/mgr/reset")){
                                     <#button name="重置密码" icon="fa-refresh" clickFun="MgrUser.resetPwd()" space="true"/>
                                     @}
-                                    @if(shiro.hasPermission("/mgr/exp")){
-                                    <#button name="导出人员" icon="fa-level-up" clickFun="MgrUser.expUsers()"
-                                    space="true"/>
-                                    @}
-                                    @if(shiro.hasPermission("/mgr/imp")){
-                                    <#button name="导入人员" icon="fa-level-down" clickFun="MgrUser.impUsers()"
-                                    space="true"/>
-                                    @}
                                 </div>
                                 <#table id="managerTable"/>
                             </div>
@@ -73,8 +65,7 @@
         </div>
     </div>
 </div>
-<script src="${ctxPath}/static/modular/system/user/club_user.js"></script><!--
-<script src="${ctxPath}/static/modular/system/user/user_excel.js"></script>-->
+<script src="${ctxPath}/static/modular/system/user/club_user.js"></script>
 <script>
     laydate.render({
         elem: '#beginTime'

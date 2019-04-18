@@ -22,5 +22,10 @@ public interface INoticeService extends IService<Notice> {
      */
     List<Map<String, Object>> list(String condition);
 
+    /**
+     * 获取社团通知列表
+     */
+    List<Map<String, Object>> club_list(Integer deptId);
+
     Integer noticNum();
 }

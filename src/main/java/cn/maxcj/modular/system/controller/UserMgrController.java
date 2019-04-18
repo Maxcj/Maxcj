@@ -182,11 +182,6 @@ public class UserMgrController extends BaseController {
         }
     }
 
-    /*public Object getSheLian(){
-        List<Map<String, Object>> users = userService.selectUsers(null, null, null, null, null);
-        return new UserWarpper(users).wrap();
-    }*/
-
 
 
     /**
@@ -260,7 +255,6 @@ public class UserMgrController extends BaseController {
         if (result.hasErrors()) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }
-
         User oldUser = userService.selectById(user.getId());
 
         if (ShiroKit.hasRole(Const.ADMIN_NAME)) {

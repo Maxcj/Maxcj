@@ -15,8 +15,8 @@
  */
 package cn.maxcj.config.web;
 
-import cn.maxcj.config.properties.GunsProperties;
 import cn.maxcj.core.interceptor.GunsUserFilter;
+import cn.maxcj.config.properties.GunsProperties;
 import cn.maxcj.core.shiro.ShiroDbRealm;
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
@@ -46,7 +46,7 @@ import java.util.Map;
 /**
  * shiro权限管理的配置
  *
- * @author Maxcj
+ * @author fengshuonan
  * @date 2016年11月14日 下午3:03:44
  */
 @Configuration
@@ -154,7 +154,7 @@ public class ShiroConfig {
         shiroFilter.setUnauthorizedUrl("/global/error");
 
         /**
-         * 覆盖默认的user拦截器(默认拦截器解决不了ajax请求 session超时的问题)
+         * 覆盖默认的user拦截器(默认拦截器解决不了ajax请求 session超时的问题,若有更好的办法请及时反馈作者)
          */
         HashMap<String, Filter> myFilters = new HashMap<>();
         myFilters.put("user", new GunsUserFilter());
@@ -178,8 +178,13 @@ public class ShiroConfig {
         hashMap.put("/static/**", "anon");
         hashMap.put("/gunsApi/**", "anon");
         hashMap.put("/login", "anon");
-        hashMap.put("/global/sessionError", "anon");
+        hashMap.put("/register", "anon");
+        hashMap.put("/goregister", "anon");
+        hashMap.put("/index/**", "anon");
         hashMap.put("/kaptcha", "anon");
+        hashMap.put("/welcome", "anon");
+        hashMap.put("/welcome/**", "anon");
+        hashMap.put("/global/sessionError", "anon");
         hashMap.put("/**", "user");
         shiroFilter.setFilterChainDefinitionMap(hashMap);
         return shiroFilter;

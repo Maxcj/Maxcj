@@ -29,4 +29,9 @@ public interface NoticeMapper extends BaseMapper<Notice> {
      */
     Integer noticeNum();
 
+    /**
+     * 获取社团通知列表
+     */
+    List<Map<String, Object>> clublist(@Param("deptId") Integer deptId);
+
 }

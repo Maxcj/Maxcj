@@ -1,15 +1,28 @@
-
+/**
+ * Copyright 2018-2020 stylefeng & fengshuonan (https://gitee.com/stylefeng)
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.maxcj.core.common.constant.factory;
 
 import cn.maxcj.modular.system.model.Dict;
-import io.swagger.models.auth.In;
 
 import java.util.List;
 
 /**
  * 常量生产工厂的接口
  *
- * @author Maxcj
+ * @author fengshuonan
  * @date 2017-06-14 21:12
  */
 public interface IConstantFactory {
@@ -115,26 +128,46 @@ public interface IConstantFactory {
      */
     List<Integer> getParentDeptIds(Integer deptid);
 
-
-    /*
+    /**
      * 获取活动的类别中文名
-     *
-     * @author Maxcj
-     * @date 2018-12-20-0020
-     * @param  * @param null
+     * @param categoryCode
      * @return
      */
     String getActivity_category(Integer categoryCode);
 
-    /*
+    /**
      * 获取活动的状态中文名
-     *
-     * @author Maxcj
-     * @date 2018-12-20-0020
-     * @param  * @param null
+     * @param stateCode
      * @return
      */
     String getActivity_state(Integer stateCode);
 
+    /**
+     * 获取所在学院中文名称
+     * @param academyCode
+     * @return
+     */
+    String getUserAcademy(Integer academyCode);
+
+    /**
+     * 获取活动名称
+     * @param activity_id
+     * @return
+     */
+    String getActivityName(Integer activity_id);
+
+    /**
+     * 社团财务类型
+     * @param finance_catory
+     * @return
+     */
+    public String getFinance(Integer finance_catory);
+
+    /**
+     * 社团类别
+     * @param category
+     * @return
+     */
+    public String getClub_category(Integer category);
 
 }

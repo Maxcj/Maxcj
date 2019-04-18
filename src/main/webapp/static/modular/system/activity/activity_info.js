@@ -44,17 +44,11 @@ ActivityInfoDlg.close = function () {
  * 收集数据
  */
 ActivityInfoDlg.collectData = function () {
-    this
-        .set('activityId')
-        .set('activityCategory')
+    this.set('activityCategory')
         .set('activityName')
         .set('activityPlace')
         .set('activityStartTime')
-        .set('activityEndTime')
-        .set('activityClub')
-        .set('activityPerson')
-        .set('activityCreatTime')
-        .set('activityState');
+        .set('activityEndTime');
 }
 
 /**

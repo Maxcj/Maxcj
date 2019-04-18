@@ -51,8 +51,28 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     }
 
     @Override
+    public List<ZTreeNode> sheliantree() {
+        return this.deptMapper.sheliantree();
+    }
+
+    @Override
     public List<Map<String, Object>> list(String condition) {
         return this.baseMapper.list(condition);
+    }
+
+    @Override
+    public List<Map<String, Object>> clublist(String condition) {
+        return deptMapper.clublist(condition);
+    }
+
+    @Override
+    public List<Map<String, Object>> clublist(Integer categoryId, String condition) {
+        return deptMapper.clublistWithcategoryId(categoryId,condition);
+    }
+
+    @Override
+    public List<Map<String, Object>> allclub(String condition) {
+        return deptMapper.allclub(condition);
     }
 
 

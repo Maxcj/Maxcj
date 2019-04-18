@@ -14,8 +14,6 @@ import java.util.Map;
  * 部门表 Mapper 接口
  * </p>
  *
- * @author stylefeng
- * @since 2017-07-11
  */
 public interface DeptMapper extends BaseMapper<Dept> {
 
@@ -32,8 +30,32 @@ public interface DeptMapper extends BaseMapper<Dept> {
     List<ZTreeNode> clubtree(Integer deptId);
 
     /**
-     * 获取所有部门列表
+     * 获取社联的节点列表
+     * @return
+     */
+    List<ZTreeNode> sheliantree();
+
+    /**
+     * 获取所有部门列表（包括社联）
      */
     List<Map<String, Object>> list(@Param("condition") String condition);
+
+    /**
+     * 获取所有社团
+     * @param condition
+     * @return
+     */
+    List<Map<String, Object>> clublist(@Param("condition") String condition);
+
+    /**
+     * 获取某类社团
+     * @param categoryId
+     * @param condition
+     * @return
+     */
+    List<Map<String, Object>> clublistWithcategoryId(@Param("categoryId")Integer categoryId, @Param("condition") String condition);
+
+
+    List<Map<String, Object>> allclub(@Param("condition") String condition);
 
 }

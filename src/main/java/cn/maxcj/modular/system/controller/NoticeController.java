@@ -9,6 +9,7 @@ import cn.maxcj.core.log.LogObjectHolder;
 import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.modular.system.model.Notice;
 import cn.maxcj.modular.system.service.INoticeService;
+import cn.maxcj.modular.system.service.IUserService;
 import cn.maxcj.modular.system.warpper.NoticeWrapper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import cn.stylefeng.roses.core.util.ToolUtil;
@@ -22,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,8 +30,8 @@ import java.util.Map;
  * 通知控制器
  *
  * @author Maxcj
- * @Date 2017-05-09 23:02:21
  */
+
 @Controller
 @RequestMapping("/notice")
 public class NoticeController extends BaseController {
@@ -41,12 +41,20 @@ public class NoticeController extends BaseController {
     @Autowired
     private INoticeService noticeService;
 
+    @Autowired
+    private IUserService IUserService;
+
     /**
      * 跳转到通知列表首页
      */
     @RequestMapping("")
     public String index() {
         return PREFIX + "notice.html";
+    }
+
+    @RequestMapping("/club")
+    public String club() {
+        return PREFIX + "club_notice.html";
     }
 
     /**
@@ -79,6 +87,17 @@ public class NoticeController extends BaseController {
     }
 
     /**
+     * 跳转到社团通知
+     */
+    @RequestMapping("/club_notice")
+    public String club_notice() {
+        Integer deptId = this.IUserService.getByAccount(ShiroKit.getUser().getAccount()).getDeptid();
+        List<Map<String, Object>> notices = noticeService.club_list(deptId);
+        super.setAttr("noticeList", notices);
+        return "/noticelist.html";
+    }
+
+    /**
      * 获取通知列表
      */
     @RequestMapping(value = "/list")
@@ -87,6 +106,14 @@ public class NoticeController extends BaseController {
         List<Map<String, Object>> list = this.noticeService.list(condition);
         return super.warpObject(new NoticeWrapper(list));
     }
+
+    @RequestMapping(value = "/club_list")
+    @ResponseBody
+    public Object club_list(String condition) {
+        List<Map<String, Object>> list = this.noticeService.club_list(this.IUserService.getByAccount(ShiroKit.getUser().getAccount()).getDeptid());
+        return super.warpObject(new NoticeWrapper(list));
+    }
+
 
     /**
      * 新增通知
@@ -100,6 +127,17 @@ public class NoticeController extends BaseController {
         }
         notice.setCreater(ShiroKit.getUser().getId());
         notice.setCreatetime(new Date());
+        /**
+         * 判断是否为社联成员提交
+         */
+        int pid = this.IUserService.isSheLian(ShiroKit.getUser().getId());
+        if (pid != 24){
+            //不是社联人员提交
+            notice.setIsshelian(0);
+            notice.setDeptid(this.IUserService.getByAccount(ShiroKit.getUser().getAccount()).getDeptid());
+        }else{
+            notice.setIsshelian(1);
+        }
         notice.insert();
         return SUCCESS_TIP;
     }

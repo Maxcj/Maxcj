@@ -15,10 +15,10 @@
  */
 package cn.maxcj.config.web;
 
-import cn.maxcj.config.properties.GunsProperties;
 import cn.maxcj.core.common.controller.GunsErrorView;
 import cn.maxcj.core.interceptor.RestApiInteceptor;
 import cn.maxcj.core.listener.ConfigListener;
+import cn.maxcj.config.properties.GunsProperties;
 import cn.stylefeng.roses.core.xss.XssFilter;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
@@ -47,7 +47,7 @@ import java.util.Properties;
 /**
  * web 配置类
  *
- * @author Maxcj
+ * @author fengshuonan
  * @date 2016年11月12日 下午5:03:32
  */
 @Configuration
@@ -120,7 +120,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public JdkRegexpMethodPointcut druidStatPointcut() {
         JdkRegexpMethodPointcut druidStatPointcut = new JdkRegexpMethodPointcut();
-        String patterns = "cn.stylefeng.guns.modular.*.service.*";
+        String patterns = "cn.maxcj.modular.*.service.*";
         //可以set多个
         druidStatPointcut.setPatterns(patterns);
         return druidStatPointcut;

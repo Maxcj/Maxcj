@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 角色相关业务
+ * 角色相关
  *
  * @author Maxcj
- * @Date 2017年1月10日 下午9:11:57
+ * @Date
  */
 public interface IRoleService extends IService<Role> {
 

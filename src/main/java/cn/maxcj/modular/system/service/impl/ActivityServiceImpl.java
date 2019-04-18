@@ -1,5 +1,6 @@
 package cn.maxcj.modular.system.service.impl;
 
+import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.modular.system.model.Activity;
 import cn.maxcj.modular.system.dao.ActivityMapper;
 import cn.maxcj.modular.system.service.IActivityService;
@@ -34,5 +35,15 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, Activity> i
     @Override
     public Map<Integer, Integer> club_activityNum(String condition) {
         return this.baseMapper.club_activityNum(condition);
+    }
+
+    @Override
+    public List<ZTreeNode> tree(Integer deptId) {
+        return activityMapper.tree(deptId);
+    }
+
+    @Override
+    public List<Map<String, Object>> activity_clublist(Integer deptid, String condition) {
+        return activityMapper.activity_clublist(deptid, condition);
     }
 }

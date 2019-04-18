@@ -47,6 +47,35 @@ public class Notice extends Model<Notice> {
      */
     private Integer creater;
 
+    /**
+     * 是否是社联人员
+     */
+    private Integer isshelian;
+
+    /**
+     * 社团id
+     */
+    private Integer deptid;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Integer getDeptid() {
+        return deptid;
+    }
+
+    public void setDeptid(Integer deptid) {
+        this.deptid = deptid;
+    }
+
+    public Integer getIsshelian() {
+        return isshelian;
+    }
+
+    public void setIsshelian(Integer isshelian) {
+        this.isshelian = isshelian;
+    }
 
     public Integer getId() {
         return id;
@@ -105,11 +134,13 @@ public class Notice extends Model<Notice> {
     public String toString() {
         return "Notice{" +
                 "id=" + id +
-                ", title=" + title +
+                ", title='" + title + '\'' +
                 ", type=" + type +
-                ", content=" + content +
+                ", content='" + content + '\'' +
                 ", createtime=" + createtime +
                 ", creater=" + creater +
-                "}";
+                ", isshelian=" + isshelian +
+                ", deptid=" + deptid +
+                '}';
     }
 }

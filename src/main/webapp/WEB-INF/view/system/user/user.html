@@ -1,4 +1,4 @@
-<script src="../../../../static/modular/system/user/user_excel.js"></script>@layout("/common/_container.html"){
+@layout("/common/_container.html"){
 <div class="row">
     <div class="col-sm-12">
         <div class="ibox float-e-margins">
@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col-lg-2 col-sm-3">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading">组织机构</div>
+                                    <div class="panel-heading">社团/部门</div>
                                     <div class="panel-body dept-tree">
                                         <ul id="deptTree" class="ztree"></ul>
                                     </div>
@@ -67,14 +67,6 @@
                                     <#button name="角色分配" icon="fa-user-secret" clickFun="MgrUser.roleAssign()"
                                     space="true"/>
                                     @}
-                                    @if(shiro.hasPermission("/mgr/exp")){
-                                    <#button name="导出人员" icon="fa-level-up" clickFun="MgrUser.expUsers()"
-                                    space="true"/>
-                                    @}
-                                    @if(shiro.hasPermission("/mgr/imp")){
-                                    <#button name="导入人员" icon="fa-level-down" clickFun="MgrUser.impUsers()"
-                                    space="true"/>
-                                    @}
                                 </div>
                                 <#table id="managerTable"/>
                             </div>
@@ -85,8 +77,8 @@
         </div>
     </div>
 </div>
-<script src="${ctxPath}/static/modular/system/user/user.js"></script><!--
-<script src="${ctxPath}/static/modular/system/user/user_excel.js"></script>-->
+<script src="${ctxPath}/static/modular/system/user/user.js"></script>
+<script src="${ctxPath}/static/js/plugins/bootstrap-table/bootstrap-table-export.js"></script>
 <script>
     laydate.render({
         elem: '#beginTime'

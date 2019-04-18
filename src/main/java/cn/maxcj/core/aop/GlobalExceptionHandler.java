@@ -1,11 +1,25 @@
-
+/**
+ * Copyright 2018-2020 stylefeng & fengshuonan (https://gitee.com/stylefeng)
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package cn.maxcj.core.aop;
 
 import cn.maxcj.core.common.exception.BizExceptionEnum;
 import cn.maxcj.core.common.exception.InvalidKaptchaException;
+import cn.maxcj.core.log.LogManager;
 import cn.maxcj.core.log.factory.LogTaskFactory;
 import cn.maxcj.core.shiro.ShiroKit;
-import cn.maxcj.core.log.LogManager;
 import cn.stylefeng.roses.core.reqres.response.ErrorResponseData;
 import cn.stylefeng.roses.kernel.model.exception.ServiceException;
 import org.apache.shiro.authc.AuthenticationException;
@@ -29,7 +43,7 @@ import static cn.stylefeng.roses.core.util.HttpContext.getRequest;
 /**
  * 全局的的异常拦截器（拦截所有的控制器）（带有@RequestMapping注解的方法上都会拦截）
  *
- * @author Maxcj
+ * @author fengshuonan
  * @date 2016年11月12日 下午3:19:56
  */
 @ControllerAdvice

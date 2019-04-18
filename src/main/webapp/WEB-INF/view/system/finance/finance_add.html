@@ -1,0 +1,31 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                    <#select id="category" name="类型" underline="true">
+                        <option value="1">活动</option>
+                        <option value="2">社团内部</option>
+                        <option value="3">其他</option>
+                    </#select>
+                    <#input id="activityid" name="活动" underline="true"/>
+                </div>
+
+                <div class="col-sm-6">
+                    <#input id="money" name="所需金额" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="申请" id="ensure" icon="fa-check" clickFun="FinanceInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="FinanceInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/finance/finance_info.js"></script>
+
+@}

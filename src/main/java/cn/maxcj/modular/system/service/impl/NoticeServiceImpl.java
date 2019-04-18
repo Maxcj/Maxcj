@@ -27,6 +27,11 @@ public class NoticeServiceImpl extends ServiceImpl<NoticeMapper, Notice> impleme
     }
 
     @Override
+    public List<Map<String, Object>> club_list(Integer deptId) {
+        return this.baseMapper.clublist(deptId);
+    }
+
+    @Override
     public Integer noticNum() {
         return this.baseMapper.noticeNum();
     }

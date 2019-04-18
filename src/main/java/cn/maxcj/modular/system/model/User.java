@@ -1,6 +1,5 @@
 package cn.maxcj.modular.system.model;
 
-import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
@@ -34,7 +33,6 @@ public class User extends Model<User> {
     /**
      * 账号
      */
-    @Excel(name = "学号")
     private String account;
     /**
      * 密码
@@ -47,7 +45,6 @@ public class User extends Model<User> {
     /**
      * 名字
      */
-    @Excel(name = "姓名")
     private String name;
     /**
      * 生日
@@ -56,17 +53,14 @@ public class User extends Model<User> {
     /**
      * 性别（1：男 2：女）
      */
-    @Excel(name = "性别")
     private Integer sex;
     /**
      * 电子邮件
      */
-    @Excel(name = "邮箱")
     private String email;
     /**
      * 电话
      */
-    @Excel(name = "电话")
     private String phone;
     /**
      * 角色id
@@ -88,11 +82,12 @@ public class User extends Model<User> {
      * 保留字段
      */
     private Integer version;
+
     /**
      * 学院
      */
-    @Excel(name = "所在学院")
-    private String academy;
+
+    private Integer academy;
 
     public Integer getId() {
         return id;
@@ -214,11 +209,11 @@ public class User extends Model<User> {
         this.version = version;
     }
 
-    public String getAcademy() {
+    public Integer getAcademy() {
         return academy;
     }
 
-    public void setAcademy(String academy) {
+    public void setAcademy(Integer academy) {
         this.academy = academy;
     }
 

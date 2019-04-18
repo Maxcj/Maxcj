@@ -72,7 +72,6 @@ Dept.openDeptDetail = function () {
  */
 Dept.delete = function () {
     if (this.check()) {
-
         var operation = function () {
             var ajax = new $ax(Feng.ctxPath + "/dept/delete", function () {
                 Feng.success("删除成功!");
@@ -83,7 +82,6 @@ Dept.delete = function () {
             ajax.set("deptId", Dept.seItem.id);
             ajax.start();
         };
-
         Feng.confirm("是否刪除该部门?", operation);
     }
 };

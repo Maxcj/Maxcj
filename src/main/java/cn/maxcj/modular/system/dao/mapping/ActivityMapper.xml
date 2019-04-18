@@ -21,6 +21,11 @@
         activity_id, activity_category, activity_name, activity_place, activity_start_time, activity_end_time, activity_club, activity_person, activity_creat_time, activity_state
     </sql>
 
+    <select id="tree" parameterType="java.lang.Integer" resultType="cn.maxcj.core.common.node.ZTreeNode">
+        select activity_id as id,activity_name as name  from sys_activity
+		where activity_club = #{deptId}
+    </select>
+
     <select id="activity_list" resultType="map">
         select * from sys_activity
         <if test="condition != null and condition != ''">
@@ -32,12 +37,30 @@
         order by activity_start_time DESC
     </select>
 
-    <!--<select id="club_activityNum" resultType="map">
+    <select id="club_activityNum" resultType="map">
         select activity_club,count(DISTINCT activity_id) as activity_num from sys_activity
         <where>
             activity_state > '5'
         </where>
         group by activity_club
-    </select>-->
+    </select>
+
+    <select id="activity_clublist" parameterType="java.lang.Integer" resultType="map">
+        select * from sys_activity
+        where activity_club = #{deptid}
+        <if test="condition != null and condition != ''">
+            and activity_name like CONCAT('%',#{condition},'%')
+        </if>
+        <!--<if test="activity_category != null and activity_category !=''">
+            and activity_category like CONCAT('%',#{activity_category},'%')
+        </if>-->
+        order by activity_start_time DESC
+    </select>
+
+    <select id="getActivityName" parameterType="java.lang.Integer" resultType="java.lang.String">
+        select * from sys_activity where activity_id = #{activity_id}
+    </select>
+
+
 
 </mapper>

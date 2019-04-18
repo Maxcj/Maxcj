@@ -24,11 +24,19 @@ public class UserDto {
     private String phone;
     private String roleid;
     private Integer deptid;
+    private Integer academy;
     private Integer status;
     private Date createtime;
     private Integer version;
     private String avatar;
 
+    public Integer getAcademy() {
+        return academy;
+    }
+
+    public void setAcademy(Integer academy) {
+        this.academy = academy;
+    }
 
     public Integer getId() {
         return id;

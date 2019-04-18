@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.maxcj.modular.system.dao.ClubinfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.maxcj.modular.system.model.Clubinfo">
+        <id column="id" property="id" />
+        <result column="deptid" property="deptid" />
+        <result column="club_category" property="clubCategory" />
+        <result column="culb_create_time" property="culbCreateTime" />
+        <result column="club_number" property="clubNumber" />
+        <result column="club_infomation" property="clubInfomation" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, deptid, club_category, culb_create_time, club_number, club_infomation
+    </sql>
+
+    <select id="queryClubInfo" parameterType="java.lang.Integer" resultType="map">
+        SELECT
+            d.id,d.fullname,i.club_category,i.culb_create_time,i.club_number,i.club_infomation
+        FROM
+            sys_dept d
+        LEFT JOIN sys_clubinfo i ON d.id = i.deptid
+        WHERE
+            d.pid = "38"
+        and d.id = #{deptid}
+    </select>
+
+    <select id="getClubInfoByDeptid" parameterType="java.lang.Integer" resultType="cn.maxcj.modular.system.model.Clubinfo">
+        SELECT <include refid="Base_Column_List"></include> from sys_clubinfo where deptid = #{deptid}
+    </select>
+
+
+</mapper>
