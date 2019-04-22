@@ -94,17 +94,16 @@ Activity.delete = function () {
  */
 Activity.search = function () {
     var queryData = {};
-
     queryData['condition'] = $("#condition").val();
     queryData['activity_category'] = $("#activity_category").val();
-
+    queryData['beginTime'] = $("#beginTime").val();
     Activity.table.refresh({query: queryData});
 };
 
 Activity.resetSearch = function () {
     $("#condition").val("");
-    $("#activity_category").val("0");
-
+    $("#activity_category").val("");
+    $("#beginTime").val("");
     Activity.search();
 }
 

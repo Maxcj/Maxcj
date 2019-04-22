@@ -63,7 +63,8 @@
 				//console.log(data);
 				$("#club_number").html(data[0].club_number);
 				$("#culb_create_time").html(data[0].culb_create_time);
-				$("#club_infomation").html(data[0].club_infomation);
+				$("#club_infomation").html('<p>'+data[0].club_infomation+'</p>');
+				//$("#club_infomation").html();
 				$("#fullname").html(data[0].fullname);
 				$("#club_category").html(data[0].club_category);
 			}
@@ -73,6 +74,7 @@
 		table.setData(deptid);
 		table.setPaginationType("client");
 		Activity.table = table.init();
+		$(".fixed-table-toolbar").remove();
 	});
 
 </script>

@@ -45,7 +45,6 @@ import java.util.UUID;
  * 系统管理员控制器
  *
  * @author Maxcj
- * @Date 2017年1月11日 下午1:08:17
  */
 @Controller
 @RequestMapping("/mgr")
@@ -190,8 +189,8 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/myclub")
     @ResponseBody
-    public Object getMyClubUser(){
-        List<Map<String, Object>> users = userService.selectUsers(null, null, null, null, ShiroKit.getUser().deptId);
+    public Object getMyClubUser(@RequestParam(required = false) String name, @RequestParam(required = false) String beginTime, @RequestParam(required = false) String endTime){
+        List<Map<String, Object>> users = userService.selectUsers(null, name, beginTime, endTime, ShiroKit.getUser().deptId);
         return new UserWarpper(users).wrap();
     }
 
@@ -388,7 +387,6 @@ public class UserMgrController extends BaseController {
     @RequestMapping(method = RequestMethod.POST, path = "/upload")
     @ResponseBody
     public String upload(@RequestPart("file") MultipartFile picture) {
-
         String pictureName = UUID.randomUUID().toString() + "." + ToolUtil.getFileSuffix(picture.getOriginalFilename());
         try {
             String fileSavePath = gunsProperties.getFileUploadPath();

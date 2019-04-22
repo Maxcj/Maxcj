@@ -201,13 +201,11 @@ MgrUser.resetSearch = function () {
     $("#name").val("");
     $("#beginTime").val("");
     $("#endTime").val("");
-
     MgrUser.search();
 }
 
 MgrUser.search = function () {
     var queryData = {};
-
     queryData['deptid'] = MgrUser.deptid;
     queryData['name'] = $("#name").val();
     queryData['beginTime'] = $("#beginTime").val();

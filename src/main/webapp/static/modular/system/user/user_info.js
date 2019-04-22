@@ -33,7 +33,7 @@ var UserInfoDlg = {
                 identical: {
                     field: 'rePassword',
                     message: '两次密码不一致'
-                },
+                }
             }
         },
         rePassword: {
@@ -44,7 +44,7 @@ var UserInfoDlg = {
                 identical: {
                     field: 'password',
                     message: '两次密码不一致'
-                },
+                }
             }
         },
         email: {
@@ -58,8 +58,15 @@ var UserInfoDlg = {
             }
         },
         phone: {
-            notEmpty: {
-                message: '电话号码不能为空'
+            validators: {
+                notEmpty: {
+                    message: '电话号码不能为空'
+                },
+                phone: {
+                    min: 11,
+                    max: 11,
+                    message: '电话号码格式错误'
+                }
             }
         }
     }

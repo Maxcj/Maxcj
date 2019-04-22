@@ -28,8 +28,8 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, Activity> i
 
 
     @Override
-    public List<Map<String, Object>> activity_list(String condition) {
-        return this.baseMapper.activity_list(condition);
+    public List<Map<String, Object>> activity_list(String condition,String activity_category, String beginTime) {
+        return this.baseMapper.activity_list(condition,activity_category,beginTime);
     }
 
     @Override

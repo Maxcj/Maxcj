@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public interface IActivityService extends IService<Activity> {
 
-    List<Map<String, Object>> activity_list(String condition);
+    List<Map<String, Object>> activity_list(String condition,String activity_category, String beginTime);
 
     Map<Integer, Integer> club_activityNum(String condition);
 

@@ -60,7 +60,7 @@ public class RegisterController  extends BaseController {
         newUser.setStatus(ManagerStatus.OK.getCode());
         newUser.setCreatetime(new Date());
         userService.insert(newUser);
-        model.addAttribute("tips","注册成功");
+        model.addAttribute("tips","注册成功，请登录后台管理系统");
         return "/login.html";
     }
 }

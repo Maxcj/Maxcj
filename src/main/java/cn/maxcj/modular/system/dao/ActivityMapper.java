@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public interface ActivityMapper extends BaseMapper<Activity> {
 
-    List<Map<String, Object>> activity_list(@Param("condition") String condition);
+    List<Map<String, Object>> activity_list(@Param("condition") String condition,@Param("activity_category")String activity_category,@Param("beginTime") String beginTime);
 
     List<ZTreeNode> tree(@Param("deptId") Integer deptId);
 

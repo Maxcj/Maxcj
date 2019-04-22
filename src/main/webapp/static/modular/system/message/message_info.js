@@ -54,7 +54,7 @@ MessageInfoDlg.close = function() {
  * 收集数据
  */
 MessageInfoDlg.collectData = function() {
-    this.messageInfoData['content'] = MessageInfoDlg.editor.txt.html();
+    this.messageInfoData['content'] = MessageInfoDlg.editor.txt.text();
     this.set('id').set('title').set('username');
 }
 
@@ -75,8 +75,9 @@ MessageInfoDlg.addSubmit = function() {
     this.clearData();
     this.collectData();
 
+
     //提交信息
-    var ajax = new $ax(Feng.ctxPath + "/welcome/message/add", function(data){
+    var ajax = new $ax(Feng.ctxPath + "/message/add", function(data){
         Feng.success("添加成功!");
         window.parent.Message.table.refresh();
         MessageInfoDlg.close();

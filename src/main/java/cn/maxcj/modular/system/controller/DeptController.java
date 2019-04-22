@@ -194,6 +194,9 @@ public class DeptController extends BaseController {
         Apply apply = new Apply();
         apply.setUserid(user.getId());
         apply.setDeptid(deptId);
+        if (applyService.selectById(apply) != null){
+            return null;
+        }
         apply.setApplytime(new Date());
         applyService.insert(apply);
         return SUCCESS_TIP;

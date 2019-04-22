@@ -12,7 +12,7 @@
                             <div class="col-lg-10 col-sm-9">
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-3">
-                                        <#NameCon id="condition" name="社团名称" placeholder="社团活动名称/社团名称"/>
+                                        <#NameCon id="condition" name="社团名称" placeholder="社团活动名称"/>
                                     </div>
                                     <div class="col-lg-3 col-sm-3">
                                         <#SelectCon id="activity_category" name="活动类别">
@@ -22,7 +22,7 @@
                                         </#SelectCon>
                                     </div>
                                     <div class="col-lg-3 col-sm-3">
-                                        <#TimeCon id="condition1" name="活动开始时间" placeholder="社团活动开始时间"/>
+                                        <#TimeCon id="beginTime" name="活动开始时间" placeholder="社团活动开始时间"/>
                                     </div>
                                     <div class="col-lg-3 col-sm-3">
                                         <#button name="搜索" icon="fa-search" clickFun="Activity.search()"/>
@@ -53,7 +53,7 @@
 <script src="${ctxPath}/static/modular/system/activity/activity.js"></script>
 <script>
     laydate.render({
-        elem: '#condition1'
+        elem: '#beginTime'
     });
 </script>
 @}

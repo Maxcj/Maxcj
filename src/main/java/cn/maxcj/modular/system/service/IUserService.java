@@ -33,7 +33,11 @@ public interface IUserService extends IService<User> {
      */
     List<Map<String, Object>> selectUsers(DataScope dataScope, String name, String beginTime, String endTime, Integer deptid);
 
-
+    /**
+     * 根据部门查询其下所有的人员
+     * @param deptid
+     * @return
+     */
     List<Map<String, Object>> selectUsersbydeptid(Integer deptid);
 
     /**

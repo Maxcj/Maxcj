@@ -17,10 +17,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -68,7 +65,7 @@ public class WelcomeController  extends BaseController {
      */
     @RequestMapping(value = "/clublist")
     @ResponseBody
-    public Object clublist(String condition) {
+    public Object clublist(@RequestParam(required = false) String condition) {
         List<Map<String, Object>> list = this.deptService.clublist(condition);
         return super.warpObject(new DeptWarpper(list));
     }

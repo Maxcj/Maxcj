@@ -27,13 +27,16 @@
     </select>
 
     <select id="activity_list" resultType="map">
-        select * from sys_activity
+        select * from sys_activity where 1 = 1
         <if test="condition != null and condition != ''">
-            where activity_name like CONCAT('%',#{condition},'%')
+            and activity_name like CONCAT('%',#{condition},'%')
         </if>
-        <!--<if test="activity_category != null and activity_category !=''">
-            and activity_category like CONCAT('%',#{activity_category},'%')
-        </if>-->
+        <if test="activity_category != null and activity_category != 0 and activity_category !=''">
+            and activity_category = #{activity_category}
+        </if>
+        <if test="beginTime != null and beginTime != ''">
+            and activity_start_time > CONCAT(#{beginTime},' 00:00:00')
+        </if>
         order by activity_start_time DESC
     </select>
 

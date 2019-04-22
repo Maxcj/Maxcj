@@ -44,7 +44,7 @@ ClubinfoInfoDlg.close = function() {
  * 收集数据
  */
 ClubinfoInfoDlg.collectData = function() {
-    this.clubinfoInfoData['clubInfomation'] = ClubinfoInfoDlg.editor.txt.html();
+    this.clubinfoInfoData['clubInfomation'] = ClubinfoInfoDlg.editor.txt.text();
     this.set('id').set('clubNumber').set('clubCategory').set('culbCreateTime');
 
 }
