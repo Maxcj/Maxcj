@@ -78,8 +78,8 @@ public class ClubinfoController extends BaseController {
     public Object add(Clubinfo clubinfo) {
         clubinfo.setId(null);
         clubinfo.setDeptid(ShiroKit.getUser().getDeptId());
-        String strXml = clubinfo.getClubInfomation().replace("&lt;","<"+"");
-        String strXml1 = strXml.replace("&gt;",">"+"");
+        String strXml = clubinfo.getClubInfomation().replace("&amp; lt;","<"+"");
+        String strXml1 = strXml.replace("&amp; gt;",">"+"");
         clubinfo.setClubInfomation(strXml1);
         clubinfoService.insert(clubinfo);
         return SUCCESS_TIP;

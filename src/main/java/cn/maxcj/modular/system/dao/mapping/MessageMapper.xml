@@ -17,4 +17,8 @@
         id, title, content, username, createtime, string_1
     </sql>
 
+    <select id="message_list" resultType="map">
+        select <include refid="Base_Column_List"></include> from sys_message order by createtime desc
+    </select>
+
 </mapper>

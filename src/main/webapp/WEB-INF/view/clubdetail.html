@@ -64,13 +64,9 @@
 			data : deptid,
 			async: true,
 			success: function (data) {
-				//console.log(data);
-				debugger;
 				$("#club_number").html(data[0].club_number);
 				$("#culb_create_time").html(data[0].culb_create_time);
 				$("#club_infomation").html(data[0].club_infomation);
-
-				//$("#club_infomation").html();
 				$("#fullname").html(data[0].fullname);
 				$("#club_category").html(data[0].club_category);
 			}

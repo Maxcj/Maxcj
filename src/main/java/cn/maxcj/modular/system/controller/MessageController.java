@@ -38,6 +38,11 @@ public class MessageController extends BaseController {
         return PREFIX + "message.html";
     }
 
+    @RequestMapping("/message")
+    public String message() {
+        return PREFIX + "message_list.html";
+    }
+
     /**
      * 跳转到添加留言管理
      */
@@ -63,7 +68,7 @@ public class MessageController extends BaseController {
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String condition) {
-        return messageService.selectList(null);
+        return messageService.list(condition);
     }
 
     /**
@@ -74,6 +79,9 @@ public class MessageController extends BaseController {
     public Object add(Message message) {
         message.setUsername(ShiroKit.getUser().getName());
         message.setCreatetime(new Date());
+        String strXml = message.getContent().replace("&amp; lt;","<"+"");
+        String strXml1 = strXml.replace("&amp; gt;",">"+"");
+        message.setContent(strXml1);
         messageService.insert(message);
         return SUCCESS_TIP;
     }
@@ -94,6 +102,9 @@ public class MessageController extends BaseController {
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Message message) {
+        String strXml = message.getContent().replace("&amp; lt;","<"+"");
+        String strXml1 = strXml.replace("&amp; gt;",">"+"");
+        message.setContent(strXml1);
         messageService.updateById(message);
         return SUCCESS_TIP;
     }

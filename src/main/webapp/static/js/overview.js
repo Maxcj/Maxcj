@@ -4,9 +4,7 @@ function noticeNum() {
         dataType: "json",
         async: false,
         success: function (data) {
-            console.log(data);
             $("#noticeNum_id").text(data+"");
-            console.log("==");
         }
     });
 };
