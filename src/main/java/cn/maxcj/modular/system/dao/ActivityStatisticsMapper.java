@@ -30,7 +30,7 @@ public interface ActivityStatisticsMapper extends BaseMapper<ActivityStatistics>
     List<Map<String, Object>> weekActivityNum();
 
     /**
-     * 加载overview.html页面的信息内容
+     * 加载overview.html页面的信息内容（顶部四个小方块）
      *
      * @return
      */
