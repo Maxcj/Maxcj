@@ -39,7 +39,7 @@
                     cache: false,      			//是否使用缓存,默认为true
                     sortable: true,      		//是否启用排序
                     sortOrder: "desc",     		//排序方式
-                    pageNumber: 1,      			//初始化加载第一页，默认第一页
+                    pageNumber: 1,      		//初始化加载第一页，默认第一页
                     pageSize: 14,      			//每页的记录行数（*）
                     pageList: [14, 50, 100],  	//可供选择的每页的行数（*）
                     queryParamsType: 'limit', 	//默认值为 'limit' ,在默认情况下 传给服务端的参数为：offset,limit,sort
@@ -60,7 +60,20 @@
                     icons: {
                         refresh: 'glyphicon-repeat',
                         toggle: 'glyphicon-list-alt',
-                        columns: 'glyphicon-list'
+                        columns: 'glyphicon-list',
+                        export: 'glyphicon-export icon-share'
+                    },
+                    showExport: true,           //是否显示导出按钮
+                    exportDataType: 'basic',              //basic', 'all', 'selected'.
+                    exportTypes:['excel','xlsx'],	    //导出类型
+                    //exportButton: $('#btn_export'),     //为按钮btn_export  绑定导出事件  自定义导出按钮(可以不用)
+                    exportOptions:{
+                        //ignoreColumn: [0,0],            //忽略某一列的索引
+                        fileName: '数据导出',              //文件名称设置
+                        worksheetName: 'Sheet1',          //表格工作区名称
+                        tableName: '商品数据表',
+                        excelstyles: ['background-color', 'color', 'font-size', 'font-weight'],
+                        //onMsoNumberFormat: DoOnMsoNumberFormat
                     },
                     iconSize: 'outline'
                 });

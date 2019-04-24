@@ -107,6 +107,7 @@
    */
 
   (function ($) {
+    debugger;
     var Utils = $.fn.bootstrapTable.utils;
 
     var bootstrap = {

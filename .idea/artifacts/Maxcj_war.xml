@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Maxcj:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Maxcj</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Maxcj-1.0.0.war">
+      <element id="artifact" artifact-name="Maxcj:war exploded" />
+    </root>
+  </artifact>
+</component>
