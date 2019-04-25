@@ -72,24 +72,8 @@ FinanceInfoDlg.addSubmit = function() {
     });
     ajax.set(this.financeInfoData);
     ajax.start();
-}
-
-
-FinanceInfoDlg.onClickDept = function (e, treeId, treeNode) {
-    $("#activityid").attr("value", instance.getSelectedVal());
-    $("#activity_id").attr("value", treeNode.id);
 };
 
-FinanceInfoDlg.showInfoActivitySelectTree = function () {
-    var cityObj = $("#activityid");
-    var cityOffset = $("#activityid").offset();
-    $("#menuContent").css({
-        left: cityOffset.left + "px",
-        top: cityOffset.top + cityObj.outerHeight() + "px"
-    }).slideDown("fast");
-
-    $("body").bind("mousedown", onBodyDown);
-};
 
 /**
  * 提交修改
@@ -111,18 +95,31 @@ FinanceInfoDlg.editSubmit = function() {
     ajax.start();
 };
 
-FinanceInfoDlg.hideDeptSelectTree = function () {
-    $("#menuContent").fadeOut("fast");
-    $("body").unbind("mousedown", onBodyDown);// mousedown当鼠标按下就可以触发，不用弹起
-};
 
 $(function() {
+    $.ajax({
+        url: "/activity/tree",
+        dataType: "json",
+        async: true,
+        success: function (data) {
+
+            /*$("#club_number").html(data[0].club_number);
+            $("#culb_create_time").html(data[0].culb_create_time);
+            $("#club_infomation").html(data[0].club_infomation);
+            $("#fullname").html(data[0].fullname);
+            $("#club_category").html(data[0].club_category);*/
+            var html = '';
+            if (data.length > 0){
+                for (var i = 0; i < data.length; i++) {
+                    html += '<option value="'+data[i].id+'">'+data[i].name+'</option>';
+                }
+            }
+            $("#activityid").append(html);
+        }
+    });
+    debugger;
     $("#category").val($("#categoryValue").val());
+    $("#activityid").val($("#activityidValue").val());
 
-
-    var ztree = new $ZTree("treeDemo", "/activity/tree");
-    ztree.bindOnClick(FinanceInfoDlg.onClickDept);
-    ztree.init();
-    instance = ztree;
 
 });

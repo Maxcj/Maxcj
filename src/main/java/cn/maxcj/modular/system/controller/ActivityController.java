@@ -2,9 +2,6 @@ package cn.maxcj.modular.system.controller;
 
 import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.core.shiro.ShiroKit;
-import cn.maxcj.modular.system.model.User;
-import cn.maxcj.modular.system.service.IDeptService;
-import cn.maxcj.modular.system.service.IUserService;
 import cn.maxcj.modular.system.warpper.ActivityWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import org.springframework.stereotype.Controller;
@@ -90,17 +87,17 @@ public class ActivityController extends BaseController {
      */
     @RequestMapping(value = "/tree")
     @ResponseBody
-    public List<ZTreeNode> tree() {
+    public Object tree() {
         Integer deptid = ShiroKit.getUser().getDeptId();
-        List<ZTreeNode> tree = this.activityService.tree(deptid);
-        tree.add(ZTreeNode.createParent());
+        List<Map<String,Object>> tree = this.activityService.tree(deptid);
+        //tree.add(ZTreeNode.createParent());
         return tree;
     }
 
 
 
     /**
-     * 获取社团活动列表
+     * 获取某个社团活动列表
      */
     @RequestMapping(value = "/clublist")
     @ResponseBody

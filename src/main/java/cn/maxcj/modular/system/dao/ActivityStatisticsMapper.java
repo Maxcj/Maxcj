@@ -36,6 +36,4 @@ public interface ActivityStatisticsMapper extends BaseMapper<ActivityStatistics>
      */
     Map<String, Integer> getview();
 
-
-
 }

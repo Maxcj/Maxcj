@@ -5,12 +5,15 @@
             <div class="row">
                 <div class="col-sm-6 b-r">
                     <#select id="category" name="类型" underline="true">
+                        <option selected = "selected">请选择...</option>
                         <option value="1">活动</option>
                         <option value="2">社团内部</option>
                         <option value="3">其他</option>
                     </#select>
-                    <#input id="activityid" name="活动" underline="true"/>
-                </div>
+                    <#select id="activityid" name="关联活动" underline="true">
+                        <option selected = "selected">请选择...</option>
+                    </#select>
+            </div>
 
                 <div class="col-sm-6">
                     <#input id="money" name="所需金额" underline="true"/>

@@ -8,12 +8,15 @@
                     <input id="id" type="hidden" name="" value="${item.id}" underline="true"/>
                     <input id="deptid" type="hidden" name="社团id" value="${item.deptid}" underline="true"/>
                     <input type="hidden" id="categoryValue" value="${item.category}">
+                    <input type="hidden" id="activityidValue" value="${item.activityid}">
                     <#select id="category" name="类型" value="${item.category}" underline="true">
                         <option value="1">活动</option>
                         <option value="2">社团内部</option>
                         <option value="3">其他</option>
                     </#select>
-                    <#input id="activityid" name="活动id" value="${item.activityid}" />
+
+                    <#select id="activityid" name="关联活动" underline="true" value="${item.activityid}">
+                    </#select>
                 </div>
 
                 <div class="col-sm-6">

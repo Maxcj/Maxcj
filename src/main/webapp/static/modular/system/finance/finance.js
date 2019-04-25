@@ -17,10 +17,10 @@ Finance.initColumn = function () {
             {title: '', field: 'id', visible: false, align: 'center', valign: 'middle'},
             {title: '社团', field: 'deptName', visible: true, align: 'center', valign: 'middle'},
             {title: '类型', field: 'category', visible: true, align: 'center', valign: 'middle'},
-            {title: '活动id', field: 'activityName', visible: true, align: 'center', valign: 'middle'},
+            {title: '关联的活动', field: 'activityName', visible: true, align: 'center', valign: 'middle'},
             {title: '花费金额', field: 'money', visible: true, align: 'center', valign: 'middle'},
             /*{title: '余额', field: 'balance', visible: true, align: 'center', valign: 'middle'},*/
-            {title: '日期', field: 'costtime', visible: true, align: 'center', valign: 'middle'}
+            {title: '申请日期', field: 'costtime', visible: true, align: 'center', valign: 'middle'}
     ];
 };
 

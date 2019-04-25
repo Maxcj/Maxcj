@@ -83,27 +83,32 @@
 	<script type="text/javascript">
 		var condition;
 		$(function(){
-			all();
+			all(condition);
 
 			$("#search").keydown(function(event) {
 				if (event.keyCode == 13) {
 					debugger;
 					condition = document.getElementById("search").value;
-					all();
+					all(condition);
 				}
 			});
 		});
 
+
+
+
 		/**
 		 * 查询所有社团
 		 */
-		function all(){
+		function all(condition){
+			var d = condition;
 			var html = '';
 			$("#club_wall").html(html);
 			$.ajax({
 				url: "/welcome/clublist",
+				type: "POST",
+				data : {condition:d},
 				dataType: "json",
-				data : condition,
 				async: true,
 				success: function (data) {
 					console.log(data);

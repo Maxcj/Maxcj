@@ -21,9 +21,10 @@
         activity_id, activity_category, activity_name, activity_place, activity_start_time, activity_end_time, activity_club, activity_person, activity_creat_time, activity_state
     </sql>
 
-    <select id="tree" parameterType="java.lang.Integer" resultType="cn.maxcj.core.common.node.ZTreeNode">
-        select activity_id as id,activity_name as name  from sys_activity
+    <select id="tree" parameterType="java.lang.Integer" resultType="map">
+        select activity_id as id, activity_name as name from sys_activity
 		where activity_club = #{deptId}
+		order by activity_creat_time DESC
     </select>
 
     <select id="activity_list" resultType="map">
@@ -61,7 +62,7 @@
     </select>
 
     <select id="getActivityName" parameterType="java.lang.Integer" resultType="java.lang.String">
-        select * from sys_activity where activity_id = #{activity_id}
+        select activity_name from sys_activity where activity_id = #{activity_id}
     </select>
 
 

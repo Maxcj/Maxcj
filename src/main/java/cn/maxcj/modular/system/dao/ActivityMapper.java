@@ -5,6 +5,7 @@ import cn.maxcj.modular.system.model.Activity;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +21,7 @@ public interface ActivityMapper extends BaseMapper<Activity> {
 
     List<Map<String, Object>> activity_list(@Param("condition") String condition,@Param("activity_category")String activity_category,@Param("beginTime") String beginTime);
 
-    List<ZTreeNode> tree(@Param("deptId") Integer deptId);
+    List<Map<String,Object>> tree(@Param("deptId") Integer deptId);
 
     Map<Integer, Integer> club_activityNum(@Param("condition") String condition);
 

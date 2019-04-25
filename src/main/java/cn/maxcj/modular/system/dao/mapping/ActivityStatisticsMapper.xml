@@ -16,7 +16,12 @@
         club_id, club_name, common_num, great_num, total
     </sql>
 
-    <!-- 查询社团所有的活动统计 -->
+    <!-- 查询社团所有的活动统计  通过Kettle数据抽取-->
+    <!--<select id="activityNum" resultType="map">
+        select * from activity_statistics
+    </select>-->
+
+    <!-- 查询社团所有的活动统计 通过sys_activity表直接查询 -->
     <select id="activityNum" resultType="map">
         SELECT
             dd.id,

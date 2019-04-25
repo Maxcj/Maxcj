@@ -21,7 +21,7 @@
   - Shiro
   - Mybatis-Plus
   - Beetl
-- JBPM / Activiti / Flowable
+- JBPM / Activiti / Flowable（整合一直报错，准备删了）
 
 
 

@@ -51,9 +51,9 @@ public class FinanceController extends BaseController {
      */
     @RequestMapping("/finance_add")
     public String financeAdd(Model model, String con) {
-        Integer deptid = ShiroKit.getUser().getDeptId();
+        /*Integer deptid = ShiroKit.getUser().getDeptId();
         List<Map<String, Object>> activity = activityService.activity_clublist(deptid, con);
-        model.addAttribute("activity", activity);
+        model.addAttribute("activity", activity);*/
         return PREFIX + "finance_add.html";
     }
 

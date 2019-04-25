@@ -65,7 +65,7 @@ public class WelcomeController  extends BaseController {
      */
     @RequestMapping(value = "/clublist")
     @ResponseBody
-    public Object clublist(@RequestParam(required = false) String condition) {
+    public Object clublist(@Param("condition") String condition) {
         List<Map<String, Object>> list = this.deptService.clublist(condition);
         return super.warpObject(new DeptWarpper(list));
     }
