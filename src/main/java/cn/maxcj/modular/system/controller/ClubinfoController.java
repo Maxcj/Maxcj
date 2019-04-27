@@ -102,14 +102,16 @@ public class ClubinfoController extends BaseController {
     @ResponseBody
     public Object update(Clubinfo clubinfo) {
         clubinfo.setDeptid(ShiroKit.getUser().getDeptId());
-        String strXml = clubinfo.getClubInfomation().replace("&amp; lt;","<"+"");
-        String strXml1 = strXml.replace("&amp; gt;",">"+"");
-        clubinfo.setClubInfomation(strXml1);
+        String str = clubinfo.getClubInfomation().replace("&amp; lt;","<");
+        str = str.replace("&amp; gt;",">");
+        str = str.replace("& lt;","<");
+        str = str.replace("& gt;",">");
+        clubinfo.setClubInfomation(str);
         clubinfoService.updateById(clubinfo);
         return SUCCESS_TIP;
     }
 
-    /**123456556565是是是&amp; lt;p&amp; gt;&amp; lt;img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2772322941,1909362549&amp;fm=58&amp;bpow=800&amp;bpoh=600" style="max-width:100%;"&amp; gt;&amp; lt;br&amp; gt;&amp; lt;/p&amp; gt;
+    /**
      * 社团简介管理详情
      */
     @RequestMapping(value = "/detail/{clubinfoId}")

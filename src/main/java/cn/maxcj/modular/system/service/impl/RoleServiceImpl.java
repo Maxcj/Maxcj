@@ -34,10 +34,8 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     @Override
     @Transactional
     public void setAuthority(Integer roleId, String ids) {
-
         // 删除该角色所有的权限
         this.roleMapper.deleteRolesById(roleId);
-
         // 添加新的权限
         for (Long id : Convert.toLongArray(ids.split(","))) {
             Relation relation = new Relation();

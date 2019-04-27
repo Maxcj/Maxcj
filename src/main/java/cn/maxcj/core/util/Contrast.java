@@ -1,18 +1,4 @@
-/**
- * Copyright 2018-2020 stylefeng & fengshuonan (https://gitee.com/stylefeng)
- * <p>
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * <p>
- * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 package cn.maxcj.core.util;
 
 import cn.hutool.core.date.DateUtil;
@@ -29,8 +15,8 @@ import java.util.Map;
 /**
  * 对比两个对象的变化的工具类
  *
- * @author fengshuonan
- * @Date 2017/3/31 10:36
+ * @author Maxcj
+ * @date 2018/3/31 10:36
  */
 public class Contrast {
 
@@ -41,7 +27,7 @@ public class Contrast {
      * 比较两个对象,并返回不一致的信息
      *
      * @author stylefeng
-     * @Date 2017/5/9 19:34
+     * @date 2018/5/9 19:34
      */
     public static String contrastObj(Object pojo1, Object pojo2) {
         String str = "";
@@ -81,7 +67,7 @@ public class Contrast {
      * 比较两个对象pojo1和pojo2,并输出不一致信息
      *
      * @author stylefeng
-     * @Date 2017/5/9 19:34
+     * @date 2018/5/9 19:34
      */
     public static String contrastObj(Class dictClass, String key, Object pojo1, Map<String, String> pojo2) throws IllegalAccessException, InstantiationException {
         AbstractDictMap dictMap = (AbstractDictMap) dictClass.newInstance();
@@ -132,7 +118,7 @@ public class Contrast {
      * 比较两个对象pojo1和pojo2,并输出不一致信息
      *
      * @author stylefeng
-     * @Date 2017/5/9 19:34
+     * @date 2018/5/9 19:34
      */
     public static String contrastObjByName(Class dictClass, String key, Object pojo1, Map<String, String> pojo2) throws IllegalAccessException, InstantiationException {
         AbstractDictMap dictMap = (AbstractDictMap) dictClass.newInstance();
@@ -194,7 +180,7 @@ public class Contrast {
      * 解析多个key(逗号隔开的)
      *
      * @author stylefeng
-     * @Date 2017/5/16 22:19
+     * @date 2018/5/16 22:19
      */
     public static String parseMutiKey(AbstractDictMap dictMap, String key, Map<String, String> requests) {
         StringBuilder sb = new StringBuilder();

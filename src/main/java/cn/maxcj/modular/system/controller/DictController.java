@@ -30,7 +30,7 @@ import java.util.Map;
  * 字典控制器
  *
  * @author Maxcj
- * @Date 2017年4月26日 12:55:31
+ * @date 2019年4月26日 12:55:31
  */
 @Controller
 @RequestMapping("/dict")

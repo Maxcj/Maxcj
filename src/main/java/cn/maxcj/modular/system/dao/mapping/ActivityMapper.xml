@@ -44,7 +44,7 @@
     <select id="club_activityNum" resultType="map">
         select activity_club,count(DISTINCT activity_id) as activity_num from sys_activity
         <where>
-            activity_state > '5'
+            activity_state > '0'
         </where>
         group by activity_club
     </select>
@@ -55,16 +55,10 @@
         <if test="condition != null and condition != ''">
             and activity_name like CONCAT('%',#{condition},'%')
         </if>
-        <!--<if test="activity_category != null and activity_category !=''">
-            and activity_category like CONCAT('%',#{activity_category},'%')
-        </if>-->
         order by activity_start_time DESC
     </select>
 
     <select id="getActivityName" parameterType="java.lang.Integer" resultType="java.lang.String">
         select activity_name from sys_activity where activity_id = #{activity_id}
     </select>
-
-
-
 </mapper>

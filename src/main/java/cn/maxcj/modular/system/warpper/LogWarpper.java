@@ -15,7 +15,7 @@ import java.util.Map;
  * 日志列表的包装类
  *
  * @author Maxcj
- * @date 2017年4月5日22:56:24
+ * @date 2019年4月5日22:56:24
  */
 public class LogWarpper extends BaseControllerWrapper {
 

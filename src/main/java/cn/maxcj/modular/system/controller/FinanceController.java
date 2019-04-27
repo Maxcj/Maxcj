@@ -1,5 +1,8 @@
 package cn.maxcj.modular.system.controller;
 
+import cn.maxcj.core.common.annotion.BussinessLog;
+import cn.maxcj.core.common.constant.dictmap.DeptDict;
+import cn.maxcj.core.common.constant.dictmap.FinanceDict;
 import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.modular.system.service.IActivityService;
 import cn.maxcj.modular.system.warpper.FinanceWarpper;
@@ -23,7 +26,7 @@ import java.util.Map;
 /**
  * 社团财务管理控制器
  *
- * @author fengshuonan
+ * @author Maxcj
  * @Date 2019-04-16 12:54:16
  */
 @Controller
@@ -81,6 +84,7 @@ public class FinanceController extends BaseController {
     /**
      * 新增社团财务管理
      */
+    @BussinessLog(value = "财务申请", key = "userId", dict = FinanceDict.class)
     @RequestMapping(value = "/add")
     @ResponseBody
     public Object add(Finance finance) {

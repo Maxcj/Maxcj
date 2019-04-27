@@ -19,7 +19,7 @@ public class ContactController {
     @ResponseBody
     public List<ZTreeNode> tree() {
         List<ZTreeNode> tree = this.deptService.sheliantree();
-        tree.add(ZTreeNode.createParent());
+        //tree.add(ZTreeNode.createParent());
         return tree;
     }
 }

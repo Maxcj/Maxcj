@@ -56,6 +56,11 @@ public interface DeptMapper extends BaseMapper<Dept> {
     List<Map<String, Object>> clublistWithcategoryId(@Param("categoryId")Integer categoryId, @Param("condition") String condition);
 
 
+    /**
+     * 查询所有的社团及其信息
+     * @param condition
+     * @return
+     */
     List<Map<String, Object>> allclub(@Param("condition") String condition);
 
 }

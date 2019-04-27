@@ -165,13 +165,13 @@ public class UserMgrController extends BaseController {
     }
 
     /**
-     * 查询管理员列表
+     * 查询所有人员列表（管理员或者社联人员）
      */
     @RequestMapping("/list")
     @Permission
     @ResponseBody
     public Object list(@RequestParam(required = false) String name, @RequestParam(required = false) String beginTime, @RequestParam(required = false) String endTime, @RequestParam(required = false) Integer deptid) {
-        if (ShiroKit.isAdmin()) {
+        if (ShiroKit.isAdmin() || (userService.isSheLian(ShiroKit.getUser().getId())== 24)) {
             List<Map<String, Object>> users = userService.selectUsers(null, name, beginTime, endTime, deptid);
             return new UserWarpper(users).wrap();
         } else {
@@ -181,10 +181,8 @@ public class UserMgrController extends BaseController {
         }
     }
 
-
-
     /**
-     * 跳转到社团管理人员界面
+     * 跳转到社团管理人员界面（仅限社团管理人员）
      * @return
      */
     @RequestMapping("/myclub")
@@ -215,29 +213,26 @@ public class UserMgrController extends BaseController {
 
 
     /**
-     * 添加管理员
+     * 添加人员
      */
     @RequestMapping("/add")
-    @BussinessLog(value = "添加管理员", key = "account", dict = UserDict.class)
+    @BussinessLog(value = "添加人员", key = "account", dict = UserDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData add(@Valid UserDto user, BindingResult result) {
         if (result.hasErrors()) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }
-
         // 判断账号是否重复
         User theUser = userService.getByAccount(user.getAccount());
         if (theUser != null) {
             throw new ServiceException(BizExceptionEnum.USER_ALREADY_REG);
         }
-
         // 完善账号信息
         user.setSalt(ShiroKit.getRandomSalt(5));
         user.setPassword(ShiroKit.md5(user.getPassword(), user.getSalt()));
         user.setStatus(ManagerStatus.OK.getCode());
         user.setCreatetime(new Date());
-
         this.userService.insert(UserFactory.createUser(user));
         return SUCCESS_TIP;
     }

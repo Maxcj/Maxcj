@@ -66,13 +66,6 @@ public class BlackboardController extends BaseController {
      */
     @RequestMapping("/file")
     public String fileManage(Model model){
-        /*List<Map<String, Object>> users = userService.selectSheLian();
-        model.addAttribute("shelian",new UserWarpper(users).wrap());*/
         return "/system/file/file.html";
     }
-
-
-
-
-
 }

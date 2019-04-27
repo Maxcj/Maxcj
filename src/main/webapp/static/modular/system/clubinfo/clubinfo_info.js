@@ -44,7 +44,7 @@ ClubinfoInfoDlg.close = function() {
  * 收集数据
  */
 ClubinfoInfoDlg.collectData = function() {
-    this.clubinfoInfoData['clubInfomation'] = ClubinfoInfoDlg.editor.txt.text();
+    this.clubinfoInfoData['clubInfomation'] = ClubinfoInfoDlg.editor.txt.html();
     this.set('id').set('clubNumber').set('clubCategory').set('culbCreateTime');
 
 }
@@ -90,12 +90,10 @@ ClubinfoInfoDlg.editSubmit = function() {
 }
 
 $(function() {
-
-    $("#clubCategory").val($("#clubCategoryValue").val());
-
     var E = window.wangEditor;
     var editor = new E('#editor');
     editor.create();
     editor.txt.html($("#clubInfomationVal").val());
     ClubinfoInfoDlg.editor = editor;
+    $("#clubCategory").val($("#clubCategoryValue").val());
 });

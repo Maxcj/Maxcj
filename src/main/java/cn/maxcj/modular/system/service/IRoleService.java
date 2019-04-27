@@ -21,7 +21,7 @@ public interface IRoleService extends IService<Role> {
      *
      * @param roleId 角色id
      * @param ids    权限的id
-     * @date 2017年2月13日 下午8:26:53
+     * @date 2019年2月13日 下午8:26:53
      */
     void setAuthority(Integer roleId, String ids);
 
@@ -29,7 +29,7 @@ public interface IRoleService extends IService<Role> {
      * 删除角色
      *
      * @author stylefeng
-     * @Date 2017/5/5 22:24
+     * @date 2018/5/5 22:24
      */
     void delRoleById(Integer roleId);
 
@@ -37,7 +37,7 @@ public interface IRoleService extends IService<Role> {
      * 根据条件查询角色列表
      *
      * @return
-     * @date 2017年2月12日 下午9:14:34
+     * @date 2019年2月12日 下午9:14:34
      */
     List<Map<String, Object>> selectRoles(String condition);
 
@@ -46,7 +46,7 @@ public interface IRoleService extends IService<Role> {
      *
      * @param roleId 角色id
      * @return
-     * @date 2017年2月13日 下午7:57:51
+     * @date 2019年2月13日 下午7:57:51
      */
     int deleteRolesById(Integer roleId);
 
@@ -54,7 +54,7 @@ public interface IRoleService extends IService<Role> {
      * 获取角色列表树
      *
      * @return
-     * @date 2017年2月18日 上午10:32:04
+     * @date 2019年2月18日 上午10:32:04
      */
     List<ZTreeNode> roleTreeList();
 
@@ -62,7 +62,7 @@ public interface IRoleService extends IService<Role> {
      * 获取角色列表树
      *
      * @return
-     * @date 2017年2月18日 上午10:32:04
+     * @date 2019年2月18日 上午10:32:04
      */
     List<ZTreeNode> roleTreeListByRoleId(String[] roleId);
 }

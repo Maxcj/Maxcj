@@ -14,7 +14,7 @@ import java.util.Map;
  * 字典列表的包装
  *
  * @author Maxcj
- * @date 2017年4月25日 18:10:31
+ * @date 2019年4月25日 18:10:31
  */
 public class DictWarpper extends BaseControllerWrapper {
 

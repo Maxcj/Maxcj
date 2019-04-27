@@ -527,44 +527,30 @@
       <schema_name />
     </partitioning>
     <connection>本地数据库</connection>
-    <sql>SELECT
-	dd.id,
+    <sql>SELECT dd.id,
 	dd.fullname,
 	IFNULL(aa.activity_num, 0) AS commmon_activity_num,
 	IFNULL(bb.activity_num, 0) AS great_activity_num,
 	now() as update_time
 FROM
-	(
-		SELECT
-			d.id,
-			d.fullname
-		FROM
-			sys_dept AS d
-		WHERE
-			d.pid = '38'
-		GROUP BY
-			d.id
+	(SELECT d.id, d.fullname
+		FROM sys_dept AS d
+		WHERE d.pid = '38'
+		GROUP BY d.id
 	) AS dd
 LEFT JOIN (
-	SELECT
-		a.activity_club,
+	SELECT a.activity_club,
 		COUNT(DISTINCT a.activity_id) AS activity_num
-	FROM
-		sys_activity AS a
-	WHERE
-		--a.activity_state >= '5'
+	FROM sys_activity AS a
+	WHERE a.activity_state >= '0'
 	AND a.activity_category = '1'
-	GROUP BY
-		a.activity_club
+	GROUP BY a.activity_club
 ) AS aa ON dd.id = aa.activity_club
 LEFT JOIN (
-	SELECT
-		a.activity_club,
+	SELECT a.activity_club,
 		COUNT(DISTINCT a.activity_id) AS activity_num
-	FROM
-		sys_activity AS a
-	WHERE
-		--a.activity_state >= '5'
+	FROM sys_activity AS a
+	WHERE a.activity_state >= '0'
 	AND a.activity_category = '2'
 	GROUP BY
 		a.activity_club
@@ -602,27 +588,21 @@ LEFT JOIN (
     <fields>
       <field>
         <name>id</name>
-        <rename />
       </field>
       <field>
         <name>fullname</name>
-        <rename />
       </field>
       <field>
         <name>commmon_activity_num</name>
-        <rename />
       </field>
       <field>
         <name>great_activity_num</name>
-        <rename />
       </field>
       <field>
         <name>activity_total</name>
-        <rename />
       </field>
       <field>
         <name>update_time</name>
-        <rename />
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>

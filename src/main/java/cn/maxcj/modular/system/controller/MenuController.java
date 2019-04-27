@@ -36,7 +36,7 @@ import java.util.Map;
  * 菜单控制器
  *
  * @author Maxcj
- * @Date 2017年2月12日21:59:14
+ * @date 2019年2月12日21:59:14
  */
 @Controller
 @RequestMapping("/menu")
@@ -107,7 +107,6 @@ public class MenuController extends BaseController {
         }
         //设置父级菜单编号
         menuSetPcode(menu);
-
         this.menuService.updateById(menu);
         return SUCCESS_TIP;
     }
@@ -134,16 +133,13 @@ public class MenuController extends BaseController {
         if (result.hasErrors()) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }
-
         //判断是否存在该编号
         String existedMenuName = ConstantFactory.me().getMenuNameByCode(menu.getCode());
         if (ToolUtil.isNotEmpty(existedMenuName)) {
             throw new ServiceException(BizExceptionEnum.EXISTED_THE_MENU);
         }
-
         //设置父级菜单编号
         menuSetPcode(menu);
-
         menu.setStatus(MenuStatus.ENABLE.getCode());
         this.menuService.insert(menu);
         return SUCCESS_TIP;
@@ -160,10 +156,8 @@ public class MenuController extends BaseController {
         if (ToolUtil.isEmpty(menuId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }
-
         //缓存菜单的名称
         LogObjectHolder.me().set(ConstantFactory.me().getMenuName(menuId));
-
         this.menuService.delMenuContainSubMenus(menuId);
         return SUCCESS_TIP;
     }

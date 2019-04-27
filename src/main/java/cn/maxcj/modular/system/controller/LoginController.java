@@ -57,15 +57,12 @@ public class LoginController extends BaseController {
         List<MenuNode> menus = menuService.getMenusByRoleIds(roleList);
         List<MenuNode> titles = MenuNode.buildTitle(menus);
         titles = ApiMenuFilter.build(titles);
-
         model.addAttribute("titles", titles);
-
         //获取用户头像
         Integer id = ShiroKit.getUser().getId();
         User user = userService.selectById(id);
         String avatar = user.getAvatar();
         model.addAttribute("avatar", avatar);
-
         return "/index.html";
     }
 
@@ -89,11 +86,9 @@ public class LoginController extends BaseController {
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginVali() {
-
         String username = super.getPara("username").trim();
         String password = super.getPara("password").trim();
         String remember = super.getPara("remember");
-
         //验证验证码是否正确
         if (KaptchaUtil.getKaptchaOnOff()) {
             String kaptcha = super.getPara("kaptcha").trim();
@@ -102,26 +97,19 @@ public class LoginController extends BaseController {
                 throw new InvalidKaptchaException();
             }
         }
-
         Subject currentUser = ShiroKit.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(username, password.toCharArray());
-
         if ("on".equals(remember)) {
             token.setRememberMe(true);
         } else {
             token.setRememberMe(false);
         }
-
         currentUser.login(token);
-
         ShiroUser shiroUser = ShiroKit.getUser();
         super.getSession().setAttribute("shiroUser", shiroUser);
         super.getSession().setAttribute("username", shiroUser.getAccount());
-
         LogManager.me().executeLog(LogTaskFactory.loginLog(shiroUser.getId(), getIp()));
-
         ShiroKit.getSession().setAttribute("sessionFlag", true);
-
         return REDIRECT + "/";
     }
 

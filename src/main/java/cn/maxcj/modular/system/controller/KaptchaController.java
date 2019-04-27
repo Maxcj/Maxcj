@@ -22,7 +22,7 @@ import java.io.IOException;
  * 验证码生成
  *
  * @author Maxcj
- * @date 2017-05-05 23:10
+ * @date 2018-05-05 23:10
  */
 @Controller
 @RequestMapping("/kaptcha")
@@ -95,7 +95,7 @@ public class KaptchaController {
      * 返回图片
      *
      * @author stylefeng
-     * @Date 2017/5/24 23:00
+     * @date 2018/5/24 23:00
      */
     @RequestMapping("/{pictureId}")
     public void renderPicture(@PathVariable("pictureId") String pictureId, HttpServletResponse response) {

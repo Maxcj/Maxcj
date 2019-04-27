@@ -23,7 +23,7 @@ import java.util.Map;
 /**
  * 申请加入社团控制器
  *
- * @author fengshuonan
+ * @author Maxcj
  * @Date 2019-04-17 22:13:05
  */
 @Controller
