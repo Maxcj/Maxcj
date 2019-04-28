@@ -30,6 +30,15 @@ var UserInfoDlg = {
                 notEmpty: {
                     message: '密码不能为空'
                 },
+                stringLength: {
+                    min: 6,
+                    max: 18,
+                    message: '密码长度必须在6到18位之间'
+                },
+                regexp: {
+                    regexp: /^[^ ]+$/,
+                    message: '密码不能有空格'
+                },
                 identical: {
                     field: 'rePassword',
                     message: '两次密码不一致'
@@ -62,10 +71,14 @@ var UserInfoDlg = {
                 notEmpty: {
                     message: '电话号码不能为空'
                 },
-                phone: {
+                stringLength: {
                     min: 11,
                     max: 11,
-                    message: '电话号码格式错误'
+                    message: '请输入11位手机号码'
+                },
+                regexp: {
+                    regexp: /^1[3|5|8]{1}[0-9]{9}$/,
+                    message: '请输入正确的手机号码'
                 }
             }
         }

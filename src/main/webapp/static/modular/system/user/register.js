@@ -7,7 +7,15 @@ var registerDlg = {
         account: {
             validators: {
                 notEmpty: {
-                    message: '账户不能为空'
+                    message: '学号不能为空'
+                },
+                stringLength: {
+                    min: 6,
+                    max: 18,
+                    message: '学号长度必须在6到18位之间'
+                },
+                digits: {
+                    message: '只能输入数字'
                 }
             }
         },
@@ -19,6 +27,15 @@ var registerDlg = {
                 identical: {
                     field: 'rePassword',
                     message: '两次密码不一致'
+                },
+                stringLength: {
+                    min: 6,
+                    max: 18,
+                    message: '密码长度必须在6到18位之间'
+                },
+                regexp: {
+                    regexp: /^[^ ]+$/,
+                    message: '密码不能有空格'
                 }
             }
         },
@@ -36,18 +53,10 @@ var registerDlg = {
     }
 };
 
-
-/**
- * 验证两个密码是否一致
- */
-registerDlg.identical = function () {
-    var password = this.get("password");
-    var rePassword = this.get("rePassword");
-    if (password == rePassword) {
-        return true;
-    } else {
-        return false;
-    }
+registerDlg.validate = function () {
+    $('#registerForm').data("bootstrapValidator").resetForm();
+    $('#registerForm').bootstrapValidator('validate');
+    return $("#registerForm").data('bootstrapValidator').isValid();
 };
 
 $(function () {
