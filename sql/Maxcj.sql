@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 本地项目数据库（Maxcj）
+ Source Server         : 本地数据库（Maxcj）
  Source Server Type    : MySQL
  Source Server Version : 50639
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50639
  File Encoding         : 65001
 
- Date: 27/04/2019 14:54:56
+ Date: 28/04/2019 10:21:04
 */
 
 SET NAMES utf8mb4;
@@ -875,7 +875,7 @@ CREATE TABLE `sys_login_log` (
   `message` text COMMENT '具体消息',
   `ip` varchar(255) DEFAULT NULL COMMENT '登录ip',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=916 DEFAULT CHARSET=utf8 COMMENT='登录记录';
+) ENGINE=InnoDB AUTO_INCREMENT=925 DEFAULT CHARSET=utf8 COMMENT='登录记录';
 
 -- ----------------------------
 -- Records of sys_login_log
@@ -1177,6 +1177,15 @@ INSERT INTO `sys_login_log` VALUES (912, '登录日志', 48, '2019-04-26 09:53:3
 INSERT INTO `sys_login_log` VALUES (913, '登录日志', 48, '2019-04-27 10:50:00', '成功', NULL, '0:0:0:0:0:0:0:1');
 INSERT INTO `sys_login_log` VALUES (914, '登录日志', 48, '2019-04-27 11:05:57', '成功', NULL, '0:0:0:0:0:0:0:1');
 INSERT INTO `sys_login_log` VALUES (915, '登录日志', 48, '2019-04-27 11:17:31', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (916, '登录日志', 48, '2019-04-28 09:39:55', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (917, '退出日志', 48, '2019-04-28 09:39:59', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (918, '登录日志', 48, '2019-04-28 09:41:46', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (919, '登录日志', 48, '2019-04-28 09:54:59', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (920, '登录日志', 48, '2019-04-28 09:57:34', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (921, '登录日志', 48, '2019-04-28 09:57:34', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (922, '退出日志', 48, '2019-04-28 09:58:12', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (923, '登录日志', 48, '2019-04-28 09:58:42', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (924, '退出日志', 48, '2019-04-28 10:03:34', '成功', NULL, '0:0:0:0:0:0:0:1');
 COMMIT;
 
 -- ----------------------------
@@ -1387,7 +1396,7 @@ CREATE TABLE `sys_operation_log` (
   `succeed` varchar(255) DEFAULT NULL COMMENT '是否成功',
   `message` text COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=990 DEFAULT CHARSET=utf8 COMMENT='操作日志';
+) ENGINE=InnoDB AUTO_INCREMENT=991 DEFAULT CHARSET=utf8 COMMENT='操作日志';
 
 -- ----------------------------
 -- Records of sys_operation_log
@@ -1502,6 +1511,7 @@ INSERT INTO `sys_operation_log` VALUES (986, '业务日志', '分配角色', 48,
 INSERT INTO `sys_operation_log` VALUES (987, '业务日志', '分配角色', 48, 'cn.maxcj.modular.system.controller.UserMgrController', 'setRole', '2019-04-25 17:26:49', '成功', '账号=15436300,角色名称集合=社团,社团秘书处');
 INSERT INTO `sys_operation_log` VALUES (988, '业务日志', '加入社团', 49, 'cn.maxcj.modular.system.controller.DeptController', 'apply', '2019-04-25 20:04:15', '成功', '部门名称=爱心社');
 INSERT INTO `sys_operation_log` VALUES (989, '业务日志', '分配角色', 48, 'cn.maxcj.modular.system.controller.UserMgrController', 'setRole', '2019-04-26 09:45:02', '成功', '账号=aixinshe,角色名称集合=社团,社团秘书处');
+INSERT INTO `sys_operation_log` VALUES (990, '业务日志', '修改管理员', 48, 'cn.maxcj.modular.system.controller.UserMgrController', 'edit', '2019-04-28 09:58:07', '成功', '账号=zhongcj;;;字段名称:null,旧值:8c26ef6046898d3ab7511132f0bab0bc,新值:;;;字段名称:电子邮件,旧值:903283542@qq.com,新值:90328@qq.com;;;字段名称:电话,旧值:17670511003,新值:13222222222');
 COMMIT;
 
 -- ----------------------------
@@ -2583,7 +2593,7 @@ CREATE TABLE `sys_user` (
 BEGIN;
 INSERT INTO `sys_user` VALUES (1, '', 'admin', 'ecfadcde9305f8891bcfe5a1e28c253e', '8pgby', 'maxcj', '2018-12-11 17:57:04', 1, '', '', '1', 0, 1, '2018-11-27 15:42:53', 25, 1);
 INSERT INTO `sys_user` VALUES (47, '', 'leilz', '775b08d2315debe6b289a2c8a0d8be54', 'qayuu', '哈哈哈', '2019-04-29 00:00:00', 1, '', '', '8,21', 33, 1, '2018-11-27 15:43:10', NULL, 12);
-INSERT INTO `sys_user` VALUES (48, '', 'zhongcj', '8c26ef6046898d3ab7511132f0bab0bc', 'ahihk', '钟乘剑', '2019-04-29 00:00:00', 1, '903283542@qq.com', '17670511003', '1,7,21', 33, 1, '2018-11-27 15:43:46', NULL, 12);
+INSERT INTO `sys_user` VALUES (48, '', 'zhongcj', '8c26ef6046898d3ab7511132f0bab0bc', 'ahihk', '钟乘剑', '2019-04-29 00:00:00', 1, '90328@qq.com', '13222222222', '1,7,21', 33, 1, '2018-11-27 15:43:46', NULL, 12);
 INSERT INTO `sys_user` VALUES (49, '', 'aixinshe', '2209d28da013ab4a8d25e23ebbf777d5', '4myee', '爱心社测试1', '2019-04-17 00:00:00', 2, '', '17670511003', '21,22', 39, 1, '2018-12-04 14:54:06', NULL, 2);
 INSERT INTO `sys_user` VALUES (50, NULL, '15436303', '47a97fb3e2be7c3c52fef64cb9a44afa', 'q4iah', '15436303', '2019-04-29 00:00:00', 1, NULL, '17670511003', '21', 39, 1, '2019-04-17 16:38:22', NULL, 1);
 INSERT INTO `sys_user` VALUES (51, NULL, '15436300', '7d61b3abe3485e1ee623614714dd72ee', 'iqwoq', '15436300', '2019-04-29 00:00:00', 2, NULL, NULL, '21,22', 57, 1, '2019-04-17 16:55:14', NULL, 11);

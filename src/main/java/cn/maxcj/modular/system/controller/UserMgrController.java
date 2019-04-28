@@ -1,8 +1,5 @@
 package cn.maxcj.modular.system.controller;
 
-import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
-import cn.afterturn.easypoi.excel.entity.ExportParams;
-import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.maxcj.config.properties.GunsProperties;
 import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.common.annotion.Permission;
@@ -192,10 +189,10 @@ public class UserMgrController extends BaseController {
         return new UserWarpper(users).wrap();
     }
 
-    /**
+/*   **
      *  导出人员
      * @return
-     */
+     *//*
     @RequestMapping("/exp")
     @BussinessLog(value = "导出人员", key = "userid", dict = UserDict.class)
     @ResponseBody
@@ -209,7 +206,7 @@ public class UserMgrController extends BaseController {
         map.put(NormalExcelConstants.CLASS, User.class);
         map.put(NormalExcelConstants.PARAMS, params);
         return NormalExcelConstants.EASYPOI_EXCEL_VIEW;
-    }
+    }*/
 
 
     /**
