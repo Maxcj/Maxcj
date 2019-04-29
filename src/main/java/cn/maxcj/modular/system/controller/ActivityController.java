@@ -94,7 +94,24 @@ public class ActivityController extends BaseController {
         return tree;
     }
 
+    /**
+     * 跳转到活动审批页面
+     * @return
+     */
+    @RequestMapping("/apply_page")
+    public String apply_page() {
+        return PREFIX + "activity_apply.html";
+    }
 
+    /**
+     * 获取社团活动审批列表
+     */
+    @RequestMapping(value = "/apply")
+    @ResponseBody
+    public Object apply(@RequestParam(required = false) String condition, @RequestParam(required = false) String activity_category,@RequestParam(required = false) String beginTime) {
+        List<Map<String, Object>> activity_list = this.activityService.activity_apply(condition, activity_category, beginTime);
+        return super.warpObject(new ActivityWarpper(activity_list));
+    }
 
     /**
      * 获取某个社团活动列表
@@ -116,7 +133,7 @@ public class ActivityController extends BaseController {
         activity.setActivityClub(ShiroKit.getUser().getDeptId().toString());
         activity.setActivityPerson(ShiroKit.getUser().getId());
         activity.setActivityCreatTime(new Date());
-        activity.setActivityState(1);
+        activity.setActivityState(2);
         activityService.insert(activity);
         return SUCCESS_TIP;
     }
@@ -127,7 +144,14 @@ public class ActivityController extends BaseController {
     @RequestMapping(value = "/delete")
     @ResponseBody
     public Object delete(@RequestParam Integer activityId) {
-        activityService.deleteById(activityId);
+        Activity activity = activityService.selectById(activityId);
+        if(activity.getActivityState() > 2){
+            //活动已经同意发起不允许撤销
+            String s = "不允许撤销";
+            return (Object) s;
+        }else{
+            activityService.deleteById(activityId);
+        }
         return SUCCESS_TIP;
     }
 
@@ -137,7 +161,29 @@ public class ActivityController extends BaseController {
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Activity activity) {
-        System.out.println(activity.toString());
+        activityService.updateById(activity);
+        return SUCCESS_TIP;
+    }
+
+
+    /**
+     * 审批社团活动(通过)
+     */
+    @RequestMapping(value = "/apply_agree")
+    @ResponseBody
+    public Object apply_agree(Activity activity) {
+        activity.setActivityState(3);
+        activityService.updateById(activity);
+        return SUCCESS_TIP;
+    }
+
+    /**
+     * 审批社团活动(拒绝)
+     */
+    @RequestMapping(value = "/apply_refuse")
+    @ResponseBody
+    public Object apply_activity(Activity activity) {
+        activity.setActivityState(4);
         activityService.updateById(activity);
         return SUCCESS_TIP;
     }

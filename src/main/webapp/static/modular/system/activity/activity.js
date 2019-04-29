@@ -23,7 +23,7 @@ Activity.initColumn = function () {
         {title: '活动负责人', field: 'activity_createName', visible: true, align: 'center', valign: 'middle'},
         {title: '活动发起时间', field: 'activity_creat_time', visible: false, align: 'center', valign: 'middle'},
         {title: '活动类别', field: 'activity_categoryName', visible: true, align: 'center', valign: 'middle'},
-        {title: '活动状态', field: 'activity_stateName', visible: true, align: 'center', valign: 'middle'}
+        {title: '活动状态', field: 'activity_stateName', visible: false, align: 'center', valign: 'middle'}
     ];
 };
 

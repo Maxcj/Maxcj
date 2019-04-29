@@ -542,7 +542,7 @@ LEFT JOIN (
 	SELECT a.activity_club,
 		COUNT(DISTINCT a.activity_id) AS activity_num
 	FROM sys_activity AS a
-	WHERE a.activity_state >= '0'
+	WHERE a.activity_state = '3'
 	AND a.activity_category = '1'
 	GROUP BY a.activity_club
 ) AS aa ON dd.id = aa.activity_club
@@ -550,7 +550,7 @@ LEFT JOIN (
 	SELECT a.activity_club,
 		COUNT(DISTINCT a.activity_id) AS activity_num
 	FROM sys_activity AS a
-	WHERE a.activity_state >= '0'
+	WHERE a.activity_state = '3'
 	AND a.activity_category = '2'
 	GROUP BY
 		a.activity_club

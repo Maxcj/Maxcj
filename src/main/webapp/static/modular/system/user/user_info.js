@@ -77,7 +77,7 @@ var UserInfoDlg = {
                     message: '请输入11位手机号码'
                 },
                 regexp: {
-                    regexp: /^1[3|5|8]{1}[0-9]{9}$/,
+                    regexp: /^1[0-9]{10}$/,
                     message: '请输入正确的手机号码'
                 }
             }

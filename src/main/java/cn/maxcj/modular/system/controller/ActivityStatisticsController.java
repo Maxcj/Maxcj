@@ -27,13 +27,25 @@ public class ActivityStatisticsController extends BaseController {
     private IActivityStatisticsService activityStatisticsService;
 
     /**
-     * 获取列表
+     * 获取列表（直接对数据库进行计算）
      */
     @RequestMapping(value = "/list")
     @ResponseBody
     public Object list(String condition) {
+        return activityStatisticsService.activityNum();
+    }
+
+    /**
+     * 利用kettle采用此方法
+     * @param condition
+     * @return
+     */
+    @RequestMapping(value = "/kettle")
+    @ResponseBody
+    public Object kettle(String condition) {
         return activityStatisticsService.selectList(null);
     }
+
 
     /**
      * 获取首页需要展示的信息

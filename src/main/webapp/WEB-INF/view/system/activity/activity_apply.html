@@ -3,7 +3,7 @@
     <div class="col-sm-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>社团活动管理</h5>
+                <h5>所有社团活动管理</h5>
             </div>
             <div class="ibox-content">
                 <div class="row row-lg">
@@ -11,32 +11,33 @@
                         <div class="row">
                             <div class="col-lg-10 col-sm-9">
                                 <div class="row">
-                                    <div class="col-lg-4 col-sm-4">
+                                    <div class="col-lg-3 col-sm-3">
+                                        <#NameCon id="condition" name="社团活动名称" placeholder="社团活动名称"/>
+                                    </div>
+                                    <div class="col-lg-3 col-sm-3">
                                         <#SelectCon id="activity_category" name="活动类别">
                                             <option value="0">全部</option>
                                             <option value="1">常规活动</option>
                                             <option value="2">重大活动</option>
                                         </#SelectCon>
                                     </div>
-                                    <div class="col-lg-4 col-sm-4">
-                                        <#NameCon id="condition" name="活动开始时间" placeholder="社团活动开始时间"/>
+                                    <div class="col-lg-3 col-sm-3">
+                                        <#TimeCon id="beginTime" name="活动开始时间" placeholder="社团活动开始时间"/>
                                     </div>
-                                    <div class="col-lg-4 col-sm-4">
+                                    <div class="col-lg-3 col-sm-3">
                                         <#button name="搜索" icon="fa-search" clickFun="Activity.search()"/>
                                         <#button name="重置" icon="fa-trash" clickFun="Activity.resetSearch()" space="true"/>
                                     </div>
                             </div>
                         </div>
                     </div>
+                    <!-- 此页面为活动审批页面 -->
                     <div class="hidden-xs" id="ActivityTableToolbar" role="group">
-                        @if(shiro.hasPermission("/activity/add")){
-                        <#button name="添加" icon="fa-plus" clickFun="Activity.openAddActivity()"/>
+                        @if(shiro.hasPermission("/activity/apply_agree")){
+                        <#button name="通过" icon="fa-plus" clickFun="Activity.apply_agree()"/>
                         @}
-                        @if(shiro.hasPermission("/activity/update")){
-                        <#button name="修改" icon="fa-edit" clickFun="Activity.openActivityDetail()" space="true"/>
-                        @}
-                        @if(shiro.hasPermission("/activity/delete")){
-                        <#button name="撤销" icon="fa-remove" clickFun="Activity.delete()" space="true"/>
+                        @if(shiro.hasPermission("/activity/apply_refuse")){
+                        <#button name="拒绝" icon="fa-edit" clickFun="Activity.apply_refuse()" space="true"/>
                         @}
                     </div>
                     <#table id="ActivityTable"/>
@@ -45,10 +46,11 @@
         </div>
     </div>
 </div>
-<script src="${ctxPath}/static/modular/system/activity/club_activity.js"></script>
+
+<script src="${ctxPath}/static/modular/system/activity/activity_apply.js"></script>
 <script>
     laydate.render({
-        elem: '#condition'
+        elem: '#beginTime'
     });
 </script>
 @}

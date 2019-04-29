@@ -29,4 +29,6 @@ public interface ActivityMapper extends BaseMapper<Activity> {
 
     String getActivityName(@Param("activity_id") Integer activity_id);
 
+    List<Map<String, Object>> activity_apply(@Param("condition") String condition,@Param("activity_category")String activity_category,@Param("beginTime") String beginTime);
+
 }

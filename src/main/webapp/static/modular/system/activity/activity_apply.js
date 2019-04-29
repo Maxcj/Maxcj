@@ -42,21 +42,6 @@ Activity.check = function () {
 };
 
 /**
- * 点击添加社团活动
- */
-Activity.openAddActivity = function () {
-    var index = layer.open({
-        type: 2,
-        title: '添加社团活动',
-        area: ['800px', '420px'], //宽高
-        fix: false, //不固定
-        maxmin: true,
-        content: Feng.ctxPath + '/activity/activity_add'
-    });
-    this.layerIndex = index;
-};
-
-/**
  * 打开查看社团活动详情
  */
 Activity.openActivityDetail = function () {
@@ -67,53 +52,64 @@ Activity.openActivityDetail = function () {
             area: ['800px', '420px'], //宽高
             fix: false, //不固定
             maxmin: true,
-            content: Feng.ctxPath + '/activity/activity_update/' + Activity.seItem.activity_id
+            content: Feng.ctxPath + '/activity/activity_update/' + Activity.seItem.id
         });
         this.layerIndex = index;
     }
 };
 
-/**
- * 删除社团活动
- */
-Activity.delete = function () {
+Activity.apply_refuse = function () {
     if (this.check()) {
-        var ajax = new $ax(Feng.ctxPath + "/activity/delete", function (data) {
-            Feng.success("撤销成功!");
+        var ajax = new $ax(Feng.ctxPath + "/activity/apply_refuse", function (data) {
+            Feng.success("已拒绝发起活动");
             Activity.table.refresh();
         }, function (data) {
-            Feng.error("撤销失败,此活动不允许撤销!");
+            Feng.error("审批失败!请联系网信部！" + data.responseJSON.message + "!");
         });
         ajax.set("activityId", this.seItem.activity_id);
         ajax.start();
     }
 };
 
+
+
+Activity.apply_agree = function () {
+    if (this.check()) {
+        var ajax = new $ax(Feng.ctxPath + "/activity/apply_agree", function (data) {
+            Feng.success("审批成功!");
+            Activity.table.refresh();
+        }, function (data) {
+            Feng.error("审批失败!请联系网信部!" + data.responseJSON.message + "!");
+        });
+        ajax.set("activityId", this.seItem.activity_id);
+        ajax.start();
+    }
+};
+
+
+
+
 /**
  * 查询社团活动列表
  */
 Activity.search = function () {
     var queryData = {};
-
     queryData['condition'] = $("#condition").val();
     queryData['activity_category'] = $("#activity_category").val();
-
+    queryData['beginTime'] = $("#beginTime").val();
     Activity.table.refresh({query: queryData});
 };
 
 Activity.resetSearch = function () {
     $("#condition").val("");
-    $("#activity_category").val("0");
-
+    $("#activity_category").val("");
+    $("#beginTime").val("");
     Activity.search();
 }
 
 $(function () {
-
-    $("#activityCategory").val($("#activityCategoryValue").val());
-
     var defaultColunms = Activity.initColumn();
-    var table = new BSTable(Activity.id, "/activity/clublist", defaultColunms);
+    var table = new BSTable(Activity.id, "/activity/apply", defaultColunms);
     table.setPaginationType("client");
     Activity.table = table.init();
 });

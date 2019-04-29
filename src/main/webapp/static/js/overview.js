@@ -74,7 +74,7 @@ function getview() {
 
 
 function echarts_data() {
-    noticeNum();
+    //noticeNum();
 
     getview();
     /*本周活动数量统计*/
