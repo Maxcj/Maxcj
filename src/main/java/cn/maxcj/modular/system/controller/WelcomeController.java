@@ -5,6 +5,7 @@ import cn.maxcj.core.common.constant.factory.ConstantFactory;
 import cn.maxcj.core.log.LogObjectHolder;
 import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.core.shiro.ShiroUser;
+import cn.maxcj.modular.system.model.Activity;
 import cn.maxcj.modular.system.model.Clubinfo;
 import cn.maxcj.modular.system.model.Message;
 import cn.maxcj.modular.system.service.*;
@@ -136,7 +137,7 @@ public class WelcomeController  extends BaseController {
     @RequestMapping(value = "/clubactivity/{deptid}")
     @ResponseBody
     public Object clublist(@PathVariable Integer deptid, String condition) {
-        List<Map<String, Object>> activity_list = this.activityService.activity_clublist(deptid, condition);
+        List<Map<String, Object>> activity_list = this.activityService.activity_club(deptid, condition);
         return super.warpObject(new ActivityWarpper(activity_list));
     }
 

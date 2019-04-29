@@ -72,6 +72,16 @@
         order by activity_start_time DESC
     </select>
 
+    <select id="activity_club" parameterType="java.lang.Integer" resultType="map">
+        select * from sys_activity
+        where activity_club = #{deptid}
+        and activity_state = '3'
+        <if test="condition != null and condition != ''">
+            and activity_name like CONCAT('%',#{condition},'%')
+        </if>
+        order by activity_start_time DESC
+    </select>
+
     <select id="getActivityName" parameterType="java.lang.Integer" resultType="java.lang.String">
         select activity_name from sys_activity where activity_id = #{activity_id}
     </select>

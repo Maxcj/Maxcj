@@ -51,37 +51,4 @@
 
 </body>
 <script type="text/javascript" src="${ctxPath}/static/js/clubdetail.js"></script>
-<script type="text/javascript">
-
-
-
-
-	$(function () {
-		var deptid = $("#dept_input").val();
-		$.ajax({
-			url: "/welcome/club/"+deptid,
-			dataType: "json",
-			data : deptid,
-			async: true,
-			success: function (data) {
-				$("#club_number").html(data[0].club_number);
-				$("#culb_create_time").html(data[0].culb_create_time);
-				$("#club_infomation").html(data[0].club_infomation);
-				$("#fullname").html(data[0].fullname);
-				$("#club_category").html(data[0].club_category);
-			}
-		});
-		var defaultColunms = Activity.initColumn();
-		var table = new BSTable(Activity.id, "/welcome/clubactivity/"+deptid, defaultColunms);
-		table.setData(deptid);
-		table.setPaginationType("client");
-		Activity.table = table.init();
-		$(".fixed-table-toolbar").remove();
-	});
-
-</script>
-
-
-
-
 </html>

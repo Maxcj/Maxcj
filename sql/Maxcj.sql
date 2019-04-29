@@ -11,7 +11,7 @@
  Target Server Version : 50639
  File Encoding         : 65001
 
- Date: 28/04/2019 10:21:04
+ Date: 29/04/2019 11:22:08
 */
 
 SET NAMES utf8mb4;
@@ -34,67 +34,67 @@ CREATE TABLE `activity_statistics` (
 -- Records of activity_statistics
 -- ----------------------------
 BEGIN;
-INSERT INTO `activity_statistics` VALUES (47, '星星羽毛球协会', 1, 1, 2, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (39, '爱心社', 2, 1, 3, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (48, '体育健身俱乐部', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (49, '地平线轮滑社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (50, '武术协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (51, '定向越野协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (52, '龍段跆拳道协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (53, '网球协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (54, '台球协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (55, '国球协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (56, '军事爱好者协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (57, 'GVA气排球协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (58, 'Journey滑板社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (59, '碧洲文学社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (60, '浅草文学社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (61, '青笛文学社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (62, '紫鸢文学社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (63, '国际象棋俱乐部', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (64, '陶然棋社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (65, '话剧协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (66, '人文戏曲协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (67, '国学协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (68, '同一首歌音乐社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (69, 'NS街舞社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (70, '微时代电影协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (71, '国际集邮协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (72, 'Happy农场', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (73, '读者俱乐部', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (74, 'Crazy电影协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (75, 'B-box协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (76, 'DIY手工艺协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (77, '锦瑟艺术团', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (78, '演讲与口才协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (79, 'HipHop社团', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (80, '摇滚Weekend', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (81, '活力健美操协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (82, '书画协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (83, '美食协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (84, '小荷记者站', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (85, '青亭印社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (86, '播音与主持艺术协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (87, 'DC漫舍', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (88, '立峰服务社', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (89, '创意电子协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (90, '人文学习交流协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (91, '中外文化交流协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (92, '湘中大学生心理学协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (93, '量化投资协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (94, '数学建模协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (95, '清沐环境保护协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (96, '计算机协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (97, '趣味与化学协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (98, 'CSC创业者协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (99, '营销协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (100, '英语俱乐部', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (101, '电子俱乐部', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (102, '梦想旅行家协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (103, '起点论坛', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (104, '法律协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (105, 'TST销售家协会', 0, 0, 0, '2019-04-27 11:05:11');
-INSERT INTO `activity_statistics` VALUES (106, '管理协会', 0, 0, 0, '2019-04-27 11:05:11');
+INSERT INTO `activity_statistics` VALUES (47, '星星羽毛球协会', 1, 1, 2, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (39, '爱心社', 1, 1, 2, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (48, '体育健身俱乐部', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (49, '地平线轮滑社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (50, '武术协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (51, '定向越野协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (52, '龍段跆拳道协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (53, '网球协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (54, '台球协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (55, '国球协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (56, '军事爱好者协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (57, 'GVA气排球协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (58, 'Journey滑板社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (59, '碧洲文学社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (60, '浅草文学社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (61, '青笛文学社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (62, '紫鸢文学社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (63, '国际象棋俱乐部', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (64, '陶然棋社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (65, '话剧协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (66, '人文戏曲协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (67, '国学协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (68, '同一首歌音乐社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (69, 'NS街舞社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (70, '微时代电影协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (71, '国际集邮协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (72, 'Happy农场', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (73, '读者俱乐部', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (74, 'Crazy电影协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (75, 'B-box协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (76, 'DIY手工艺协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (77, '锦瑟艺术团', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (78, '演讲与口才协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (79, 'HipHop社团', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (80, '摇滚Weekend', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (81, '活力健美操协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (82, '书画协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (83, '美食协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (84, '小荷记者站', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (85, '青亭印社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (86, '播音与主持艺术协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (87, 'DC漫舍', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (88, '立峰服务社', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (89, '创意电子协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (90, '人文学习交流协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (91, '中外文化交流协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (92, '湘中大学生心理学协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (93, '量化投资协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (94, '数学建模协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (95, '清沐环境保护协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (96, '计算机协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (97, '趣味与化学协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (98, 'CSC创业者协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (99, '营销协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (100, '英语俱乐部', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (101, '电子俱乐部', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (102, '梦想旅行家协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (103, '起点论坛', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (104, '法律协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (105, 'TST销售家协会', 0, 0, 0, '2019-04-29 10:58:31');
+INSERT INTO `activity_statistics` VALUES (106, '管理协会', 0, 0, 0, '2019-04-29 10:58:31');
 COMMIT;
 
 -- ----------------------------
@@ -136,11 +136,11 @@ CREATE TABLE `sys_activity` (
 -- Records of sys_activity
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_activity` VALUES (1, 1, '测试活动', '海园', '2018-12-18 15:28:07', '2018-12-19 15:28:11', 39, 48, '2018-12-18 15:28:38', 5);
-INSERT INTO `sys_activity` VALUES (2, 2, '重大活动', '图书馆', '2018-12-12 09:43:02', '2018-12-21 09:43:05', 47, 48, '2018-12-05 09:43:18', 7);
-INSERT INTO `sys_activity` VALUES (3, 1, '测试活动', '田径场', '2018-12-29 14:23:21', '2018-12-31 14:23:25', 47, 48, '2018-12-20 14:23:34', 5);
-INSERT INTO `sys_activity` VALUES (4, 1, '与外国人交朋友', '图书馆5楼', '2019-04-10 00:00:00', '2019-04-10 00:00:00', 39, 49, '2019-04-10 21:38:09', 1);
-INSERT INTO `sys_activity` VALUES (5, 2, '测试活动', 'iii', '2019-04-25 00:00:00', '2019-04-27 00:00:00', 39, 49, '2019-04-24 22:48:12', 1);
+INSERT INTO `sys_activity` VALUES (1, 1, '测试活动', '海园', '2018-12-18 15:28:07', '2018-12-19 15:28:11', 39, 48, '2018-12-18 15:28:38', 3);
+INSERT INTO `sys_activity` VALUES (2, 2, '重大活动', '图书馆', '2018-12-12 09:43:02', '2018-12-21 09:43:05', 47, 48, '2018-12-05 09:43:18', 3);
+INSERT INTO `sys_activity` VALUES (3, 1, '测试活动', '田径场', '2018-12-29 14:23:21', '2018-12-31 14:23:25', 47, 48, '2018-12-20 14:23:34', 3);
+INSERT INTO `sys_activity` VALUES (4, 1, '与外国人交朋友', '图书馆5楼', '2019-04-10 00:00:00', '2019-04-10 00:00:00', 39, 49, '2019-04-10 21:38:09', 4);
+INSERT INTO `sys_activity` VALUES (5, 2, '测试活动', 'iii', '2019-04-25 00:00:00', '2019-04-27 00:00:00', 39, 49, '2019-04-24 22:48:12', 3);
 COMMIT;
 
 -- ----------------------------
@@ -771,7 +771,7 @@ CREATE TABLE `sys_dict` (
   `tips` varchar(255) DEFAULT NULL COMMENT '提示',
   `code` varchar(255) DEFAULT NULL COMMENT '值',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='字典表';
+) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='字典表';
 
 -- ----------------------------
 -- Records of sys_dict
@@ -791,15 +791,6 @@ INSERT INTO `sys_dict` VALUES (72, 0, 0, '是否在岗', '', 'sys_on');
 INSERT INTO `sys_dict` VALUES (73, 1, 72, '在岗', NULL, '1');
 INSERT INTO `sys_dict` VALUES (74, 2, 72, '离职', NULL, '2');
 INSERT INTO `sys_dict` VALUES (75, 3, 72, '调动', NULL, '3');
-INSERT INTO `sys_dict` VALUES (85, 0, 0, '一个活动的状态', '', 'activity_state');
-INSERT INTO `sys_dict` VALUES (86, 1, 85, '发起', NULL, '1');
-INSERT INTO `sys_dict` VALUES (87, 2, 85, '审批中', NULL, '2');
-INSERT INTO `sys_dict` VALUES (88, 3, 85, '同意发起', NULL, '3');
-INSERT INTO `sys_dict` VALUES (89, 4, 85, '拒绝发起', NULL, '4');
-INSERT INTO `sys_dict` VALUES (90, 5, 85, '未开始', NULL, '5');
-INSERT INTO `sys_dict` VALUES (91, 6, 85, '进行中', NULL, '6');
-INSERT INTO `sys_dict` VALUES (92, 7, 85, '待反馈', NULL, '7');
-INSERT INTO `sys_dict` VALUES (93, 8, 85, '结束', NULL, '8');
 INSERT INTO `sys_dict` VALUES (94, 0, 0, '活动类别', '', 'activity_category');
 INSERT INTO `sys_dict` VALUES (95, 1, 94, '常规', NULL, '1');
 INSERT INTO `sys_dict` VALUES (96, 2, 94, '重大', NULL, '2');
@@ -833,6 +824,10 @@ INSERT INTO `sys_dict` VALUES (147, 0, 0, '社团财务类型', '社团财务类
 INSERT INTO `sys_dict` VALUES (148, 1, 147, '活动花费', NULL, '1');
 INSERT INTO `sys_dict` VALUES (149, 2, 147, '社团内部', NULL, '2');
 INSERT INTO `sys_dict` VALUES (150, 3, 147, '其他', NULL, '3');
+INSERT INTO `sys_dict` VALUES (151, 0, 0, '一个活动的状态', '', 'activity_state');
+INSERT INTO `sys_dict` VALUES (152, 2, 151, '审批中', NULL, '2');
+INSERT INTO `sys_dict` VALUES (153, 3, 151, '同意发起', NULL, '3');
+INSERT INTO `sys_dict` VALUES (154, 4, 151, '拒绝发起', NULL, '4');
 COMMIT;
 
 -- ----------------------------
@@ -875,7 +870,7 @@ CREATE TABLE `sys_login_log` (
   `message` text COMMENT '具体消息',
   `ip` varchar(255) DEFAULT NULL COMMENT '登录ip',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=925 DEFAULT CHARSET=utf8 COMMENT='登录记录';
+) ENGINE=InnoDB AUTO_INCREMENT=954 DEFAULT CHARSET=utf8 COMMENT='登录记录';
 
 -- ----------------------------
 -- Records of sys_login_log
@@ -1186,6 +1181,35 @@ INSERT INTO `sys_login_log` VALUES (921, '登录日志', 48, '2019-04-28 09:57:3
 INSERT INTO `sys_login_log` VALUES (922, '退出日志', 48, '2019-04-28 09:58:12', '成功', NULL, '0:0:0:0:0:0:0:1');
 INSERT INTO `sys_login_log` VALUES (923, '登录日志', 48, '2019-04-28 09:58:42', '成功', NULL, '0:0:0:0:0:0:0:1');
 INSERT INTO `sys_login_log` VALUES (924, '退出日志', 48, '2019-04-28 10:03:34', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (925, '登录日志', 48, '2019-04-28 10:27:09', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (926, '登录日志', 48, '2019-04-29 09:49:53', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (927, '登录日志', 48, '2019-04-29 10:01:40', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (928, '登录日志', 48, '2019-04-29 10:13:23', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (929, '登录日志', 48, '2019-04-29 10:22:12', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (930, '登录日志', 48, '2019-04-29 10:28:43', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (931, '登录日志', 48, '2019-04-29 10:30:10', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (932, '登录日志', 48, '2019-04-29 10:31:43', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (933, '登录日志', 49, '2019-04-29 10:32:25', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (934, '退出日志', 49, '2019-04-29 10:33:18', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (935, '登录日志', 49, '2019-04-29 10:33:22', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (936, '登录日志', 49, '2019-04-29 10:41:46', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (937, '登录日志', 49, '2019-04-29 10:44:51', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (938, '登录日志', 49, '2019-04-29 10:46:34', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (939, '登录日志', 49, '2019-04-29 10:46:34', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (940, '登录日志', 49, '2019-04-29 10:48:57', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (941, '登录日志', 48, '2019-04-29 10:49:47', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (942, '登录日志', 48, '2019-04-29 10:51:39', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (943, '登录日志', 48, '2019-04-29 10:54:14', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (944, '登录日志', 48, '2019-04-29 11:01:40', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (945, '登录日志', 49, '2019-04-29 11:04:49', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (946, '登录日志', 48, '2019-04-29 11:05:35', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (947, '登录日志', 49, '2019-04-29 11:08:16', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (948, '登录日志', 48, '2019-04-29 11:09:16', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (949, '登录日志', 49, '2019-04-29 11:10:18', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (950, '登录日志', 51, '2019-04-29 11:15:19', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (951, '退出日志', 51, '2019-04-29 11:15:21', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (952, '登录日志', 48, '2019-04-29 11:15:23', '成功', NULL, '0:0:0:0:0:0:0:1');
+INSERT INTO `sys_login_log` VALUES (953, '登录日志', 48, '2019-04-29 11:19:06', '成功', NULL, '0:0:0:0:0:0:0:1');
 COMMIT;
 
 -- ----------------------------
@@ -1207,7 +1231,7 @@ CREATE TABLE `sys_menu` (
   `status` int(65) DEFAULT NULL COMMENT '菜单状态 :  1:启用   0:不启用',
   `isopen` int(11) DEFAULT NULL COMMENT '是否打开:    1:打开   0:不打开',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=utf8 COMMENT='菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=utf8 COMMENT='菜单表';
 
 -- ----------------------------
 -- Records of sys_menu
@@ -1316,6 +1340,9 @@ INSERT INTO `sys_menu` VALUES (212, 'ZXTG', 'ZXGL', '[0],[my_club],[ZXGL],', '�
 INSERT INTO `sys_menu` VALUES (213, 'ZXYJTG', 'ZXGL', '[0],[my_club],[ZXGL],', '一键通过', '', '/apply/agree_all', 2, 3, 0, NULL, 1, NULL);
 INSERT INTO `sys_menu` VALUES (214, 'ZXBTG', 'ZXGL', '[0],[my_club],[ZXGL],', '不通过', '', '/apply/disagree', 3, 3, 0, NULL, 1, NULL);
 INSERT INTO `sys_menu` VALUES (215, 'LY', '0', '[0],', '留言', 'fa-commenting', '/message/message', 3, 1, 1, NULL, 1, NULL);
+INSERT INTO `sys_menu` VALUES (216, 'HDSP', 'HDB', '[0],[SLGL],[HDB],', '社团活动审批', '', '/activity/apply_page', 1, 3, 1, NULL, 1, NULL);
+INSERT INTO `sys_menu` VALUES (217, 'TYHD', 'HDSP', '[0],[SLGL],[HDB],[HDSP],', '同意发起', '', '/activity/apply_agree', 1, 4, 0, NULL, 1, NULL);
+INSERT INTO `sys_menu` VALUES (218, 'JJHD', 'HDSP', '[0],[SLGL],[HDB],[HDSP],', '拒绝发起', '', '/activity/apply_refuse', 2, 4, 0, NULL, 1, NULL);
 COMMIT;
 
 -- ----------------------------
@@ -1374,7 +1401,7 @@ CREATE TABLE `sys_notice` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `sys_notice` VALUES (6, '社团信息化管理系统', 10, '欢迎使用社团信息化管理系统', '2018-12-19 08:53:20', 1, 1, NULL);
-INSERT INTO `sys_notice` VALUES (8, '你好', NULL, '<p><b>你好</b></p><p>123</p>', '2018-11-22 19:28:57', 1, 1, NULL);
+INSERT INTO `sys_notice` VALUES (8, '你好', NULL, '<p><b>你好</b><span style=\"color: inherit;\">123</span></p>', '2018-11-22 19:28:57', 1, 1, NULL);
 INSERT INTO `sys_notice` VALUES (9, '爱心社', NULL, '<p>爱心社</p>', '2019-04-07 19:37:49', 49, 0, 39);
 INSERT INTO `sys_notice` VALUES (11, '啦啦啦啦', NULL, '<p>啦啦啦啦</p>', '2019-04-10 21:14:33', 49, 0, 39);
 INSERT INTO `sys_notice` VALUES (12, '111asdasd', NULL, '<p>111<span style=\"color: inherit;\">22</span></p>', '2019-04-10 22:12:43', 49, 0, 39);
@@ -1396,7 +1423,7 @@ CREATE TABLE `sys_operation_log` (
   `succeed` varchar(255) DEFAULT NULL COMMENT '是否成功',
   `message` text COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=991 DEFAULT CHARSET=utf8 COMMENT='操作日志';
+) ENGINE=InnoDB AUTO_INCREMENT=1004 DEFAULT CHARSET=utf8 COMMENT='操作日志';
 
 -- ----------------------------
 -- Records of sys_operation_log
@@ -1512,6 +1539,19 @@ INSERT INTO `sys_operation_log` VALUES (987, '业务日志', '分配角色', 48,
 INSERT INTO `sys_operation_log` VALUES (988, '业务日志', '加入社团', 49, 'cn.maxcj.modular.system.controller.DeptController', 'apply', '2019-04-25 20:04:15', '成功', '部门名称=爱心社');
 INSERT INTO `sys_operation_log` VALUES (989, '业务日志', '分配角色', 48, 'cn.maxcj.modular.system.controller.UserMgrController', 'setRole', '2019-04-26 09:45:02', '成功', '账号=aixinshe,角色名称集合=社团,社团秘书处');
 INSERT INTO `sys_operation_log` VALUES (990, '业务日志', '修改管理员', 48, 'cn.maxcj.modular.system.controller.UserMgrController', 'edit', '2019-04-28 09:58:07', '成功', '账号=zhongcj;;;字段名称:null,旧值:8c26ef6046898d3ab7511132f0bab0bc,新值:;;;字段名称:电子邮件,旧值:903283542@qq.com,新值:90328@qq.com;;;字段名称:电话,旧值:17670511003,新值:13222222222');
+INSERT INTO `sys_operation_log` VALUES (991, '业务日志', '修改管理员', 48, 'cn.maxcj.modular.system.controller.UserMgrController', 'edit', '2019-04-28 10:27:18', '成功', '账号=zhongcj;;;字段名称:null,旧值:8c26ef6046898d3ab7511132f0bab0bc,新值:;;;字段名称:名字,旧值:钟乘剑,新值:Maxcj');
+INSERT INTO `sys_operation_log` VALUES (992, '业务日志', '修改字典', 48, 'cn.maxcj.modular.system.controller.DictController', 'update', '2019-04-29 10:06:49', '成功', '字典名称=一个活动的状态,字典内容=2:审批中:2;3:同意发起:3;4:拒绝发起:4;;;;');
+INSERT INTO `sys_operation_log` VALUES (993, '业务日志', '菜单新增', 48, 'cn.maxcj.modular.system.controller.MenuController', 'add', '2019-04-29 10:22:54', '成功', '菜单名称=社团活动审批');
+INSERT INTO `sys_operation_log` VALUES (994, '业务日志', '菜单新增', 48, 'cn.maxcj.modular.system.controller.MenuController', 'add', '2019-04-29 10:24:29', '成功', '菜单名称=同意发起');
+INSERT INTO `sys_operation_log` VALUES (995, '业务日志', '菜单新增', 48, 'cn.maxcj.modular.system.controller.MenuController', 'add', '2019-04-29 10:25:04', '成功', '菜单名称=拒绝发起');
+INSERT INTO `sys_operation_log` VALUES (996, '业务日志', '配置权限', 48, 'cn.maxcj.modular.system.controller.RoleController', 'setAuthority', '2019-04-29 10:25:22', '成功', '角色名称=活动部部长,资源名称=角色管理,添加角色,修改角色,删除角色,配置权限,修改角色跳转,角色分配跳转,角色列表,通知,添加通知,修改通知,删除通知,社联通知,社团通知,社团活动,社团活动列表,社联管理,用户管理,添加用户,修改用户,删除用户,重置密码,冻结用户,解除冻结用户,分配角色,分配角色跳转,编辑用户跳转,用户列表,导出人员,导入人员,添加通知,修改通知,删除通知,社联通知,社团通知,活动部,社团活动审批,同意发起,拒绝发起,部门管理,添加部门,修改部门,删除部门,修改部门跳转,部门列表,部门详情,业务日志,清空日志,日志列表,日志详情,登录日志,清空登录日志,登录日志列表,社联通讯录,文件专区,上传文件,社团一览,留言');
+INSERT INTO `sys_operation_log` VALUES (997, '业务日志', '配置权限', 48, 'cn.maxcj.modular.system.controller.RoleController', 'setAuthority', '2019-04-29 10:25:38', '成功', '角色名称=超级管理员,资源名称=系统管理,角色管理,添加角色,修改角色,删除角色,配置权限,修改角色跳转,角色分配跳转,角色列表,菜单管理,添加菜单,修改菜单,删除菜单,菜单编辑跳转,菜单列表,监控管理,字典管理,添加字典,修改字典,删除字典,修改菜单跳转,字典列表,字典详情,代码生成,接口文档,通知,添加通知,修改通知,删除通知,社联通知,社团通知,社团管理,社团成员管理,导入人员,导出人员,社团活动管理,活动详情,活动申请,活动修改,删除活动,社团财务管理,申请财务,修改财务,撤销财务申请,社团简介管理,增加社团简介,修改社团简介,删除社团简介,社团公告管理,添加社团公告,修改社团公告,删除社团公告,社团招新管理,通过,一键通过,不通过,社团活动,社团活动列表,社联管理,用户管理,添加用户,修改用户,删除用户,重置密码,冻结用户,解除冻结用户,分配角色,分配角色跳转,编辑用户跳转,用户列表,导出人员,导入人员,秘书处,通知管理,添加通知,修改通知,删除通知,社联通知,社团通知,宣传部,活动部,社团活动审批,同意发起,拒绝发起,财务部,组织部,部门管理,添加部门,修改部门,删除部门,修改部门跳转,部门列表,部门详情,公关部,网信部,业务日志,清空日志,日志列表,日志详情,登录日志,清空登录日志,登录日志列表,留言管理,添加留言,修改留言,删除留言,社联通讯录,文件专区,上传文件,社团一览,留言');
+INSERT INTO `sys_operation_log` VALUES (998, '业务日志', '修改菜单', 48, 'cn.maxcj.modular.system.controller.MenuController', 'edit', '2019-04-29 10:29:01', '成功', '菜单名称=社团活动审批;;;字段名称:url地址,旧值:/activity/apply,新值:/activity/apply_page');
+INSERT INTO `sys_operation_log` VALUES (999, '业务日志', '分配角色', 48, 'cn.maxcj.modular.system.controller.UserMgrController', 'setRole', '2019-04-29 10:33:05', '成功', '账号=aixinshe,角色名称集合=社团,社团秘书处,社团活动部');
+INSERT INTO `sys_operation_log` VALUES (1000, '业务日志', '修改通知', 48, 'cn.maxcj.modular.system.controller.NoticeController', 'update', '2019-04-29 11:11:01', '成功', '标题=你好;;;');
+INSERT INTO `sys_operation_log` VALUES (1001, '业务日志', '修改通知', 48, 'cn.maxcj.modular.system.controller.NoticeController', 'update', '2019-04-29 11:11:08', '成功', '标题=你好;;;字段名称:内容,旧值:<p><b>你好</b></p><p>123</p>,新值:<p><b>你好</b><span style=\"color: inherit;\">123</span></p><p><br></p>');
+INSERT INTO `sys_operation_log` VALUES (1002, '业务日志', '修改通知', 48, 'cn.maxcj.modular.system.controller.NoticeController', 'update', '2019-04-29 11:11:12', '成功', '标题=你好;;;字段名称:内容,旧值:<p><b>你好</b><span style=\"color: inherit;\">123</span></p><p><br></p>,新值:<p><b>你好</b><span style=\"color: inherit;\">123</span></p>');
+INSERT INTO `sys_operation_log` VALUES (1003, '业务日志', '分配角色', 48, 'cn.maxcj.modular.system.controller.UserMgrController', 'setRole', '2019-04-29 11:12:35', '成功', '账号=aixinshe,角色名称集合=社团,社团秘书处');
 COMMIT;
 
 -- ----------------------------
@@ -1523,120 +1563,12 @@ CREATE TABLE `sys_relation` (
   `menuid` bigint(11) DEFAULT NULL COMMENT '菜单id',
   `roleid` int(11) DEFAULT NULL COMMENT '角色id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7757 DEFAULT CHARSET=utf8 COMMENT='角色和菜单关联表';
+) ENGINE=InnoDB AUTO_INCREMENT=7926 DEFAULT CHARSET=utf8 COMMENT='角色和菜单关联表';
 
 -- ----------------------------
 -- Records of sys_relation
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_relation` VALUES (6473, 105, 1);
-INSERT INTO `sys_relation` VALUES (6474, 119, 1);
-INSERT INTO `sys_relation` VALUES (6475, 120, 1);
-INSERT INTO `sys_relation` VALUES (6476, 121, 1);
-INSERT INTO `sys_relation` VALUES (6477, 122, 1);
-INSERT INTO `sys_relation` VALUES (6478, 150, 1);
-INSERT INTO `sys_relation` VALUES (6479, 151, 1);
-INSERT INTO `sys_relation` VALUES (6480, 130, 1);
-INSERT INTO `sys_relation` VALUES (6481, 132, 1);
-INSERT INTO `sys_relation` VALUES (6482, 138, 1);
-INSERT INTO `sys_relation` VALUES (6483, 139, 1);
-INSERT INTO `sys_relation` VALUES (6484, 140, 1);
-INSERT INTO `sys_relation` VALUES (6485, 155, 1);
-INSERT INTO `sys_relation` VALUES (6486, 156, 1);
-INSERT INTO `sys_relation` VALUES (6487, 157, 1);
-INSERT INTO `sys_relation` VALUES (6488, 148, 1);
-INSERT INTO `sys_relation` VALUES (6489, 149, 1);
-INSERT INTO `sys_relation` VALUES (6490, 145, 1);
-INSERT INTO `sys_relation` VALUES (6491, 142, 1);
-INSERT INTO `sys_relation` VALUES (6492, 143, 1);
-INSERT INTO `sys_relation` VALUES (6493, 144, 1);
-INSERT INTO `sys_relation` VALUES (6494, 194, 1);
-INSERT INTO `sys_relation` VALUES (6495, 195, 1);
-INSERT INTO `sys_relation` VALUES (6496, 169, 1);
-INSERT INTO `sys_relation` VALUES (6497, 170, 1);
-INSERT INTO `sys_relation` VALUES (6498, 179, 1);
-INSERT INTO `sys_relation` VALUES (6499, 180, 1);
-INSERT INTO `sys_relation` VALUES (6500, 171, 1);
-INSERT INTO `sys_relation` VALUES (6501, 175, 1);
-INSERT INTO `sys_relation` VALUES (6502, 196, 1);
-INSERT INTO `sys_relation` VALUES (6503, 201, 1);
-INSERT INTO `sys_relation` VALUES (6504, 202, 1);
-INSERT INTO `sys_relation` VALUES (6505, 172, 1);
-INSERT INTO `sys_relation` VALUES (6506, 207, 1);
-INSERT INTO `sys_relation` VALUES (6507, 208, 1);
-INSERT INTO `sys_relation` VALUES (6508, 209, 1);
-INSERT INTO `sys_relation` VALUES (6509, 189, 1);
-INSERT INTO `sys_relation` VALUES (6510, 203, 1);
-INSERT INTO `sys_relation` VALUES (6511, 204, 1);
-INSERT INTO `sys_relation` VALUES (6512, 205, 1);
-INSERT INTO `sys_relation` VALUES (6513, 190, 1);
-INSERT INTO `sys_relation` VALUES (6514, 191, 1);
-INSERT INTO `sys_relation` VALUES (6515, 192, 1);
-INSERT INTO `sys_relation` VALUES (6516, 193, 1);
-INSERT INTO `sys_relation` VALUES (6517, 211, 1);
-INSERT INTO `sys_relation` VALUES (6518, 212, 1);
-INSERT INTO `sys_relation` VALUES (6519, 213, 1);
-INSERT INTO `sys_relation` VALUES (6520, 214, 1);
-INSERT INTO `sys_relation` VALUES (6521, 173, 1);
-INSERT INTO `sys_relation` VALUES (6522, 174, 1);
-INSERT INTO `sys_relation` VALUES (6523, 176, 1);
-INSERT INTO `sys_relation` VALUES (6524, 106, 1);
-INSERT INTO `sys_relation` VALUES (6525, 107, 1);
-INSERT INTO `sys_relation` VALUES (6526, 108, 1);
-INSERT INTO `sys_relation` VALUES (6527, 109, 1);
-INSERT INTO `sys_relation` VALUES (6528, 110, 1);
-INSERT INTO `sys_relation` VALUES (6529, 111, 1);
-INSERT INTO `sys_relation` VALUES (6530, 112, 1);
-INSERT INTO `sys_relation` VALUES (6531, 113, 1);
-INSERT INTO `sys_relation` VALUES (6532, 165, 1);
-INSERT INTO `sys_relation` VALUES (6533, 166, 1);
-INSERT INTO `sys_relation` VALUES (6534, 167, 1);
-INSERT INTO `sys_relation` VALUES (6535, 168, 1);
-INSERT INTO `sys_relation` VALUES (6536, 178, 1);
-INSERT INTO `sys_relation` VALUES (6537, 181, 1);
-INSERT INTO `sys_relation` VALUES (6538, 141, 1);
-INSERT INTO `sys_relation` VALUES (6539, 142, 1);
-INSERT INTO `sys_relation` VALUES (6540, 143, 1);
-INSERT INTO `sys_relation` VALUES (6541, 144, 1);
-INSERT INTO `sys_relation` VALUES (6542, 194, 1);
-INSERT INTO `sys_relation` VALUES (6543, 195, 1);
-INSERT INTO `sys_relation` VALUES (6544, 182, 1);
-INSERT INTO `sys_relation` VALUES (6545, 183, 1);
-INSERT INTO `sys_relation` VALUES (6546, 184, 1);
-INSERT INTO `sys_relation` VALUES (6547, 185, 1);
-INSERT INTO `sys_relation` VALUES (6548, 131, 1);
-INSERT INTO `sys_relation` VALUES (6549, 135, 1);
-INSERT INTO `sys_relation` VALUES (6550, 136, 1);
-INSERT INTO `sys_relation` VALUES (6551, 137, 1);
-INSERT INTO `sys_relation` VALUES (6552, 152, 1);
-INSERT INTO `sys_relation` VALUES (6553, 153, 1);
-INSERT INTO `sys_relation` VALUES (6554, 154, 1);
-INSERT INTO `sys_relation` VALUES (6555, 186, 1);
-INSERT INTO `sys_relation` VALUES (6556, 187, 1);
-INSERT INTO `sys_relation` VALUES (6557, 114, 1);
-INSERT INTO `sys_relation` VALUES (6558, 115, 1);
-INSERT INTO `sys_relation` VALUES (6559, 116, 1);
-INSERT INTO `sys_relation` VALUES (6560, 117, 1);
-INSERT INTO `sys_relation` VALUES (6561, 118, 1);
-INSERT INTO `sys_relation` VALUES (6562, 162, 1);
-INSERT INTO `sys_relation` VALUES (6563, 163, 1);
-INSERT INTO `sys_relation` VALUES (6564, 164, 1);
-INSERT INTO `sys_relation` VALUES (6565, 128, 1);
-INSERT INTO `sys_relation` VALUES (6566, 134, 1);
-INSERT INTO `sys_relation` VALUES (6567, 158, 1);
-INSERT INTO `sys_relation` VALUES (6568, 159, 1);
-INSERT INTO `sys_relation` VALUES (6569, 133, 1);
-INSERT INTO `sys_relation` VALUES (6570, 160, 1);
-INSERT INTO `sys_relation` VALUES (6571, 161, 1);
-INSERT INTO `sys_relation` VALUES (6572, 197, 1);
-INSERT INTO `sys_relation` VALUES (6573, 198, 1);
-INSERT INTO `sys_relation` VALUES (6574, 199, 1);
-INSERT INTO `sys_relation` VALUES (6575, 200, 1);
-INSERT INTO `sys_relation` VALUES (6576, 177, 1);
-INSERT INTO `sys_relation` VALUES (6577, 188, 1);
-INSERT INTO `sys_relation` VALUES (6578, 206, 1);
-INSERT INTO `sys_relation` VALUES (6579, 210, 1);
-INSERT INTO `sys_relation` VALUES (6580, 215, 1);
 INSERT INTO `sys_relation` VALUES (6581, 105, 5);
 INSERT INTO `sys_relation` VALUES (6582, 119, 5);
 INSERT INTO `sys_relation` VALUES (6583, 120, 5);
@@ -1847,56 +1779,6 @@ INSERT INTO `sys_relation` VALUES (6984, 188, 10);
 INSERT INTO `sys_relation` VALUES (6985, 206, 10);
 INSERT INTO `sys_relation` VALUES (6986, 210, 10);
 INSERT INTO `sys_relation` VALUES (6987, 215, 10);
-INSERT INTO `sys_relation` VALUES (6988, 145, 11);
-INSERT INTO `sys_relation` VALUES (6989, 142, 11);
-INSERT INTO `sys_relation` VALUES (6990, 143, 11);
-INSERT INTO `sys_relation` VALUES (6991, 144, 11);
-INSERT INTO `sys_relation` VALUES (6992, 194, 11);
-INSERT INTO `sys_relation` VALUES (6993, 195, 11);
-INSERT INTO `sys_relation` VALUES (6994, 173, 11);
-INSERT INTO `sys_relation` VALUES (6995, 174, 11);
-INSERT INTO `sys_relation` VALUES (6996, 176, 11);
-INSERT INTO `sys_relation` VALUES (6997, 106, 11);
-INSERT INTO `sys_relation` VALUES (6998, 107, 11);
-INSERT INTO `sys_relation` VALUES (6999, 108, 11);
-INSERT INTO `sys_relation` VALUES (7000, 109, 11);
-INSERT INTO `sys_relation` VALUES (7001, 110, 11);
-INSERT INTO `sys_relation` VALUES (7002, 111, 11);
-INSERT INTO `sys_relation` VALUES (7003, 112, 11);
-INSERT INTO `sys_relation` VALUES (7004, 113, 11);
-INSERT INTO `sys_relation` VALUES (7005, 165, 11);
-INSERT INTO `sys_relation` VALUES (7006, 166, 11);
-INSERT INTO `sys_relation` VALUES (7007, 167, 11);
-INSERT INTO `sys_relation` VALUES (7008, 168, 11);
-INSERT INTO `sys_relation` VALUES (7009, 178, 11);
-INSERT INTO `sys_relation` VALUES (7010, 183, 11);
-INSERT INTO `sys_relation` VALUES (7011, 131, 11);
-INSERT INTO `sys_relation` VALUES (7012, 135, 11);
-INSERT INTO `sys_relation` VALUES (7013, 136, 11);
-INSERT INTO `sys_relation` VALUES (7014, 137, 11);
-INSERT INTO `sys_relation` VALUES (7015, 152, 11);
-INSERT INTO `sys_relation` VALUES (7016, 153, 11);
-INSERT INTO `sys_relation` VALUES (7017, 154, 11);
-INSERT INTO `sys_relation` VALUES (7018, 114, 11);
-INSERT INTO `sys_relation` VALUES (7019, 115, 11);
-INSERT INTO `sys_relation` VALUES (7020, 116, 11);
-INSERT INTO `sys_relation` VALUES (7021, 117, 11);
-INSERT INTO `sys_relation` VALUES (7022, 118, 11);
-INSERT INTO `sys_relation` VALUES (7023, 162, 11);
-INSERT INTO `sys_relation` VALUES (7024, 163, 11);
-INSERT INTO `sys_relation` VALUES (7025, 164, 11);
-INSERT INTO `sys_relation` VALUES (7026, 128, 11);
-INSERT INTO `sys_relation` VALUES (7027, 134, 11);
-INSERT INTO `sys_relation` VALUES (7028, 158, 11);
-INSERT INTO `sys_relation` VALUES (7029, 159, 11);
-INSERT INTO `sys_relation` VALUES (7030, 133, 11);
-INSERT INTO `sys_relation` VALUES (7031, 160, 11);
-INSERT INTO `sys_relation` VALUES (7032, 161, 11);
-INSERT INTO `sys_relation` VALUES (7033, 177, 11);
-INSERT INTO `sys_relation` VALUES (7034, 188, 11);
-INSERT INTO `sys_relation` VALUES (7035, 206, 11);
-INSERT INTO `sys_relation` VALUES (7036, 210, 11);
-INSERT INTO `sys_relation` VALUES (7037, 215, 11);
 INSERT INTO `sys_relation` VALUES (7038, 145, 12);
 INSERT INTO `sys_relation` VALUES (7039, 142, 12);
 INSERT INTO `sys_relation` VALUES (7040, 143, 12);
@@ -2515,6 +2397,175 @@ INSERT INTO `sys_relation` VALUES (7753, 188, 8);
 INSERT INTO `sys_relation` VALUES (7754, 206, 8);
 INSERT INTO `sys_relation` VALUES (7755, 210, 8);
 INSERT INTO `sys_relation` VALUES (7756, 215, 8);
+INSERT INTO `sys_relation` VALUES (7757, 114, 11);
+INSERT INTO `sys_relation` VALUES (7758, 115, 11);
+INSERT INTO `sys_relation` VALUES (7759, 116, 11);
+INSERT INTO `sys_relation` VALUES (7760, 117, 11);
+INSERT INTO `sys_relation` VALUES (7761, 118, 11);
+INSERT INTO `sys_relation` VALUES (7762, 162, 11);
+INSERT INTO `sys_relation` VALUES (7763, 163, 11);
+INSERT INTO `sys_relation` VALUES (7764, 164, 11);
+INSERT INTO `sys_relation` VALUES (7765, 145, 11);
+INSERT INTO `sys_relation` VALUES (7766, 142, 11);
+INSERT INTO `sys_relation` VALUES (7767, 143, 11);
+INSERT INTO `sys_relation` VALUES (7768, 144, 11);
+INSERT INTO `sys_relation` VALUES (7769, 194, 11);
+INSERT INTO `sys_relation` VALUES (7770, 195, 11);
+INSERT INTO `sys_relation` VALUES (7771, 173, 11);
+INSERT INTO `sys_relation` VALUES (7772, 174, 11);
+INSERT INTO `sys_relation` VALUES (7773, 176, 11);
+INSERT INTO `sys_relation` VALUES (7774, 106, 11);
+INSERT INTO `sys_relation` VALUES (7775, 107, 11);
+INSERT INTO `sys_relation` VALUES (7776, 108, 11);
+INSERT INTO `sys_relation` VALUES (7777, 109, 11);
+INSERT INTO `sys_relation` VALUES (7778, 110, 11);
+INSERT INTO `sys_relation` VALUES (7779, 111, 11);
+INSERT INTO `sys_relation` VALUES (7780, 112, 11);
+INSERT INTO `sys_relation` VALUES (7781, 113, 11);
+INSERT INTO `sys_relation` VALUES (7782, 165, 11);
+INSERT INTO `sys_relation` VALUES (7783, 166, 11);
+INSERT INTO `sys_relation` VALUES (7784, 167, 11);
+INSERT INTO `sys_relation` VALUES (7785, 168, 11);
+INSERT INTO `sys_relation` VALUES (7786, 178, 11);
+INSERT INTO `sys_relation` VALUES (7787, 142, 11);
+INSERT INTO `sys_relation` VALUES (7788, 143, 11);
+INSERT INTO `sys_relation` VALUES (7789, 144, 11);
+INSERT INTO `sys_relation` VALUES (7790, 194, 11);
+INSERT INTO `sys_relation` VALUES (7791, 195, 11);
+INSERT INTO `sys_relation` VALUES (7792, 183, 11);
+INSERT INTO `sys_relation` VALUES (7793, 216, 11);
+INSERT INTO `sys_relation` VALUES (7794, 217, 11);
+INSERT INTO `sys_relation` VALUES (7795, 218, 11);
+INSERT INTO `sys_relation` VALUES (7796, 131, 11);
+INSERT INTO `sys_relation` VALUES (7797, 135, 11);
+INSERT INTO `sys_relation` VALUES (7798, 136, 11);
+INSERT INTO `sys_relation` VALUES (7799, 137, 11);
+INSERT INTO `sys_relation` VALUES (7800, 152, 11);
+INSERT INTO `sys_relation` VALUES (7801, 153, 11);
+INSERT INTO `sys_relation` VALUES (7802, 154, 11);
+INSERT INTO `sys_relation` VALUES (7803, 128, 11);
+INSERT INTO `sys_relation` VALUES (7804, 134, 11);
+INSERT INTO `sys_relation` VALUES (7805, 158, 11);
+INSERT INTO `sys_relation` VALUES (7806, 159, 11);
+INSERT INTO `sys_relation` VALUES (7807, 133, 11);
+INSERT INTO `sys_relation` VALUES (7808, 160, 11);
+INSERT INTO `sys_relation` VALUES (7809, 161, 11);
+INSERT INTO `sys_relation` VALUES (7810, 177, 11);
+INSERT INTO `sys_relation` VALUES (7811, 188, 11);
+INSERT INTO `sys_relation` VALUES (7812, 206, 11);
+INSERT INTO `sys_relation` VALUES (7813, 210, 11);
+INSERT INTO `sys_relation` VALUES (7814, 215, 11);
+INSERT INTO `sys_relation` VALUES (7815, 105, 1);
+INSERT INTO `sys_relation` VALUES (7816, 114, 1);
+INSERT INTO `sys_relation` VALUES (7817, 115, 1);
+INSERT INTO `sys_relation` VALUES (7818, 116, 1);
+INSERT INTO `sys_relation` VALUES (7819, 117, 1);
+INSERT INTO `sys_relation` VALUES (7820, 118, 1);
+INSERT INTO `sys_relation` VALUES (7821, 162, 1);
+INSERT INTO `sys_relation` VALUES (7822, 163, 1);
+INSERT INTO `sys_relation` VALUES (7823, 164, 1);
+INSERT INTO `sys_relation` VALUES (7824, 119, 1);
+INSERT INTO `sys_relation` VALUES (7825, 120, 1);
+INSERT INTO `sys_relation` VALUES (7826, 121, 1);
+INSERT INTO `sys_relation` VALUES (7827, 122, 1);
+INSERT INTO `sys_relation` VALUES (7828, 150, 1);
+INSERT INTO `sys_relation` VALUES (7829, 151, 1);
+INSERT INTO `sys_relation` VALUES (7830, 130, 1);
+INSERT INTO `sys_relation` VALUES (7831, 132, 1);
+INSERT INTO `sys_relation` VALUES (7832, 138, 1);
+INSERT INTO `sys_relation` VALUES (7833, 139, 1);
+INSERT INTO `sys_relation` VALUES (7834, 140, 1);
+INSERT INTO `sys_relation` VALUES (7835, 155, 1);
+INSERT INTO `sys_relation` VALUES (7836, 156, 1);
+INSERT INTO `sys_relation` VALUES (7837, 157, 1);
+INSERT INTO `sys_relation` VALUES (7838, 148, 1);
+INSERT INTO `sys_relation` VALUES (7839, 149, 1);
+INSERT INTO `sys_relation` VALUES (7840, 145, 1);
+INSERT INTO `sys_relation` VALUES (7841, 142, 1);
+INSERT INTO `sys_relation` VALUES (7842, 143, 1);
+INSERT INTO `sys_relation` VALUES (7843, 144, 1);
+INSERT INTO `sys_relation` VALUES (7844, 194, 1);
+INSERT INTO `sys_relation` VALUES (7845, 195, 1);
+INSERT INTO `sys_relation` VALUES (7846, 169, 1);
+INSERT INTO `sys_relation` VALUES (7847, 170, 1);
+INSERT INTO `sys_relation` VALUES (7848, 179, 1);
+INSERT INTO `sys_relation` VALUES (7849, 180, 1);
+INSERT INTO `sys_relation` VALUES (7850, 171, 1);
+INSERT INTO `sys_relation` VALUES (7851, 175, 1);
+INSERT INTO `sys_relation` VALUES (7852, 196, 1);
+INSERT INTO `sys_relation` VALUES (7853, 201, 1);
+INSERT INTO `sys_relation` VALUES (7854, 202, 1);
+INSERT INTO `sys_relation` VALUES (7855, 172, 1);
+INSERT INTO `sys_relation` VALUES (7856, 207, 1);
+INSERT INTO `sys_relation` VALUES (7857, 208, 1);
+INSERT INTO `sys_relation` VALUES (7858, 209, 1);
+INSERT INTO `sys_relation` VALUES (7859, 189, 1);
+INSERT INTO `sys_relation` VALUES (7860, 203, 1);
+INSERT INTO `sys_relation` VALUES (7861, 204, 1);
+INSERT INTO `sys_relation` VALUES (7862, 205, 1);
+INSERT INTO `sys_relation` VALUES (7863, 190, 1);
+INSERT INTO `sys_relation` VALUES (7864, 191, 1);
+INSERT INTO `sys_relation` VALUES (7865, 192, 1);
+INSERT INTO `sys_relation` VALUES (7866, 193, 1);
+INSERT INTO `sys_relation` VALUES (7867, 211, 1);
+INSERT INTO `sys_relation` VALUES (7868, 212, 1);
+INSERT INTO `sys_relation` VALUES (7869, 213, 1);
+INSERT INTO `sys_relation` VALUES (7870, 214, 1);
+INSERT INTO `sys_relation` VALUES (7871, 173, 1);
+INSERT INTO `sys_relation` VALUES (7872, 174, 1);
+INSERT INTO `sys_relation` VALUES (7873, 176, 1);
+INSERT INTO `sys_relation` VALUES (7874, 106, 1);
+INSERT INTO `sys_relation` VALUES (7875, 107, 1);
+INSERT INTO `sys_relation` VALUES (7876, 108, 1);
+INSERT INTO `sys_relation` VALUES (7877, 109, 1);
+INSERT INTO `sys_relation` VALUES (7878, 110, 1);
+INSERT INTO `sys_relation` VALUES (7879, 111, 1);
+INSERT INTO `sys_relation` VALUES (7880, 112, 1);
+INSERT INTO `sys_relation` VALUES (7881, 113, 1);
+INSERT INTO `sys_relation` VALUES (7882, 165, 1);
+INSERT INTO `sys_relation` VALUES (7883, 166, 1);
+INSERT INTO `sys_relation` VALUES (7884, 167, 1);
+INSERT INTO `sys_relation` VALUES (7885, 168, 1);
+INSERT INTO `sys_relation` VALUES (7886, 178, 1);
+INSERT INTO `sys_relation` VALUES (7887, 181, 1);
+INSERT INTO `sys_relation` VALUES (7888, 141, 1);
+INSERT INTO `sys_relation` VALUES (7889, 142, 1);
+INSERT INTO `sys_relation` VALUES (7890, 143, 1);
+INSERT INTO `sys_relation` VALUES (7891, 144, 1);
+INSERT INTO `sys_relation` VALUES (7892, 194, 1);
+INSERT INTO `sys_relation` VALUES (7893, 195, 1);
+INSERT INTO `sys_relation` VALUES (7894, 182, 1);
+INSERT INTO `sys_relation` VALUES (7895, 183, 1);
+INSERT INTO `sys_relation` VALUES (7896, 216, 1);
+INSERT INTO `sys_relation` VALUES (7897, 217, 1);
+INSERT INTO `sys_relation` VALUES (7898, 218, 1);
+INSERT INTO `sys_relation` VALUES (7899, 184, 1);
+INSERT INTO `sys_relation` VALUES (7900, 185, 1);
+INSERT INTO `sys_relation` VALUES (7901, 131, 1);
+INSERT INTO `sys_relation` VALUES (7902, 135, 1);
+INSERT INTO `sys_relation` VALUES (7903, 136, 1);
+INSERT INTO `sys_relation` VALUES (7904, 137, 1);
+INSERT INTO `sys_relation` VALUES (7905, 152, 1);
+INSERT INTO `sys_relation` VALUES (7906, 153, 1);
+INSERT INTO `sys_relation` VALUES (7907, 154, 1);
+INSERT INTO `sys_relation` VALUES (7908, 186, 1);
+INSERT INTO `sys_relation` VALUES (7909, 187, 1);
+INSERT INTO `sys_relation` VALUES (7910, 128, 1);
+INSERT INTO `sys_relation` VALUES (7911, 134, 1);
+INSERT INTO `sys_relation` VALUES (7912, 158, 1);
+INSERT INTO `sys_relation` VALUES (7913, 159, 1);
+INSERT INTO `sys_relation` VALUES (7914, 133, 1);
+INSERT INTO `sys_relation` VALUES (7915, 160, 1);
+INSERT INTO `sys_relation` VALUES (7916, 161, 1);
+INSERT INTO `sys_relation` VALUES (7917, 197, 1);
+INSERT INTO `sys_relation` VALUES (7918, 198, 1);
+INSERT INTO `sys_relation` VALUES (7919, 199, 1);
+INSERT INTO `sys_relation` VALUES (7920, 200, 1);
+INSERT INTO `sys_relation` VALUES (7921, 177, 1);
+INSERT INTO `sys_relation` VALUES (7922, 188, 1);
+INSERT INTO `sys_relation` VALUES (7923, 206, 1);
+INSERT INTO `sys_relation` VALUES (7924, 210, 1);
+INSERT INTO `sys_relation` VALUES (7925, 215, 1);
 COMMIT;
 
 -- ----------------------------
@@ -2593,7 +2644,7 @@ CREATE TABLE `sys_user` (
 BEGIN;
 INSERT INTO `sys_user` VALUES (1, '', 'admin', 'ecfadcde9305f8891bcfe5a1e28c253e', '8pgby', 'maxcj', '2018-12-11 17:57:04', 1, '', '', '1', 0, 1, '2018-11-27 15:42:53', 25, 1);
 INSERT INTO `sys_user` VALUES (47, '', 'leilz', '775b08d2315debe6b289a2c8a0d8be54', 'qayuu', '哈哈哈', '2019-04-29 00:00:00', 1, '', '', '8,21', 33, 1, '2018-11-27 15:43:10', NULL, 12);
-INSERT INTO `sys_user` VALUES (48, '', 'zhongcj', '8c26ef6046898d3ab7511132f0bab0bc', 'ahihk', '钟乘剑', '2019-04-29 00:00:00', 1, '90328@qq.com', '13222222222', '1,7,21', 33, 1, '2018-11-27 15:43:46', NULL, 12);
+INSERT INTO `sys_user` VALUES (48, '', 'zhongcj', '8c26ef6046898d3ab7511132f0bab0bc', 'ahihk', 'Maxcj', '2019-04-29 00:00:00', 1, '90328@qq.com', '13222222222', '1,7,21', 33, 1, '2018-11-27 15:43:46', NULL, 12);
 INSERT INTO `sys_user` VALUES (49, '', 'aixinshe', '2209d28da013ab4a8d25e23ebbf777d5', '4myee', '爱心社测试1', '2019-04-17 00:00:00', 2, '', '17670511003', '21,22', 39, 1, '2018-12-04 14:54:06', NULL, 2);
 INSERT INTO `sys_user` VALUES (50, NULL, '15436303', '47a97fb3e2be7c3c52fef64cb9a44afa', 'q4iah', '15436303', '2019-04-29 00:00:00', 1, NULL, '17670511003', '21', 39, 1, '2019-04-17 16:38:22', NULL, 1);
 INSERT INTO `sys_user` VALUES (51, NULL, '15436300', '7d61b3abe3485e1ee623614714dd72ee', 'iqwoq', '15436300', '2019-04-29 00:00:00', 2, NULL, NULL, '21,22', 57, 1, '2019-04-17 16:55:14', NULL, 11);
