@@ -57,7 +57,10 @@
         <if test="condition != null and condition != ''">
             and simplename like CONCAT('%',#{condition},'%') or fullname like CONCAT('%',#{condition},'%')
         </if>
+    </select>
 
+    <select id="club_son" resultType="cn.maxcj.modular.system.model.Dept">
+        select * from sys_dept where pid = #{deptid}
     </select>
 
     <select id="clublistWithcategoryId" parameterType="java.lang.Integer" resultType="map">

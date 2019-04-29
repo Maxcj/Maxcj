@@ -127,7 +127,25 @@ public class DeptController extends BaseController {
         }
         //完善pids,根据pid拿到pid的pids
         deptSetPids(dept);
-        return this.deptService.insert(dept);
+        this.deptService.insert(dept);
+        //添加社团下属七个部门
+        for (int i = 0; i < 7; i++){
+            Dept dept1 = new Dept();
+            dept1.setPid(dept.getId());
+            deptSetPids(dept1);
+            switch (i){
+                case 0 : dept1.setSimplename("秘书处");dept1.setFullname("秘书处"); break;
+                case 1 : dept1.setSimplename("宣传部");dept1.setFullname("宣传部"); break;
+                case 2 : dept1.setSimplename("活动部");dept1.setFullname("活动部"); break;
+                case 3 : dept1.setSimplename("财务部");dept1.setFullname("财务部"); break;
+                case 4 : dept1.setSimplename("组织部");dept1.setFullname("组织部"); break;
+                case 5 : dept1.setSimplename("公关部");dept1.setFullname("公关部"); break;
+                case 6 : dept1.setSimplename("网信部");dept1.setFullname("网信部"); break;
+                default : break;
+            }
+            this.deptService.insert(dept1);
+        }
+        return true;
     }
 
     /**
@@ -212,6 +230,11 @@ public class DeptController extends BaseController {
     public Object delete(@RequestParam Integer deptId) {
         //缓存被删除的部门名称
         LogObjectHolder.me().set(ConstantFactory.me().getDeptName(deptId));
+        //查询社团下属部门
+        List<Dept> club_son = this.deptService.club_son(deptId);
+        for (int i = 0; i < club_son.size(); i++){
+            deptService.deleteDept(club_son.get(i).getId());
+        }
         deptService.deleteDept(deptId);
         return SUCCESS_TIP;
     }

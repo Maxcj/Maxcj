@@ -41,6 +41,11 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     }
 
     @Override
+    public List<Dept> club_son(Integer deptid) {
+        return this.deptMapper.club_son(deptid);
+    }
+
+    @Override
     public List<ZTreeNode> tree() {
         return this.baseMapper.tree();
     }
