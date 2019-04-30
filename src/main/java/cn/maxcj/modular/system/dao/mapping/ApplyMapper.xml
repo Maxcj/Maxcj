@@ -20,7 +20,18 @@
     </select>
 
     <select id="listByDeptid" parameterType="java.lang.Integer" resultType="map">
+        select a.* from sys_apply a left join sys_user u on a.userid = u.id where a.deptid = #{deptid} and a.agree = "0"
+        <if test="con != null and con != ''">
+            and u.name like CONCAT('%',#{con},'%')
+        </if>
+    </select>
+
+    <select id="applys" parameterType="java.lang.Integer" resultType="cn.maxcj.modular.system.model.Apply">
         select <include refid="Base_Column_List"></include> from sys_apply where deptid = #{deptid} and agree = "0"
+    </select>
+
+    <select id="apply_exist" parameterType="java.lang.Integer" resultType="cn.maxcj.modular.system.model.Apply">
+        select * from sys_apply where userid = #{userid} and agree = "0"
     </select>
 
 </mapper>

@@ -68,6 +68,6 @@ public interface DeptMapper extends BaseMapper<Dept> {
      * @param condition
      * @return
      */
-    List<Map<String, Object>> allclub(@Param("condition") String condition);
+    List<Map<String, Object>> allclub(@Param("condition") String condition,@Param("clubCategory") String clubCategory);
 
 }

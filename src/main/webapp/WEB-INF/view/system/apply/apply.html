@@ -10,18 +10,19 @@
                     <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-3">
-                                <#NameCon id="condition" name="名称" />
+                                <#NameCon id="condition" name="申请人姓名" />
                             </div>
                             <div class="col-sm-3">
                                 <#button name="搜索" icon="fa-search" clickFun="Apply.search()"/>
+                                <#button name="重置" icon="fa-trash" clickFun="Apply.research()"/>
                             </div>
                         </div>
                         <div class="hidden-xs" id="ApplyTableToolbar" role="group">
                             @if(shiro.hasPermission("/apply/agree")){
-                                <#button name="通过" icon="fa-plus" clickFun="Apply.agree()"/>
+                                <#button name="通过" icon="fa-check" clickFun="Apply.agree()"/>
                             @}
                             @if(shiro.hasPermission("/apply/agree_all")){
-                                <#button name="一键通过" icon="fa-edit" clickFun="Apply.agree_all()" space="true"/>
+                                <#button name="一键通过" icon="fa-check-square" clickFun="Apply.agree_all()" space="true"/>
                             @}
                             @if(shiro.hasPermission("/apply/disagree")){
                                 <#button name="不通过" icon="fa-remove" clickFun="Apply.disagree()" space="true"/>

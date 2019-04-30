@@ -65,5 +65,5 @@ public interface IDeptService extends IService<Dept> {
     List<Map<String, Object>> clublist(Integer categoryId, String condition);
 
 
-    List<Map<String, Object>> allclub(String condition);
+    List<Map<String, Object>> allclub(String condition, String clubCategory);
 }

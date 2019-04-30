@@ -88,7 +88,7 @@ public class MenuController extends BaseController {
         }
 
         Map<String, Object> menuMap = BeanUtil.beanToMap(menu);
-        menuMap.put("pcodeName", ConstantFactory.me().getMenuNameByCode(temp.getCode()));
+        //menuMap.put("pcodeName", ConstantFactory.me().getMenuNameByCode(temp.getCode()));
         model.addAttribute("menu", menuMap);
         LogObjectHolder.me().set(menu);
         return PREFIX + "menu_edit.html";

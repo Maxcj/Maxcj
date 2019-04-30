@@ -76,8 +76,8 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     }
 
     @Override
-    public List<Map<String, Object>> allclub(String condition) {
-        return deptMapper.allclub(condition);
+    public List<Map<String, Object>> allclub(String condition, String clubCategory) {
+        return deptMapper.allclub(condition, clubCategory);
     }
 
 

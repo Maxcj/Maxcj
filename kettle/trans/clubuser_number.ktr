@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>activity_statistics</name>
+    <name>clubuser_number</name>
     <description />
     <extended_description />
     <trans_version />
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/12/20 14:36:58.506</created_date>
+    <created_date>2019/04/30 09:54:47.815</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/12/20 14:36:58.506</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2019/04/30 09:54:47.815</modified_date>
+    <key_for_session_key />
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -448,10 +448,6 @@
     <data_tablespace />
     <index_tablespace />
     <attributes>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.characterEncoding</code>
-        <attribute>utf8</attribute>
-      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -477,10 +473,6 @@
         <attribute>N</attribute>
       </attribute>
       <attribute>
-        <code>SQL_CONNECT</code>
-        <attribute>set names utf8;</attribute>
-      </attribute>
-      <attribute>
         <code>STREAM_RESULTS</code>
         <attribute>Y</attribute>
       </attribute>
@@ -500,23 +492,13 @@
   </connection>
   <order>
     <hop>
-      <from>各个社团的活动统计</from>
-      <to>计算总活动数量</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>计算总活动数量</from>
-      <to>字段选择</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>字段选择</from>
+      <from>统计各社团人数</from>
       <to>插入 / 更新</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>各个社团的活动统计</name>
+    <name>统计各社团人数</name>
     <type>TableInput</type>
     <description />
     <distribute>Y</distribute>
@@ -527,34 +509,13 @@
       <schema_name />
     </partitioning>
     <connection>本地数据库</connection>
-    <sql>SELECT dd.id,
-	dd.fullname,
-	IFNULL(aa.activity_num, 0) AS commmon_activity_num,
-	IFNULL(bb.activity_num, 0) AS great_activity_num,
-	now() as update_time
-FROM
-	(SELECT d.id, d.fullname
-		FROM sys_dept AS d
-		WHERE d.pid = '38'
-		GROUP BY d.id
-	) AS dd
-LEFT JOIN (
-	SELECT a.activity_club,
-		COUNT(DISTINCT a.activity_id) AS activity_num
-	FROM sys_activity AS a
-	WHERE a.activity_state = '3'
-	AND a.activity_category = '1'
-	GROUP BY a.activity_club
-) AS aa ON dd.id = aa.activity_club
-LEFT JOIN (
-	SELECT a.activity_club,
-		COUNT(DISTINCT a.activity_id) AS activity_num
-	FROM sys_activity AS a
-	WHERE a.activity_state = '3'
-	AND a.activity_category = '2'
-	GROUP BY
-		a.activity_club
-) AS bb ON dd.id = bb.activity_club</sql>
+    <sql>SELECT u.deptid, count( u.id ) AS num 
+FROM sys_user u LEFT JOIN sys_dept d
+ON u.deptid = d.id 
+WHERE u.`status` = "1"
+AND d.pid = "38" 
+GROUP BY u.deptid 
+ORDER BY u.deptid ASC</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -569,156 +530,8 @@ LEFT JOIN (
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>字段选择</name>
-    <type>SelectValues</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <fields>
-      <field>
-        <name>id</name>
-      </field>
-      <field>
-        <name>fullname</name>
-      </field>
-      <field>
-        <name>commmon_activity_num</name>
-      </field>
-      <field>
-        <name>great_activity_num</name>
-      </field>
-      <field>
-        <name>activity_total</name>
-      </field>
-      <field>
-        <name>update_time</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>id</name>
-        <rename>id</rename>
-        <type>None</type>
-        <length>9</length>
-        <precision>0</precision>
-        <conversion_mask />
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale />
-        <date_format_timezone />
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding />
-        <decimal_symbol />
-        <grouping_symbol />
-        <currency_symbol />
-        <storage_type />
-      </meta>
-      <meta>
-        <name>fullname</name>
-        <rename>fullname</rename>
-        <type>None</type>
-        <length>255</length>
-        <precision>-2</precision>
-        <conversion_mask />
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale />
-        <date_format_timezone />
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding />
-        <decimal_symbol />
-        <grouping_symbol />
-        <currency_symbol />
-        <storage_type />
-      </meta>
-      <meta>
-        <name>commmon_activity_num</name>
-        <rename>commmon_activity_num</rename>
-        <type>None</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask />
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale />
-        <date_format_timezone />
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding />
-        <decimal_symbol />
-        <grouping_symbol />
-        <currency_symbol />
-        <storage_type />
-      </meta>
-      <meta>
-        <name>great_activity_num</name>
-        <rename>great_activity_num</rename>
-        <type>None</type>
-        <length>15</length>
-        <precision>0</precision>
-        <conversion_mask />
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale />
-        <date_format_timezone />
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding />
-        <decimal_symbol />
-        <grouping_symbol />
-        <currency_symbol />
-        <storage_type />
-      </meta>
-      <meta>
-        <name>activity_total</name>
-        <rename>activity_total</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>0</precision>
-        <conversion_mask />
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale />
-        <date_format_timezone />
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding />
-        <decimal_symbol />
-        <grouping_symbol />
-        <currency_symbol />
-        <storage_type />
-      </meta>
-      <meta>
-        <name>update_time</name>
-        <rename>update_time</rename>
-        <type>None</type>
-        <length>0</length>
-        <precision>-2</precision>
-        <conversion_mask />
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale />
-        <date_format_timezone />
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding />
-        <decimal_symbol />
-        <grouping_symbol />
-        <currency_symbol />
-        <storage_type />
-      </meta>
-    </fields>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>224</yloc>
+      <xloc>144</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -738,47 +551,16 @@ LEFT JOIN (
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema />
-      <table>activity_statistics</table>
+      <table>sys_clubinfo</table>
       <key>
-        <name>id</name>
-        <field>club_id</field>
-        <condition>= ~NULL</condition>
-        <name2 />
-      </key>
-      <key>
-        <name>fullname</name>
-        <field>club_name</field>
+        <name>deptid</name>
+        <field>deptid</field>
         <condition>= ~NULL</condition>
         <name2 />
       </key>
       <value>
-        <name>club_id</name>
-        <rename>id</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>club_name</name>
-        <rename>fullname</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>common_num</name>
-        <rename>commmon_activity_num</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>great_num</name>
-        <rename>great_activity_num</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>total</name>
-        <rename>activity_total</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>update_time</name>
-        <rename>update_time</rename>
+        <name>club_number</name>
+        <rename>num</rename>
         <update>Y</update>
       </value>
     </lookup>
@@ -791,49 +573,8 @@ LEFT JOIN (
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>计算总活动数量</name>
-    <type>Calculator</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>activity_total</field_name>
-      <calc_type>ADD</calc_type>
-      <field_a>commmon_activity_num</field_a>
-      <field_b>great_activity_num</field_b>
-      <field_c />
-      <value_type>Integer</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask />
-      <decimal_symbol />
-      <grouping_symbol />
-      <currency_symbol />
-    </calculation>
-    <attributes />
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>320</xloc>
-      <yloc>224</yloc>
+      <xloc>336</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

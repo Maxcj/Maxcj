@@ -34,10 +34,10 @@
                     <!-- 此页面为活动审批页面 -->
                     <div class="hidden-xs" id="ActivityTableToolbar" role="group">
                         @if(shiro.hasPermission("/activity/apply_agree")){
-                        <#button name="通过" icon="fa-plus" clickFun="Activity.apply_agree()"/>
+                        <#button name="通过" icon="fa-check" clickFun="Activity.apply_agree()"/>
                         @}
                         @if(shiro.hasPermission("/activity/apply_refuse")){
-                        <#button name="拒绝" icon="fa-edit" clickFun="Activity.apply_refuse()" space="true"/>
+                        <#button name="拒绝" icon="fa-remove" clickFun="Activity.apply_refuse()" space="true"/>
                         @}
                     </div>
                     <#table id="ActivityTable"/>

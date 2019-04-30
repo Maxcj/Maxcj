@@ -15,10 +15,10 @@ Message.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
             {title: '留言id', field: 'id', visible: false, align: 'center', valign: 'middle'},
-            {title: '留言标题', field: 'title', visible: true, align: 'center', valign: 'middle'},
-            {title: '留言内容', field: 'content', visible: true, align: 'center', valign: 'middle'},
-            {title: '留言人姓名', field: 'username', visible: true, align: 'center', valign: 'middle'},
-            {title: '留言时间', field: 'createtime', visible: true, align: 'center', valign: 'middle'},
+            {title: '留言标题', field: 'title', visible: true, align: 'center', valign: 'middle', sortable: true},
+            {title: '留言内容', field: 'content', visible: true, align: 'center', valign: 'middle', sortable: true},
+            {title: '留言人姓名', field: 'username', visible: true, align: 'center', valign: 'middle', sortable: true},
+            {title: '留言时间', field: 'createtime', visible: true, align: 'center', valign: 'middle', sortable: true},
             {title: '预留字段', field: 'string1', visible: false, align: 'center', valign: 'middle'}
     ];
 };
@@ -84,6 +84,17 @@ Message.delete = function () {
         ajax.start();
     }
 };
+
+/**
+ * 重置搜索
+ */
+Message.resetSearch = function () {
+    $("#condition").val("");
+    Message.search();
+};
+
+
+
 
 /**
  * 查询留言管理列表

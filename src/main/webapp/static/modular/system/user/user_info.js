@@ -57,13 +57,17 @@ var UserInfoDlg = {
             }
         },
         email: {
-            notEmpty: {
-                message: 'QQ邮箱不能为空'
+            validators: {
+                notEmpty: {
+                    message: '邮箱不能为空'
+                }
             }
         },
         academy: {
-            notEmpty: {
-                message: '所在学院不能为空'
+            validators: {
+                notEmpty: {
+                    message: '所在学院不能为空'
+                }
             }
         },
         phone: {
@@ -79,6 +83,13 @@ var UserInfoDlg = {
                 regexp: {
                     regexp: /^1[0-9]{10}$/,
                     message: '请输入正确的手机号码'
+                }
+            }
+        },
+        birthday: {
+            validators: {
+                notEmpty: {
+                    message: '生日不能为空'
                 }
             }
         }
@@ -308,7 +319,6 @@ function onBodyDown(event) {
 
 $(function () {
     Feng.initValidator("userInfoForm", UserInfoDlg.validateFields);
-
     //初始化性别选项
     $("#sex").val($("#sexValue").val());
     $("#academy").val($("#academyValue").val());

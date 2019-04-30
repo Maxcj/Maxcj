@@ -13,7 +13,18 @@
                                 <#NameCon id="condition" name="社团名称" />
                             </div>
                             <div class="col-sm-3">
+                                <#SelectCon id="clubCategory" name="社团分类">
+                                    <option value="">请选择...</option>
+                                    <option value="1">体育竞技类</option>
+                                    <option value="2">文化艺术类</option>
+                                    <option value="3">兴趣拓展类</option>
+                                    <option value="4">学术服务类</option>
+                                    <option value="5">理论实践类</option>
+                                </#SelectCon>
+                            </div>
+                            <div class="col-sm-3">
                                 <#button name="搜索" icon="fa-search" clickFun="Dept.search()"/>
+                                <#button name="重置" icon="fa-trash" clickFun="Dept.resetSearch()" space="true"/>
                             </div>
                         </div>
                         <div class="hidden-xs" id="DeptTableToolbar" role="group">

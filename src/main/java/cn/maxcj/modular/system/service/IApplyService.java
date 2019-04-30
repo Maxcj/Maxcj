@@ -27,4 +27,18 @@ public interface IApplyService extends IService<Apply> {
      */
     List<Map<String, Object>> list(Integer deptid, String con);
 
+    /**
+     * 查询某个社团下的所有申请
+     * @param deptid
+     * @return
+     */
+    List<Apply> applys(Integer deptid);
+
+    /**
+     * 判断是否已经有记录了
+     * @param userid
+     * @return
+     */
+    boolean apply_exist(Integer userid);
+
 }

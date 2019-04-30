@@ -7,12 +7,14 @@
             <input type="hidden" id="academyValue" value="${user.academy}">
             <div class="row">
                 <div class="col-sm-6 b-r">
-                    <#input id="account" name="账户/学号" underline="true" value="${user.account}"/>
+                    <#input id="account" name="账户/学号" underline="true" value="${user.account}" disabled="disabled"/>
                     <#select id="sex" name="性别" underline="true">
+                        <option value="">请选择...</option>
                         <option value="1">男</option>
                         <option value="2">女</option>
                     </#select>
                     <#select id="academy" name="所在学院" underline="true">
+                        <option value="">请选择...</option>
                         <option value="1">马克思主义学院</option>
                         <option value="2">农业与生物技术学院</option>
                         <option value="3">法学院</option>
@@ -32,9 +34,9 @@
             </div>
             <div class="col-sm-6">
                 <div id="driverInfoContent">
-                    <#input id="name" name="姓名" underline="true" value="${user.name}" disabled="disabled"/>
-                    <#input id="birthday" name="出生日期" underline="true" type="text" value="${user.birthday}"/>
-                    <#input id="citySel" name="部门" underline="true" disabled="disabled" readonly="readonly" hidden="deptid" hiddenValue="${user.deptid}" value="${deptName}" clickFun="UserInfoDlg.showDeptSelectTree(); return false;" style="background-color: #ffffff !important;"/>
+                    <#input id="name" name="姓名" underline="true" value="${user.name}"/>
+                    <#input id="birthday" name="生日" underline="true" type="text" value="${user.birthday}"/>
+                    <#input id="citySel" name="部门" underline="true" hidden="deptid" hiddenValue="${user.deptid}" value="${deptName}" clickFun="UserInfoDlg.showDeptSelectTree(); return false;" style="background-color: #ffffff !important;"/>
                     <#input id="phone" name="电话" value="${user.phone}"/>
                 </div>
             </div>
@@ -55,10 +57,10 @@
     </div>
 </div>
 </div>
-<script src="${ctxPath}/static/modular/system/user/user_info.js"></script>
 <script>
     laydate.render({
         elem: '#birthday'
     });
 </script>
+<script src="${ctxPath}/static/modular/system/user/user_info.js"></script>
 @}

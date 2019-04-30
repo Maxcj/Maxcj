@@ -10,9 +10,11 @@ import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.core.log.LogObjectHolder;
 import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.modular.system.model.Apply;
+import cn.maxcj.modular.system.model.Clubinfo;
 import cn.maxcj.modular.system.model.Dept;
 import cn.maxcj.modular.system.model.User;
 import cn.maxcj.modular.system.service.IApplyService;
+import cn.maxcj.modular.system.service.IClubinfoService;
 import cn.maxcj.modular.system.service.IDeptService;
 import cn.maxcj.modular.system.service.IUserService;
 import cn.maxcj.modular.system.warpper.ClubWarpper;
@@ -52,6 +54,9 @@ public class DeptController extends BaseController {
 
     @Autowired
     private IApplyService applyService;
+
+    @Autowired
+    private IClubinfoService clubinfoService;
 
     /**
      * 跳转到社团一览页面
@@ -127,23 +132,31 @@ public class DeptController extends BaseController {
         }
         //完善pids,根据pid拿到pid的pids
         deptSetPids(dept);
-        this.deptService.insert(dept);
-        //添加社团下属七个部门
-        for (int i = 0; i < 7; i++){
-            Dept dept1 = new Dept();
-            dept1.setPid(dept.getId());
-            deptSetPids(dept1);
-            switch (i){
-                case 0 : dept1.setSimplename("秘书处");dept1.setFullname("秘书处"); break;
-                case 1 : dept1.setSimplename("宣传部");dept1.setFullname("宣传部"); break;
-                case 2 : dept1.setSimplename("活动部");dept1.setFullname("活动部"); break;
-                case 3 : dept1.setSimplename("财务部");dept1.setFullname("财务部"); break;
-                case 4 : dept1.setSimplename("组织部");dept1.setFullname("组织部"); break;
-                case 5 : dept1.setSimplename("公关部");dept1.setFullname("公关部"); break;
-                case 6 : dept1.setSimplename("网信部");dept1.setFullname("网信部"); break;
-                default : break;
+        try {
+            this.deptService.insert(dept);
+            //添加社团下属七个部门
+            for (int i = 0; i < 7; i++){
+                Dept dept1 = new Dept();
+                dept1.setPid(dept.getId());
+                deptSetPids(dept1);
+                switch (i){
+                    case 0 : dept1.setSimplename("秘书处");dept1.setFullname("秘书处"); break;
+                    case 1 : dept1.setSimplename("宣传部");dept1.setFullname("宣传部"); break;
+                    case 2 : dept1.setSimplename("活动部");dept1.setFullname("活动部"); break;
+                    case 3 : dept1.setSimplename("财务部");dept1.setFullname("财务部"); break;
+                    case 4 : dept1.setSimplename("组织部");dept1.setFullname("组织部"); break;
+                    case 5 : dept1.setSimplename("公关部");dept1.setFullname("公关部"); break;
+                    case 6 : dept1.setSimplename("网信部");dept1.setFullname("网信部"); break;
+                    default : break;
+                }
+                this.deptService.insert(dept1);
             }
-            this.deptService.insert(dept1);
+            //初始化该社团对于的社团信息
+            Clubinfo clubinfo = new Clubinfo();
+            clubinfo.setDeptid(dept.getId());
+            clubinfoService.insert(clubinfo);
+        }catch (Exception e){
+            return false;
         }
         return true;
     }
@@ -166,8 +179,8 @@ public class DeptController extends BaseController {
      */
     @RequestMapping(value = "/allclub")
     @ResponseBody
-    public Object allclub(String condition) {
-        List<Map<String, Object>> list = this.deptService.allclub(condition);
+    public Object allclub(String condition, String clubCategory) {
+        List<Map<String, Object>> list = this.deptService.allclub(condition, clubCategory);
         return super.warpObject(new ClubWarpper(list));
     }
 
@@ -206,8 +219,12 @@ public class DeptController extends BaseController {
     public Object apply(@RequestParam Integer deptId) {
         User user = userService.getByAccount(ShiroKit.getUser().getAccount());
         //判断是否加入过社团
-        if (user.getDeptid() != null){
+        /*if (user.getDeptid() != null){
             return null;
+        }*/
+
+        if (applyService.apply_exist(user.getId())){
+            return SUCCESS_TIP;
         }
         Apply apply = new Apply();
         apply.setUserid(user.getId());

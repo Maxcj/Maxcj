@@ -19,8 +19,7 @@
     </sql>
 
     <select id="getMyClubFinance" parameterType="java.lang.Integer" resultType="map">
-        select *
-        from sys_finance where deptid = #{deptid}
+        select <include refid="Base_Column_List"></include> from sys_finance where deptid = #{deptid}
     </select>
 
 </mapper>

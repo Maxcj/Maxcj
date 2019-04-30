@@ -18,7 +18,11 @@
     </sql>
 
     <select id="message_list" resultType="map">
-        select <include refid="Base_Column_List"></include> from sys_message order by createtime desc
+        select <include refid="Base_Column_List"></include> from sys_message where 1 = 1
+        <if test="condition != null and condition != ''">
+            and (title like CONCAT('%',#{condition},'%') or content like CONCAT('%',#{condition},'%'))
+        </if>
+        order by createtime desc
     </select>
 
 </mapper>

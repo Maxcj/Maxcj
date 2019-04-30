@@ -89,12 +89,16 @@ public class ApplyController extends BaseController {
     /**
      * 新增申请加入社团
      */
-    @RequestMapping(value = "/add")
+    /*@RequestMapping(value = "/add")
     @ResponseBody
     public Object add(Apply apply) {
+        //判断其是否已经存在申请记录
+        if (applyService.apply_exist(apply.getUserid())){
+            return SUCCESS_TIP;
+        }
         applyService.insert(apply);
         return SUCCESS_TIP;
-    }
+    }*/
 
     /**
      * 通过加入社团申请
@@ -110,6 +114,47 @@ public class ApplyController extends BaseController {
         user.setDeptid(deptid);
         userService.updateById(user);
         apply.setAgree(1);
+        applyService.updateById(apply);
+        return SUCCESS_TIP;
+    }
+
+    /**
+     * 一键通过加入社团申请
+     * @return
+     */
+    @RequestMapping(value = "/agree_all")
+    @ResponseBody
+    public Object agree_all() {
+        Integer deptid = ShiroKit.getUser().getDeptId();
+        //将所有申请此社团的用户通过
+        //1 审批记录置1
+        //2 对应用户设置其deptid
+        List<Apply> applies = this.applyService.applys(deptid);
+        try {
+            for (int i = 0; i < applies.size(); i++){
+                Apply apply = applies.get(i);
+                apply.setAgree(1);
+                this.applyService.updateById(apply);
+                User u = this.userService.selectById(apply.getUserid());
+                u.setDeptid(deptid);
+                this.userService.updateById(u);
+            }
+        }catch (Exception e){
+            return false;
+        }
+        return SUCCESS_TIP;
+    }
+
+    /**
+     * 拒绝通过加入社团申请
+     * @param applyId
+     * @return
+     */
+    @RequestMapping(value = "/disagree")
+    @ResponseBody
+    public Object disagree(@RequestParam Integer applyId) {
+        Apply apply = applyService.selectById(applyId);
+        apply.setAgree(-1);
         applyService.updateById(apply);
         return SUCCESS_TIP;
     }

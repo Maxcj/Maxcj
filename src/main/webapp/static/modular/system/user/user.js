@@ -33,6 +33,7 @@ MgrUser.initColumn = function () {
  * 检查是否选中
  */
 MgrUser.check = function () {
+    debugger;
     var selected = $('#' + this.id).bootstrapTable('getSelections');
     if (selected.length == 0) {
         Feng.info("请先选中表格中的某一记录！");

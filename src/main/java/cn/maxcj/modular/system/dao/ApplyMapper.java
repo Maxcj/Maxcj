@@ -21,4 +21,8 @@ public interface ApplyMapper extends BaseMapper<Apply> {
 
     List<Map<String, Object>> listByDeptid(@Param("deptid") Integer deptid, @Param("con") String con);
 
+    List<Apply> applys(@Param("deptid") Integer deptid);
+
+    Apply apply_exist(@Param("userid") Integer userid);
+
 }

@@ -230,6 +230,7 @@ public class UserMgrController extends BaseController {
         user.setPassword(ShiroKit.md5(user.getPassword(), user.getSalt()));
         user.setStatus(ManagerStatus.OK.getCode());
         user.setCreatetime(new Date());
+        user.setRoleid("21");
         this.userService.insert(UserFactory.createUser(user));
         return SUCCESS_TIP;
     }
@@ -405,9 +406,4 @@ public class UserMgrController extends BaseController {
             throw new ServiceException(BizExceptionEnum.NO_PERMITION);
         }
     }
-
-
-
-
-
 }

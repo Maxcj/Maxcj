@@ -33,4 +33,17 @@ public class ApplyServiceImpl extends ServiceImpl<ApplyMapper, Apply> implements
     public List<Map<String, Object>> list(Integer deptid, String con) {
         return applyMapper.listByDeptid(deptid, con);
     }
+
+    @Override
+    public List<Apply> applys(Integer deptid) {
+        return applyMapper.applys(deptid);
+    }
+
+    @Override
+    public boolean apply_exist(Integer userid) {
+        if (applyMapper.apply_exist(userid) != null){
+            return true;
+        }
+        return false;
+    }
 }
