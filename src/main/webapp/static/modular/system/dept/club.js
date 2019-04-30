@@ -14,7 +14,7 @@ var Dept = {
 Dept.initColumn = function () {
     var columns = [
         {field: 'selectItem', radio: true},
-        {title: 'id', field: 'id', visible: true, align: 'center', valign: 'middle', width: '50px'},
+        {title: 'id', field: 'id', visible: false, align: 'center', valign: 'middle', width: '50px'},
         {title: '社团名称', field: 'simplename', align: 'center', valign: 'middle', sortable: true},
         {title: '社团分类', field: 'club_category', align: 'center', valign: 'middle', sortable: true},
         {title: '社团人数', field: 'club_number', align: 'center', valign: 'middle', sortable: true},

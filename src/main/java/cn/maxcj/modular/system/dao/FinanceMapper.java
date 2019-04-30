@@ -17,6 +17,8 @@ import java.util.Map;
  */
 public interface FinanceMapper extends BaseMapper<Finance> {
 
-    List<Map<String, Object>> getMyClubFinance(@Param("deptid") Integer deptid);
+    List<Map<String, Object>> getMyClubFinance(@Param("category") Integer category, @Param("deptid") Integer deptid);
+
+    List<Map<String, Object>> getClubFinance(@Param("condition") String condition, @Param("category") Integer category);
 
 }

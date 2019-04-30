@@ -11,15 +11,31 @@
         <result column="money" property="money" />
         <result column="balance" property="balance" />
         <result column="costtime" property="costtime" />
+        <result column="agree" property="agree" />
+        <result column="agreetime" property="agreetime" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, deptid, category, activityid, money, balance, costtime
+        id, deptid, category, activityid, money, balance, costtime, agree, agreetime
     </sql>
 
     <select id="getMyClubFinance" parameterType="java.lang.Integer" resultType="map">
         select <include refid="Base_Column_List"></include> from sys_finance where deptid = #{deptid}
+        <if test="category != null and category != '' and category != '0'">
+            and category = #{category}
+        </if>
+         order by agreetime desc, costtime desc
+    </select>
+
+    <select id="getClubFinance" parameterType="java.lang.String" resultType="map">
+        select f.* from sys_finance f left join sys_dept d on f.deptid = d.id where f.agree = "2" and d.pid = "38"
+        <if test="condition != null and condition != ''">
+            and (d.simplename like CONCAT('%',#{condition},'%') or d.fullname like CONCAT('%',#{condition},'%'))
+        </if>
+        <if test="category != null and category != '' and category != '0'">
+            and f.category = #{category}
+        </if>
     </select>
 
 </mapper>

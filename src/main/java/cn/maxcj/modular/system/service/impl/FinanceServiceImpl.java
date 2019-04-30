@@ -4,6 +4,7 @@ import cn.maxcj.modular.system.model.Finance;
 import cn.maxcj.modular.system.dao.FinanceMapper;
 import cn.maxcj.modular.system.service.IFinanceService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,12 @@ public class FinanceServiceImpl extends ServiceImpl<FinanceMapper, Finance> impl
 
 
     @Override
-    public List<Map<String, Object>> getMyClubFinance(Integer deptid) {
-        return financeMapper.getMyClubFinance(deptid);
+    public List<Map<String, Object>> getMyClubFinance(Integer condition,Integer deptid) {
+        return financeMapper.getMyClubFinance(condition, deptid);
+    }
+
+    @Override
+    public List<Map<String, Object>> getClubFinance(String condition, Integer category) {
+        return financeMapper.getClubFinance(condition, category);
     }
 }

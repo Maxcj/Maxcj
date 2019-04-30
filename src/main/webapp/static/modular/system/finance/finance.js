@@ -15,12 +15,14 @@ Finance.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
             {title: '', field: 'id', visible: false, align: 'center', valign: 'middle'},
-            {title: '社团', field: 'deptName', visible: true, align: 'center', valign: 'middle'},
-            {title: '类型', field: 'category', visible: true, align: 'center', valign: 'middle'},
-            {title: '关联的活动', field: 'activityName', visible: true, align: 'center', valign: 'middle'},
-            {title: '花费金额', field: 'money', visible: true, align: 'center', valign: 'middle'},
+            {title: '社团', field: 'deptName', visible: true, align: 'center', valign: 'middle', sortable: true},
+            {title: '类型', field: 'category', visible: true, align: 'center', valign: 'middle', sortable: true},
+            {title: '关联的活动', field: 'activityName', visible: true, align: 'center', valign: 'middle', sortable: true},
+            {title: '花费金额', field: 'money', visible: true, align: 'center', valign: 'middle', sortable: true},
             /*{title: '余额', field: 'balance', visible: true, align: 'center', valign: 'middle'},*/
-            {title: '申请日期', field: 'costtime', visible: true, align: 'center', valign: 'middle'}
+            {title: '申请日期', field: 'costtime', visible: true, align: 'center', valign: 'middle', sortable: true},
+            {title: '审批状态', field: 'agree', visible: true, align: 'center', valign: 'middle', sortable: true},
+            {title: '审批日期', field: 'agreetime', visible: true, align: 'center', valign: 'middle', sortable: true}
     ];
 };
 
@@ -92,6 +94,7 @@ Finance.delete = function () {
 Finance.search = function () {
     var queryData = {};
     queryData['condition'] = $("#condition").val();
+    queryData['category'] = $("#category").val();
     Finance.table.refresh({query: queryData});
 };
 

@@ -16,6 +16,8 @@ import java.util.Map;
  */
 public interface IFinanceService extends IService<Finance> {
 
-    List<Map<String, Object>> getMyClubFinance(Integer deptid);
+    List<Map<String, Object>> getMyClubFinance(Integer condition,Integer deptid);
+
+    List<Map<String, Object>> getClubFinance(String condition, Integer category);
 
 }

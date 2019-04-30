@@ -43,9 +43,17 @@ public class Finance extends Model<Finance> {
      */
     private Double balance;
     /**
-     * 日期
+     * 申请日期
      */
     private Date costtime;
+    /**
+     * 是否同意申请
+     */
+    private Integer agree;
+    /**
+     * 审批时间
+     */
+    private Date agreetime;
 
 
     public Integer getId() {
@@ -104,6 +112,22 @@ public class Finance extends Model<Finance> {
         this.costtime = costtime;
     }
 
+    public Integer getAgree() {
+        return agree;
+    }
+
+    public void setAgree(Integer agree) {
+        this.agree = agree;
+    }
+
+    public Date getAgreetime() {
+        return agreetime;
+    }
+
+    public void setAgreetime(Date agreetime) {
+        this.agreetime = agreetime;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.id;
@@ -112,13 +136,15 @@ public class Finance extends Model<Finance> {
     @Override
     public String toString() {
         return "Finance{" +
-        ", id=" + id +
-        ", deptid=" + deptid +
-        ", category=" + category +
-        ", activityid=" + activityid +
-        ", money=" + money +
-        ", balance=" + balance +
-        ", costtime=" + costtime +
-        "}";
+                "id=" + id +
+                ", deptid=" + deptid +
+                ", category=" + category +
+                ", activityid=" + activityid +
+                ", money=" + money +
+                ", balance=" + balance +
+                ", costtime=" + costtime +
+                ", agree=" + agree +
+                ", agreetime=" + agreetime +
+                '}';
     }
 }

@@ -7,6 +7,7 @@ import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.modular.system.service.IActivityService;
 import cn.maxcj.modular.system.warpper.FinanceWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
+import io.swagger.models.auth.In;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -50,6 +51,14 @@ public class FinanceController extends BaseController {
     }
 
     /**
+     * 跳转到财务审批
+     */
+    @RequestMapping("/apply")
+    public String apply() {
+        return PREFIX + "finance_apply.html";
+    }
+
+    /**
      * 跳转到添加社团财务管理
      */
     @RequestMapping("/finance_add")
@@ -72,12 +81,24 @@ public class FinanceController extends BaseController {
     }
 
     /**
+     * 获取所有社团的财务申请列表
+     */
+    @RequestMapping(value = "/club_list")
+    @ResponseBody
+    public Object club_list(String condition, Integer category) {
+
+        List<Map<String, Object>> map = financeService.getClubFinance(condition, category);
+        return super.warpObject(new FinanceWarpper(map));
+    }
+
+
+    /**
      * 获取本社团的财务管理列表
      */
     @RequestMapping(value = "/list")
     @ResponseBody
-    public Object list(String condition) {
-        List<Map<String, Object>> map = financeService.getMyClubFinance(ShiroKit.getUser().getDeptId());
+    public Object list(String condition, Integer category) {
+        List<Map<String, Object>> map = financeService.getMyClubFinance(category, ShiroKit.getUser().getDeptId());
         return super.warpObject(new FinanceWarpper(map));
     }
 
@@ -110,6 +131,26 @@ public class FinanceController extends BaseController {
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Finance finance) {
+        financeService.updateById(finance);
+        return SUCCESS_TIP;
+    }
+
+    @RequestMapping(value = "/apply_refuse")
+    @ResponseBody
+    public Object apply_refuse(Integer financeId) {
+        Finance finance = financeService.selectById(financeId);
+        finance.setAgree(4);
+        finance.setAgreetime(new Date());
+        financeService.updateById(finance);
+        return SUCCESS_TIP;
+    }
+
+    @RequestMapping(value = "/apply_agree")
+    @ResponseBody
+    public Object apply_agree(Integer financeId) {
+        Finance finance = financeService.selectById(financeId);
+        finance.setAgree(3);
+        finance.setAgreetime(new Date());
         financeService.updateById(finance);
         return SUCCESS_TIP;
     }

@@ -33,6 +33,7 @@ public class FinanceWarpper extends BaseControllerWrapper {
     protected void wrapTheMap(Map<String, Object> map) {
         map.put("deptName", ConstantFactory.me().getDeptName((Integer) map.get("deptid")));
         map.put("category", ConstantFactory.me().getFinance((Integer) map.get("category")));
+        map.put("agree", ConstantFactory.me().getActivity_state((Integer) map.get("agree")));
         map.put("activityName", ConstantFactory.me().getActivityName((Integer) map.get("activityid")));
     }
 }

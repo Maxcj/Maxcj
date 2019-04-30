@@ -112,4 +112,5 @@ $(function () {
     var table = new BSTable(Activity.id, "/activity/list", defaultColunms);
     table.setPaginationType("client");
     Activity.table = table.init();
+    $(".fixed-table-toolbar").html("<br/>");
 });

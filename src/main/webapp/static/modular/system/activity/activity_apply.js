@@ -60,14 +60,17 @@ Activity.openActivityDetail = function () {
 
 Activity.apply_refuse = function () {
     if (this.check()) {
-        var ajax = new $ax(Feng.ctxPath + "/activity/apply_refuse", function (data) {
-            Feng.success("已拒绝发起活动");
-            Activity.table.refresh();
-        }, function (data) {
-            Feng.error("审批失败!请联系网信部！" + data.responseJSON.message + "!");
-        });
-        ajax.set("activityId", this.seItem.activity_id);
-        ajax.start();
+        var operation = function () {
+            var ajax = new $ax(Feng.ctxPath + "/activity/apply_refuse", function (data) {
+                Feng.success("已拒绝发起活动");
+                Activity.table.refresh();
+            }, function (data) {
+                Feng.error("审批失败!请联系网信部！" + data.responseJSON.message + "!");
+            });
+            ajax.set("activityId", this.seItem.activity_id);
+            ajax.start();
+        };
+        Feng.confirm("是否拒绝此社团活动申请? ", operation);
     }
 };
 
@@ -75,14 +78,17 @@ Activity.apply_refuse = function () {
 
 Activity.apply_agree = function () {
     if (this.check()) {
-        var ajax = new $ax(Feng.ctxPath + "/activity/apply_agree", function (data) {
-            Feng.success("审批成功!");
-            Activity.table.refresh();
-        }, function (data) {
-            Feng.error("审批失败!请联系网信部!" + data.responseJSON.message + "!");
-        });
-        ajax.set("activityId", this.seItem.activity_id);
-        ajax.start();
+        var operation = function () {
+            var ajax = new $ax(Feng.ctxPath + "/activity/apply_agree", function (data) {
+                Feng.success("审批成功!");
+                Activity.table.refresh();
+            }, function (data) {
+                Feng.error("审批失败!请联系网信部!" + data.responseJSON.message + "!");
+            });
+            ajax.set("activityId", this.seItem.activity_id);
+            ajax.start();
+        };
+        Feng.confirm("是否同意此社团活动申请? ", operation);
     }
 };
 
