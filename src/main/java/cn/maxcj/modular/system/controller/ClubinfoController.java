@@ -67,7 +67,7 @@ public class ClubinfoController extends BaseController {
     public Object myclub(String condition) {
         Integer deptid = ShiroKit.getUser().getDeptId();
         List<Map<String, Object>> list = clubinfoService.queryClubInfo(deptid);
-        return list;
+        return super.warpObject(new ClubInfoWarpper(list));
     }
 
     /**
