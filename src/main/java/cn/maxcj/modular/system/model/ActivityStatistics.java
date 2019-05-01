@@ -19,6 +19,9 @@ public class ActivityStatistics extends Model<ActivityStatistics> {
 
     private static final long serialVersionUID = 1L;
 
+    @TableField("id")
+    private Integer Id;
+
     /**
      * 社团id
      */
@@ -44,6 +47,13 @@ public class ActivityStatistics extends Model<ActivityStatistics> {
      */
     private Integer total;
 
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
+    }
 
     public Integer getClubId() {
         return clubId;
@@ -93,11 +103,12 @@ public class ActivityStatistics extends Model<ActivityStatistics> {
     @Override
     public String toString() {
         return "ActivityStatistics{" +
+                "Id=" + Id +
                 ", clubId=" + clubId +
-                ", clubName=" + clubName +
+                ", clubName='" + clubName + '\'' +
                 ", commonNum=" + commonNum +
                 ", greatNum=" + greatNum +
                 ", total=" + total +
-                "}";
+                '}';
     }
 }

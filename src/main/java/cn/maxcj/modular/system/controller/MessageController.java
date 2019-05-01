@@ -1,5 +1,6 @@
 package cn.maxcj.modular.system.controller;
 
+import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.shiro.ShiroKit;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import org.springframework.stereotype.Controller;
@@ -74,6 +75,7 @@ public class MessageController extends BaseController {
     /**
      * 新增留言管理
      */
+    @BussinessLog(value = "新增留言")
     @RequestMapping(value = "/add")
     @ResponseBody
     public Object add(Message message) {
@@ -89,6 +91,7 @@ public class MessageController extends BaseController {
     /**
      * 删除留言管理
      */
+    @BussinessLog(value = "删除留言")
     @RequestMapping(value = "/delete")
     @ResponseBody
     public Object delete(@RequestParam Integer messageId) {
@@ -99,6 +102,7 @@ public class MessageController extends BaseController {
     /**
      * 修改留言管理
      */
+    @BussinessLog(value = "修改留言")
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Message message) {

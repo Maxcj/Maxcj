@@ -9,14 +9,8 @@ import cn.maxcj.core.common.exception.BizExceptionEnum;
 import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.core.log.LogObjectHolder;
 import cn.maxcj.core.shiro.ShiroKit;
-import cn.maxcj.modular.system.model.Apply;
-import cn.maxcj.modular.system.model.Clubinfo;
-import cn.maxcj.modular.system.model.Dept;
-import cn.maxcj.modular.system.model.User;
-import cn.maxcj.modular.system.service.IApplyService;
-import cn.maxcj.modular.system.service.IClubinfoService;
-import cn.maxcj.modular.system.service.IDeptService;
-import cn.maxcj.modular.system.service.IUserService;
+import cn.maxcj.modular.system.model.*;
+import cn.maxcj.modular.system.service.*;
 import cn.maxcj.modular.system.warpper.ClubWarpper;
 import cn.maxcj.modular.system.warpper.DeptWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
@@ -57,6 +51,12 @@ public class DeptController extends BaseController {
 
     @Autowired
     private IClubinfoService clubinfoService;
+
+    @Autowired
+    private IActivityService activityService;
+
+    @Autowired
+    private IActivityStatisticsService activityStatisticsService;
 
     /**
      * 跳转到社团一览页面
@@ -102,7 +102,7 @@ public class DeptController extends BaseController {
     @ResponseBody
     public List<ZTreeNode> tree() {
         List<ZTreeNode> tree = this.deptService.tree();
-        tree.add(ZTreeNode.createParent());
+        //tree.add(ZTreeNode.createParent());
         return tree;
     }
 
@@ -114,7 +114,7 @@ public class DeptController extends BaseController {
     @ResponseBody
     public List<ZTreeNode> clubtree() {
         List<ZTreeNode> tree = this.deptService.clubtree(ShiroKit.getUser().deptId);
-        tree.add(ZTreeNode.createParent());
+        //tree.add(ZTreeNode.createParent());
         return tree;
     }
 
@@ -230,7 +230,21 @@ public class DeptController extends BaseController {
         if (list.size() > 0){
             return null;
         }
-        deptService.deleteDept(deptId);
+        try {
+            //删除社团/部门前删除关于社团/部门的信息、活动
+            clubinfoService.deleteById(clubinfoService.getClubInfoByDeptid(deptId).getId());
+            List<Activity> list1 = activityService.clublist(deptId,null);
+            for (int i = 0; i < list1.size(); i++){
+                activityService.deleteById(list1.get(i));
+            }
+            List<ActivityStatistics> list2 = activityStatisticsService.list(deptId);
+            for (int i = 0; i < list2.size(); i++){
+                activityStatisticsService.deleteById(list2.get(i));
+            }
+            deptService.deleteDept(deptId);
+        }catch (Exception e){
+            return null;
+        }
         return SUCCESS_TIP;
     }
 

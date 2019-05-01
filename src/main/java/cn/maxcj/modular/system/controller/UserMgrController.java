@@ -142,6 +142,7 @@ public class UserMgrController extends BaseController {
     /**
      * 修改当前用户的密码
      */
+    @BussinessLog(value = "修改密码", key = "account", dict = UserDict.class)
     @RequestMapping("/changePwd")
     @ResponseBody
     public Object changePwd(@RequestParam String oldPwd, @RequestParam String newPwd, @RequestParam String rePwd) {
@@ -241,7 +242,7 @@ public class UserMgrController extends BaseController {
      * @throws NoPermissionException
      */
     @RequestMapping("/edit")
-    @BussinessLog(value = "修改管理员", key = "account", dict = UserDict.class)
+    @BussinessLog(value = "修改人员", key = "account", dict = UserDict.class)
     @ResponseBody
     public ResponseData edit(@Valid UserDto user, BindingResult result) throws NoPermissionException {
         if (result.hasErrors()) {
@@ -268,7 +269,7 @@ public class UserMgrController extends BaseController {
      * 删除管理员（逻辑删除）
      */
     @RequestMapping("/delete")
-    @BussinessLog(value = "删除管理员", key = "userId", dict = UserDict.class)
+    @BussinessLog(value = "删除人员", key = "userId", dict = UserDict.class)
     @Permission
     @ResponseBody
     public ResponseData delete(@RequestParam Integer userId) {
@@ -301,7 +302,7 @@ public class UserMgrController extends BaseController {
      * 重置管理员的密码
      */
     @RequestMapping("/reset")
-    @BussinessLog(value = "重置管理员密码", key = "userId", dict = UserDict.class)
+    @BussinessLog(value = "重置用户密码", key = "userId", dict = UserDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData reset(@RequestParam Integer userId) {

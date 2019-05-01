@@ -172,6 +172,4 @@ $(function () {
 
     ztree.bindOnClick(MgrUser.onClickDept);
     ztree.init();
-    //将顶级这一目录从树形结构中删除
-    $('span:contains("顶级")').parent().parent().remove();
 });

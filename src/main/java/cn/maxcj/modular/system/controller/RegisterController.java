@@ -40,8 +40,8 @@ public class RegisterController  extends BaseController {
     /**
      * 点击注册执行的动作
      */
+    @BussinessLog(value = "注册用户")
     @RequestMapping(value = "/goregister", method = RequestMethod.POST)
-    @BussinessLog(value = "注册用户", key = "account", dict = UserDict.class)
     public String loginVali(Model model) {
         String username = super.getPara("account").trim();
         String password = super.getPara("password").trim();

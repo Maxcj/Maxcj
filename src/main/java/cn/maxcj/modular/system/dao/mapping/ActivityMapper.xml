@@ -89,6 +89,12 @@
         order by activity_start_time DESC
     </select>
 
+    <select id="clublist" parameterType="java.lang.Integer" resultType="cn.maxcj.modular.system.model.Activity">
+        select * from sys_activity
+        where activity_club = #{deptid}
+        order by activity_start_time DESC
+    </select>
+
     <select id="activity_club" parameterType="java.lang.Integer" resultType="map">
         select * from sys_activity
         where activity_club = #{deptid}

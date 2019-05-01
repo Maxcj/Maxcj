@@ -1,5 +1,6 @@
 package cn.maxcj.modular.system.controller;
 
+import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.modular.system.warpper.ClubInfoWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
@@ -98,6 +99,7 @@ public class ClubinfoController extends BaseController {
     /**
      * 修改社团简介管理
      */
+    @BussinessLog(value = "修改社团简介")
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Clubinfo clubinfo) {

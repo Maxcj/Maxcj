@@ -26,6 +26,8 @@ public interface IActivityService extends IService<Activity> {
 
     List<Map<String, Object>> activity_clublist(Integer deptid, String condition);
 
+    List<Activity> clublist(Integer deptid, String condition);
+
     List<Map<String, Object>> activity_club(Integer deptid, String condition);
 
     List<Map<String, Object>> activity_apply(String condition,String activity_category, String beginTime);

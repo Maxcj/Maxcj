@@ -39,7 +39,10 @@ public class ActivityStatisticsServiceImpl extends ServiceImpl<ActivityStatistic
         return activityStatisticsMapper.getview();
     }
 
-
+    @Override
+    public List<ActivityStatistics> list(Integer deptid) {
+        return null;
+    }
 
 
 }

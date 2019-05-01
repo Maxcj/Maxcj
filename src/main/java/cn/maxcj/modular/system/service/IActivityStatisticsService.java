@@ -36,4 +36,7 @@ public interface IActivityStatisticsService extends IService<ActivityStatistics>
      */
     Map<String, Integer> getview();
 
+
+    List<ActivityStatistics> list(Integer deptid);
+
 }

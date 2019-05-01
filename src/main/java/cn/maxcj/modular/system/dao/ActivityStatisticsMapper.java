@@ -2,6 +2,7 @@ package cn.maxcj.modular.system.dao;
 
 import cn.maxcj.modular.system.model.ActivityStatistics;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -35,5 +36,7 @@ public interface ActivityStatisticsMapper extends BaseMapper<ActivityStatistics>
      * @return
      */
     Map<String, Integer> getview();
+
+    List<ActivityStatistics> list(@Param("deptid") Integer deptid);
 
 }

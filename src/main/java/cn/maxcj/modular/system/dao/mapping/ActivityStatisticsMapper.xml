@@ -4,6 +4,8 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="cn.maxcj.modular.system.model.ActivityStatistics">
+        <result column="id" property="id"/>
+        <result column="club_name" property="clubName"/>
         <result column="club_id" property="clubId"/>
         <result column="club_name" property="clubName"/>
         <result column="common_num" property="commonNum"/>
@@ -13,8 +15,11 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        club_id, club_name, common_num, great_num, total
+        id, club_id, club_name, common_num, great_num, total
     </sql>
+
+
+
 
     <!-- 查询社团所有的活动统计  通过Kettle数据抽取-->
     <!--<select id="activityNum" resultType="map">
@@ -118,5 +123,9 @@
             (SELECT COUNT(DISTINCT a.activity_id) from sys_activity a where a.activity_state = "3" and a.activity_category = "1" and a.activity_start_time BETWEEN (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) DAY)) and (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) - 6 DAY))) as week_common_num,
             (SELECT COUNT(DISTINCT a.activity_id) from sys_activity a where a.activity_state = "3" and a.activity_category = "2" and a.activity_start_time BETWEEN (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) DAY)) and (select date_sub(curdate(),INTERVAL WEEKDAY(curdate()) - 6 DAY))) as week_great_num
         from dual
+    </select>
+
+    <select id="list" parameterType="java.lang.Integer" resultType="cn.maxcj.modular.system.model.ActivityStatistics">
+        select <include refid="Base_Column_List"></include> from activity_statistics where club_id = #{deptid}
     </select>
 </mapper>

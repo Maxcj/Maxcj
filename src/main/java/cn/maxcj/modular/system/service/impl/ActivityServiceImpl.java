@@ -49,6 +49,11 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, Activity> i
     }
 
     @Override
+    public List<Activity> clublist(Integer deptid, String condition) {
+        return activityMapper.clublist(deptid, condition);
+    }
+
+    @Override
     public List<Map<String, Object>> activity_club(Integer deptid, String condition) {
         return activityMapper.activity_club(deptid, condition);
     }

@@ -1,5 +1,6 @@
 package cn.maxcj.modular.system.controller;
 
+import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.modular.system.model.User;
 import cn.maxcj.modular.system.service.IUserService;
@@ -87,24 +88,11 @@ public class ApplyController extends BaseController {
     }
 
     /**
-     * 新增申请加入社团
-     */
-    /*@RequestMapping(value = "/add")
-    @ResponseBody
-    public Object add(Apply apply) {
-        //判断其是否已经存在申请记录
-        if (applyService.apply_exist(apply.getUserid())){
-            return SUCCESS_TIP;
-        }
-        applyService.insert(apply);
-        return SUCCESS_TIP;
-    }*/
-
-    /**
      * 通过加入社团申请
      * @param applyId
      * @return
      */
+    @BussinessLog(value = "通过加入社团申请")
     @RequestMapping(value = "/agree")
     @ResponseBody
     public Object agree(@RequestParam Integer applyId) {
@@ -122,6 +110,7 @@ public class ApplyController extends BaseController {
      * 一键通过加入社团申请
      * @return
      */
+    @BussinessLog(value = "一键通过加入社团申请")
     @RequestMapping(value = "/agree_all")
     @ResponseBody
     public Object agree_all() {
@@ -150,6 +139,7 @@ public class ApplyController extends BaseController {
      * @param applyId
      * @return
      */
+    @BussinessLog(value = "拒绝加入社团申请")
     @RequestMapping(value = "/disagree")
     @ResponseBody
     public Object disagree(@RequestParam Integer applyId) {
@@ -159,12 +149,10 @@ public class ApplyController extends BaseController {
         return SUCCESS_TIP;
     }
 
-
-
-
     /**
      * 删除申请加入社团
      */
+
     @RequestMapping(value = "/delete")
     @ResponseBody
     public Object delete(@RequestParam Integer applyId) {

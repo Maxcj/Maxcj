@@ -27,6 +27,8 @@ public interface ActivityMapper extends BaseMapper<Activity> {
 
     List<Map<String, Object>> activity_clublist(@Param("deptid") Integer deptid, @Param("condition") String condition);
 
+    List<Activity> clublist(@Param("deptid") Integer deptid, @Param("condition") String condition);
+
     List<Map<String, Object>> activity_club(@Param("deptid") Integer deptid, @Param("condition") String condition);
 
     String getActivityName(@Param("activity_id") Integer activity_id);
