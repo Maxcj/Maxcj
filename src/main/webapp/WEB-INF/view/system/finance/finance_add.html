@@ -1,19 +1,19 @@
 @layout("/common/_container.html"){
 <div class="ibox float-e-margins">
     <div class="ibox-content">
-        <div class="form-horizontal">
+        <div class="form-horizontal" id="financeInfoForm">
             <div class="row">
                 <div class="col-sm-6 b-r">
                     <#select id="category" name="类型" underline="true">
-                        <option selected = "selected">请选择...</option>
+                        <option selected = "selected" value="">请选择...</option>
                         <option value="1">活动</option>
                         <option value="2">社团内部</option>
                         <option value="3">其他</option>
                     </#select>
                     <#select id="activityid" name="关联活动" underline="true">
-                        <option selected = "selected">请选择...</option>
+                        <option selected = "selected" value="">请选择...</option>
                     </#select>
-            </div>
+                </div>
 
                 <div class="col-sm-6">
                     <#input id="money" name="所需金额" underline="true"/>

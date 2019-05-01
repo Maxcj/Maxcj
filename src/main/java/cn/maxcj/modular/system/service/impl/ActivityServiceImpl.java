@@ -57,4 +57,9 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, Activity> i
     public List<Map<String, Object>> activity_apply(String condition, String activity_category, String beginTime) {
         return this.baseMapper.activity_apply(condition,activity_category,beginTime);
     }
+
+    @Override
+    public List<Map<String, Object>> activity_history(String condition, String activity_category, String beginTime, Integer state) {
+        return this.baseMapper.activity_history(condition,activity_category,beginTime, state);
+    }
 }

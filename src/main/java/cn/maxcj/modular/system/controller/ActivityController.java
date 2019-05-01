@@ -104,12 +104,31 @@ public class ActivityController extends BaseController {
     }
 
     /**
+     * 跳转到活动审批页面
+     * @return
+     */
+    @RequestMapping("/apply_history")
+    public String history_page() {
+        return PREFIX + "activity_history.html";
+    }
+
+    /**
      * 获取社团活动审批列表
      */
     @RequestMapping(value = "/apply")
     @ResponseBody
     public Object apply(@RequestParam(required = false) String condition, @RequestParam(required = false) String activity_category,@RequestParam(required = false) String beginTime) {
         List<Map<String, Object>> activity_list = this.activityService.activity_apply(condition, activity_category, beginTime);
+        return super.warpObject(new ActivityWarpper(activity_list));
+    }
+
+    /**
+     * 获取社团活动审批历史列表
+     */
+    @RequestMapping(value = "/history")
+    @ResponseBody
+    public Object history(@RequestParam(required = false) String condition, @RequestParam(required = false) String activity_category,@RequestParam(required = false) String beginTime, @RequestParam(required = false) Integer state) {
+        List<Map<String, Object>> activity_list = this.activityService.activity_history(condition, activity_category, beginTime, state);
         return super.warpObject(new ActivityWarpper(activity_list));
     }
 
@@ -171,7 +190,8 @@ public class ActivityController extends BaseController {
      */
     @RequestMapping(value = "/apply_agree")
     @ResponseBody
-    public Object apply_agree(Activity activity) {
+    public Object apply_agree(Integer activityId) {
+        Activity activity = activityService.selectById(activityId);
         activity.setActivityState(3);
         activityService.updateById(activity);
         return SUCCESS_TIP;
@@ -182,8 +202,21 @@ public class ActivityController extends BaseController {
      */
     @RequestMapping(value = "/apply_refuse")
     @ResponseBody
-    public Object apply_activity(Activity activity) {
+    public Object apply_activity(Integer activityId) {
+        Activity activity = activityService.selectById(activityId);
         activity.setActivityState(4);
+        activityService.updateById(activity);
+        return SUCCESS_TIP;
+    }
+
+    /**
+     * 审批社团活动(通过)
+     */
+    @RequestMapping(value = "/again")
+    @ResponseBody
+    public Object apply_again(Integer activityId) {
+        Activity activity = activityService.selectById(activityId);
+        activity.setActivityState(2);
         activityService.updateById(activity);
         return SUCCESS_TIP;
     }

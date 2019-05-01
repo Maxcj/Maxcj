@@ -41,56 +41,20 @@ Activity.check = function () {
     }
 };
 
-/**
- * 打开查看社团活动详情
- */
-Activity.openActivityDetail = function () {
-    if (this.check()) {
-        var index = layer.open({
-            type: 2,
-            title: '社团活动详情',
-            area: ['800px', '420px'], //宽高
-            fix: false, //不固定
-            maxmin: true,
-            content: Feng.ctxPath + '/activity/activity_update/' + Activity.seItem.id
-        });
-        this.layerIndex = index;
-    }
-};
-
-Activity.apply_refuse = function () {
+Activity.apply_again = function () {
     if (this.check()) {
         var operation = function () {
-            var activity_id = Activity.seItem.activity_id;
-            var ajax = new $ax(Feng.ctxPath + "/activity/apply_refuse", function (data) {
-                Feng.success("已拒绝发起活动");
+            var activityId = Activity.seItem.activity_id;
+            var ajax = new $ax(Feng.ctxPath + "/activity/again", function (data) {
+                Feng.success("已撤销此审批!");
                 Activity.table.refresh();
             }, function (data) {
-                Feng.error("审批失败!请联系网信部！" + data.responseJSON.message + "!");
+                Feng.error("撤销失败!请联系网信部!" + data.responseJSON.message + "!");
             });
-            ajax.set("activityId", activity_id);
+            ajax.set("activityId", activityId);
             ajax.start();
         };
-        Feng.confirm("是否拒绝此社团活动申请? ", operation);
-    }
-};
-
-
-
-Activity.apply_agree = function () {
-    if (this.check()) {
-        var operation = function () {
-            var activity_id = Activity.seItem.activity_id;
-            var ajax = new $ax(Feng.ctxPath + "/activity/apply_agree", function (data) {
-                Feng.success("审批成功!");
-                Activity.table.refresh();
-            }, function (data) {
-                Feng.error("审批失败!请联系网信部!" + data.responseJSON.message + "!");
-            });
-            ajax.set("activityId", activity_id);
-            ajax.start();
-        };
-        Feng.confirm("是否同意此社团活动申请? ", operation);
+        Feng.confirm("是否重新审批此社团活动申请? ", operation);
     }
 };
 
@@ -105,6 +69,7 @@ Activity.search = function () {
     queryData['condition'] = $("#condition").val();
     queryData['activity_category'] = $("#activity_category").val();
     queryData['beginTime'] = $("#beginTime").val();
+    queryData['state'] = $("#state").val();
     Activity.table.refresh({query: queryData});
 };
 
@@ -112,12 +77,13 @@ Activity.resetSearch = function () {
     $("#condition").val("");
     $("#activity_category").val("");
     $("#beginTime").val("");
+    $("#state").val("");
     Activity.search();
 }
 
 $(function () {
     var defaultColunms = Activity.initColumn();
-    var table = new BSTable(Activity.id, "/activity/apply", defaultColunms);
+    var table = new BSTable(Activity.id, "/activity/history", defaultColunms);
     table.setPaginationType("client");
     Activity.table = table.init();
 });

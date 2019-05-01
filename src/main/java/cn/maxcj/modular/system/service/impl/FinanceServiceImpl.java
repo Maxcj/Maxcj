@@ -36,4 +36,10 @@ public class FinanceServiceImpl extends ServiceImpl<FinanceMapper, Finance> impl
     public List<Map<String, Object>> getClubFinance(String condition, Integer category) {
         return financeMapper.getClubFinance(condition, category);
     }
+
+
+    @Override
+    public List<Map<String, Object>> getHistory(String condition, Integer category, Integer state) {
+        return financeMapper.getHistory(condition, category, state);
+    }
 }

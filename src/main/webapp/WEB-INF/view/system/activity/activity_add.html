@@ -1,12 +1,13 @@
 @layout("/common/_container.html"){
 <div class="ibox float-e-margins">
     <div class="ibox-content">
-        <div class="form-horizontal">
+        <div class="form-horizontal" id="ActivityInfoForm">
             <div class="row">
                 <div class="col-sm-6 b-r">
                     <#input id="activityName" name="活动名称" underline="true"/>
                     <#input id="activityPlace" name="活动地点" underline="true"/>
                     <#SelectCon id="activityCategory" name="活动类别" underline="true">
+                        <option selected="selected" value="">请选择...</option>
                         <option value="1">常规活动</option>
                         <option value="2">重大活动</option>
                     </#SelectCon>

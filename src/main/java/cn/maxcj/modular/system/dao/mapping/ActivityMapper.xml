@@ -55,6 +55,23 @@
         order by activity_start_time DESC
     </select>
 
+    <select id="activity_history" resultType="map">
+        select * from sys_activity where activity_state > '2'
+        <if test="condition != null and condition != ''">
+            and activity_name like CONCAT('%',#{condition},'%')
+        </if>
+        <if test="activity_category != null and activity_category != 0 and activity_category !=''">
+            and activity_category = #{activity_category}
+        </if>
+        <if test="beginTime != null and beginTime != ''">
+            and activity_start_time > CONCAT(#{beginTime},' 00:00:00')
+        </if>
+        <if test="state != null and state != '' and state!='0'">
+            and activity_state = #{state}
+        </if>
+        order by activity_start_time DESC
+    </select>
+
     <select id="club_activityNum" resultType="map">
         select activity_club,count(DISTINCT activity_id) as activity_num from sys_activity
         <where>
@@ -67,7 +84,7 @@
         select * from sys_activity
         where activity_club = #{deptid}
         <if test="condition != null and condition != ''">
-            and activity_name like CONCAT('%',#{condition},'%')
+            and activity_start_time >= CONCAT(#{condition},' 00:00:00')
         </if>
         order by activity_start_time DESC
     </select>

@@ -38,4 +38,17 @@
         </if>
     </select>
 
+    <select id="getHistory" parameterType="java.lang.String" resultType="map">
+        select f.* from sys_finance f left join sys_dept d on f.deptid = d.id where f.agree > "2" and d.pid = "38"
+        <if test="condition != null and condition != ''">
+            and (d.simplename like CONCAT('%',#{condition},'%') or d.fullname like CONCAT('%',#{condition},'%'))
+        </if>
+        <if test="category != null and category != '' and category != '0'">
+            and f.category = #{category}
+        </if>
+        <if test="state != null and state != '' and state != '0'">
+            and f.agree = #{state}
+        </if>
+    </select>
+
 </mapper>

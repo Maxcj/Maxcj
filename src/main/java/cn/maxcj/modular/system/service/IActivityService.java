@@ -30,5 +30,7 @@ public interface IActivityService extends IService<Activity> {
 
     List<Map<String, Object>> activity_apply(String condition,String activity_category, String beginTime);
 
+    List<Map<String, Object>> activity_history(String condition,String activity_category, String beginTime, Integer state);
+
 
 }

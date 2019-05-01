@@ -112,7 +112,6 @@ Finance.refuse = function () {
  * 社团财务审批：同意
  */
 Finance.agree = function () {
-    debugger;
     if (this.check()) {
         var operation = function () {
             var financeId = Finance.seItem.id;

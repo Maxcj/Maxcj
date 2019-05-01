@@ -2,7 +2,27 @@
  * 初始化社团财务管理详情对话框
  */
 var FinanceInfoDlg = {
-    financeInfoData : {}
+    financeInfoData : {},
+    validateFields: {
+        category: {
+            validators: {
+                notEmpty: {
+                    message: '财务类型不能为空'
+                }
+            }
+        },
+        money: {
+            validators: {
+                notEmpty: {
+                    message: '请输入金额'
+                },
+                regexp: {
+                    regexp: /^[0-9\.]+$/,
+                    message: '只能是数字和小数点'
+                }
+            }
+        }
+    }
 };
 
 /**
@@ -38,7 +58,13 @@ FinanceInfoDlg.get = function(key) {
  */
 FinanceInfoDlg.close = function() {
     parent.layer.close(window.parent.Finance.layerIndex);
-}
+};
+
+FinanceInfoDlg.validate = function () {
+    $('#financeInfoForm').data("bootstrapValidator").resetForm();
+    $('#financeInfoForm').bootstrapValidator('validate');
+    return $("#financeInfoForm").data('bootstrapValidator').isValid();
+};
 
 /**
  * 收集数据
@@ -61,6 +87,9 @@ FinanceInfoDlg.addSubmit = function() {
 
     this.clearData();
     this.collectData();
+    if (!this.validate()) {
+        return;
+    }
 
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/finance/add", function(data){
@@ -83,6 +112,10 @@ FinanceInfoDlg.editSubmit = function() {
     this.clearData();
     this.collectData();
 
+    if (!this.validate()) {
+        return;
+    }
+
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/finance/update", function(data){
         Feng.success("修改成功!");
@@ -97,6 +130,8 @@ FinanceInfoDlg.editSubmit = function() {
 
 
 $(function() {
+    Feng.initValidator("financeInfoForm", FinanceInfoDlg.validateFields);
+
     $.ajax({
         url: "/activity/tree",
         dataType: "json",
@@ -117,7 +152,6 @@ $(function() {
             $("#activityid").append(html);
         }
     });
-    debugger;
     $("#category").val($("#categoryValue").val());
     $("#activityid").val($("#activityidValue").val());
 

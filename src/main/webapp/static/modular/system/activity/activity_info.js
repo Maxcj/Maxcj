@@ -2,7 +2,37 @@
  * 初始化社团活动详情对话框
  */
 var ActivityInfoDlg = {
-    activityInfoData: {}
+    activityInfoData: {},
+    validateFields: {
+        activityName: {
+            validators: {
+                notEmpty: {
+                    message: '请输入活动名称'
+                }
+            }
+        },
+        activityPlace: {
+            validators: {
+                notEmpty: {
+                    message: '请输入活动地点'
+                }
+            }
+        },
+        activityCategory: {
+            validators: {
+                notEmpty: {
+                    message: '请选择活动类型'
+                }
+            }
+        },
+        activityStartTime: {
+            validators: {
+                notEmpty: {
+                    message: '请选择活动开始时间'
+                }
+            }
+        }
+    }
 };
 
 /**
@@ -44,12 +74,19 @@ ActivityInfoDlg.close = function () {
  * 收集数据
  */
 ActivityInfoDlg.collectData = function () {
-    this.set('activityCategory')
+    this.set('activityId')
+        .set('activityCategory')
         .set('activityName')
         .set('activityPlace')
         .set('activityStartTime')
         .set('activityEndTime');
-}
+};
+
+ActivityInfoDlg.validate = function () {
+    $('#ActivityInfoForm').data("bootstrapValidator").resetForm();
+    $('#ActivityInfoForm').bootstrapValidator('validate');
+    return $("#ActivityInfoForm").data('bootstrapValidator').isValid();
+};
 
 /**
  * 提交添加
@@ -58,6 +95,10 @@ ActivityInfoDlg.addSubmit = function () {
 
     this.clearData();
     this.collectData();
+
+    if (!this.validate()) {
+        return;
+    }
 
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/activity/add", function (data) {
@@ -79,6 +120,10 @@ ActivityInfoDlg.editSubmit = function () {
     this.clearData();
     this.collectData();
 
+    if (!this.validate()) {
+        return;
+    }
+
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/activity/update", function (data) {
         Feng.success("修改成功!");
@@ -92,5 +137,6 @@ ActivityInfoDlg.editSubmit = function () {
 }
 
 $(function () {
-
+    Feng.initValidator("ActivityInfoForm", ActivityInfoDlg.validateFields);
+    $("#activityCategory").val($("#activityCategoryValue").val());
 });

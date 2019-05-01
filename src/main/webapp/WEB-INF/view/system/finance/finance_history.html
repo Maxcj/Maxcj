@@ -1,0 +1,46 @@
+@layout("/common/_container.html"){
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>社团财务管理管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <#NameCon id="condition" name="社团名称" />
+                            </div>
+                            <div class="col-sm-3">
+                                <#SelectCon id="category" name="财务申请类型">
+                                    <option value="0">全部</option>
+                                    <option value="1">活动花费</option>
+                                    <option value="2">社团内部</option>
+                                </#SelectCon>
+                            </div>
+                            <div class="col-sm-3">
+                                <#SelectCon id="state" name="审批状态">
+                                    <option value="0">全部</option>
+                                    <option value="3">同意</option>
+                                    <option value="4">拒绝</option>
+                                </#SelectCon>
+                            </div>
+                            <div class="col-sm-3">
+                                <#button name="搜索" icon="fa-search" clickFun="Finance.search()"/>
+                            </div>
+                        </div>
+                        <div class="hidden-xs" id="FinanceTableToolbar" role="group">
+                            @if(shiro.hasPermission("/finance/apply_again")){
+                                <#button name="重新审批" icon="fa-check" clickFun="Finance.again()"/>
+                            @}
+                        </div>
+                        <#table id="FinanceTable"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/system/finance/finance_history.js"></script>
+@}

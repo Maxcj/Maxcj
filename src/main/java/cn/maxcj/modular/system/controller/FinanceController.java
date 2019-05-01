@@ -59,6 +59,14 @@ public class FinanceController extends BaseController {
     }
 
     /**
+     * 跳转到财务审批
+     */
+    @RequestMapping("/history_page")
+    public String hitory() {
+        return PREFIX + "finance_history.html";
+    }
+
+    /**
      * 跳转到添加社团财务管理
      */
     @RequestMapping("/finance_add")
@@ -86,8 +94,18 @@ public class FinanceController extends BaseController {
     @RequestMapping(value = "/club_list")
     @ResponseBody
     public Object club_list(String condition, Integer category) {
-
         List<Map<String, Object>> map = financeService.getClubFinance(condition, category);
+        return super.warpObject(new FinanceWarpper(map));
+    }
+
+
+    /**
+     * 获取财务审批历史列表
+     */
+    @RequestMapping(value = "/history")
+    @ResponseBody
+    public Object history(String condition, Integer category, Integer state) {
+        List<Map<String, Object>> map = financeService.getHistory(condition, category, state);
         return super.warpObject(new FinanceWarpper(map));
     }
 
@@ -135,6 +153,11 @@ public class FinanceController extends BaseController {
         return SUCCESS_TIP;
     }
 
+    /**
+     * 拒绝此财务申请
+     * @param financeId
+     * @return
+     */
     @RequestMapping(value = "/apply_refuse")
     @ResponseBody
     public Object apply_refuse(Integer financeId) {
@@ -145,11 +168,31 @@ public class FinanceController extends BaseController {
         return SUCCESS_TIP;
     }
 
+    /**
+     * 同意申请
+     * @param financeId
+     * @return
+     */
     @RequestMapping(value = "/apply_agree")
     @ResponseBody
     public Object apply_agree(Integer financeId) {
         Finance finance = financeService.selectById(financeId);
         finance.setAgree(3);
+        finance.setAgreetime(new Date());
+        financeService.updateById(finance);
+        return SUCCESS_TIP;
+    }
+
+    /**
+     * 重置审批状态
+     * @param financeId
+     * @return
+     */
+    @RequestMapping(value = "/apply_again")
+    @ResponseBody
+    public Object apply_again(Integer financeId) {
+        Finance finance = financeService.selectById(financeId);
+        finance.setAgree(2);
         finance.setAgreetime(new Date());
         financeService.updateById(finance);
         return SUCCESS_TIP;

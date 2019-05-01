@@ -21,4 +21,6 @@ public interface FinanceMapper extends BaseMapper<Finance> {
 
     List<Map<String, Object>> getClubFinance(@Param("condition") String condition, @Param("category") Integer category);
 
+    List<Map<String, Object>> getHistory(@Param("condition") String condition, @Param("category") Integer category, @Param("state") Integer state);
+
 }
