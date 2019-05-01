@@ -123,7 +123,7 @@ public class FinanceController extends BaseController {
     /**
      * 新增社团财务管理
      */
-    @BussinessLog(value = "新增财务申请")
+    @BussinessLog(value = "新增财务申请", key = "finance")
     @RequestMapping(value = "/add")
     @ResponseBody
     public Object add(Finance finance) {
@@ -136,7 +136,7 @@ public class FinanceController extends BaseController {
     /**
      * 删除社团财务管理
      */
-    @BussinessLog(value = "删除财务申请")
+    @BussinessLog(value = "删除财务申请", key = "financeId")
     @RequestMapping(value = "/delete")
     @ResponseBody
     public Object delete(@RequestParam Integer financeId) {
@@ -147,7 +147,7 @@ public class FinanceController extends BaseController {
     /**
      * 修改社团财务管理
      */
-    @BussinessLog(value = "更新财务申请")
+    @BussinessLog(value = "更新财务申请", key = "finance")
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Finance finance) {
@@ -160,7 +160,7 @@ public class FinanceController extends BaseController {
      * @param financeId
      * @return
      */
-    @BussinessLog(value = "拒绝财务申请")
+    @BussinessLog(value = "拒绝财务申请", key = "financeId")
     @RequestMapping(value = "/apply_refuse")
     @ResponseBody
     public Object apply_refuse(Integer financeId) {
@@ -176,7 +176,7 @@ public class FinanceController extends BaseController {
      * @param financeId
      * @return
      */
-    @BussinessLog(value = "通过财务申请")
+    @BussinessLog(value = "通过财务申请", key = "financeId")
     @RequestMapping(value = "/apply_agree")
     @ResponseBody
     public Object apply_agree(Integer financeId) {
@@ -192,7 +192,7 @@ public class FinanceController extends BaseController {
      * @param financeId
      * @return
      */
-    @BussinessLog(value = "撤销财务申请审批记录")
+    @BussinessLog(value = "撤销财务申请审批记录", key = "financeId")
     @RequestMapping(value = "/apply_again")
     @ResponseBody
     public Object apply_again(Integer financeId) {

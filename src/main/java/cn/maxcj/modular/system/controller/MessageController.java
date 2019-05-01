@@ -75,7 +75,7 @@ public class MessageController extends BaseController {
     /**
      * 新增留言管理
      */
-    @BussinessLog(value = "新增留言")
+    @BussinessLog(value = "新增留言", key = "message")
     @RequestMapping(value = "/add")
     @ResponseBody
     public Object add(Message message) {
@@ -91,7 +91,7 @@ public class MessageController extends BaseController {
     /**
      * 删除留言管理
      */
-    @BussinessLog(value = "删除留言")
+    @BussinessLog(value = "删除留言",  key = "messageId")
     @RequestMapping(value = "/delete")
     @ResponseBody
     public Object delete(@RequestParam Integer messageId) {
@@ -102,7 +102,7 @@ public class MessageController extends BaseController {
     /**
      * 修改留言管理
      */
-    @BussinessLog(value = "修改留言")
+    @BussinessLog(value = "修改留言", key = "message")
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Message message) {

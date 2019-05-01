@@ -31,6 +31,13 @@ var ActivityInfoDlg = {
                     message: '请选择活动开始时间'
                 }
             }
+        },
+        activityEndTime: {
+            validators: {
+                notEmpty: {
+                    message: '请选择活动结束时间'
+                }
+            }
         }
     }
 };

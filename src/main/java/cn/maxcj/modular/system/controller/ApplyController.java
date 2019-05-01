@@ -92,7 +92,7 @@ public class ApplyController extends BaseController {
      * @param applyId
      * @return
      */
-    @BussinessLog(value = "通过加入社团申请")
+    @BussinessLog(value = "通过加入社团申请", key = "applyId")
     @RequestMapping(value = "/agree")
     @ResponseBody
     public Object agree(@RequestParam Integer applyId) {
@@ -139,7 +139,7 @@ public class ApplyController extends BaseController {
      * @param applyId
      * @return
      */
-    @BussinessLog(value = "拒绝加入社团申请")
+    @BussinessLog(value = "拒绝加入社团申请", key = "applyId")
     @RequestMapping(value = "/disagree")
     @ResponseBody
     public Object disagree(@RequestParam Integer applyId) {

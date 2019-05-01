@@ -99,7 +99,7 @@ public class ClubinfoController extends BaseController {
     /**
      * 修改社团简介管理
      */
-    @BussinessLog(value = "修改社团简介")
+    @BussinessLog(value = "修改社团简介", key = "clubinfo")
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Clubinfo clubinfo) {

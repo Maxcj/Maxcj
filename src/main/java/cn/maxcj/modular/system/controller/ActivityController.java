@@ -147,7 +147,7 @@ public class ActivityController extends BaseController {
     /**
      * 新增社团活动
      */
-    @BussinessLog(value = "添加社团活动")
+    @BussinessLog(value = "添加社团活动", key = "activity")
     @RequestMapping(value = "/add")
     @ResponseBody
     public Object add(Activity activity) {
@@ -162,7 +162,7 @@ public class ActivityController extends BaseController {
     /**
      * 删除社团活动
      */
-    @BussinessLog(value = "删除社团活动")
+    @BussinessLog(value = "删除社团活动", key = "activityId")
     @RequestMapping(value = "/delete")
     @ResponseBody
     public Object delete(@RequestParam Integer activityId) {
@@ -180,7 +180,7 @@ public class ActivityController extends BaseController {
     /**
      * 修改社团活动
      */
-    @BussinessLog(value = "修改社团活动")
+    @BussinessLog(value = "修改社团活动", key = "activity")
     @RequestMapping(value = "/update")
     @ResponseBody
     public Object update(Activity activity) {
@@ -192,7 +192,7 @@ public class ActivityController extends BaseController {
     /**
      * 审批社团活动(通过)
      */
-    @BussinessLog(value = "审批社团活动（通过）")
+    @BussinessLog(value = "审批社团活动（通过）", key = "activityId")
     @RequestMapping(value = "/apply_agree")
     @ResponseBody
     public Object apply_agree(Integer activityId) {
@@ -205,7 +205,7 @@ public class ActivityController extends BaseController {
     /**
      * 审批社团活动(拒绝)
      */
-    @BussinessLog(value = "审批社团活动（拒绝）")
+    @BussinessLog(value = "审批社团活动（拒绝）", key = "activityId")
     @RequestMapping(value = "/apply_refuse")
     @ResponseBody
     public Object apply_activity(Integer activityId) {
@@ -218,7 +218,7 @@ public class ActivityController extends BaseController {
     /**
      * 审批社团活动(撤销审批)
      */
-    @BussinessLog(value = "撤销社团活动审批")
+    @BussinessLog(value = "撤销社团活动审批", key = "activityId")
     @RequestMapping(value = "/again")
     @ResponseBody
     public Object apply_again(Integer activityId) {
