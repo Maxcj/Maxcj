@@ -27,6 +27,11 @@ public class ClubinfoServiceImpl extends ServiceImpl<ClubinfoMapper, Clubinfo> i
 
 
     @Override
+    public void init(Integer deptid) {
+        clubinfoMapper.init(deptid);
+    }
+
+    @Override
     public List<Map<String, Object>> queryClubInfo(Integer deptid) {
         return clubinfoMapper.queryClubInfo(deptid);
     }

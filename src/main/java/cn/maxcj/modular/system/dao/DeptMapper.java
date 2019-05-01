@@ -47,12 +47,6 @@ public interface DeptMapper extends BaseMapper<Dept> {
      */
     List<Map<String, Object>> clublist(@Param("condition") String condition);
 
-    /**
-     * 获取该社团下属部门
-     * @param deptid
-     * @return
-     */
-    List<Dept> club_son(@Param("deptid") Integer deptid);
 
     /**
      * 获取某类社团

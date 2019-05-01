@@ -32,5 +32,8 @@
         SELECT <include refid="Base_Column_List"></include> from sys_clubinfo where deptid = #{deptid}
     </select>
 
+    <insert id="init" parameterType="java.lang.Integer">
+        insert into sys_clubinfo (deptid) values (#{deptid})
+    </insert>
 
 </mapper>

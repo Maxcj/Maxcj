@@ -59,10 +59,6 @@
         </if>
     </select>
 
-    <select id="club_son" resultType="cn.maxcj.modular.system.model.Dept">
-        select * from sys_dept where pid = #{deptid}
-    </select>
-
     <select id="clublistWithcategoryId" parameterType="java.lang.Integer" resultType="map">
         select * from sys_dept d LEFT JOIN sys_clubinfo i ON d.id = i.deptid
         where d.pid = "38" and i.club_category = #{categoryId}

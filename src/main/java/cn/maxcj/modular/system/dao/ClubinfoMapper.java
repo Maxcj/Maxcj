@@ -22,4 +22,6 @@ public interface ClubinfoMapper extends BaseMapper<Clubinfo> {
 
 
     Clubinfo getClubInfoByDeptid(@Param("deptid") Integer deptid);
+
+    void init(@Param("deptid") Integer deptid);
 }

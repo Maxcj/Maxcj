@@ -33,5 +33,4 @@
     <select id="apply_exist" parameterType="java.lang.Integer" resultType="cn.maxcj.modular.system.model.Apply">
         select * from sys_apply where userid = #{userid} and agree = "0"
     </select>
-
 </mapper>

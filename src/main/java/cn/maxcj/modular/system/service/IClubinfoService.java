@@ -18,6 +18,8 @@ import java.util.Map;
  */
 public interface IClubinfoService extends IService<Clubinfo> {
 
+    void init(Integer deptid);
+
     List<Map<String, Object>> queryClubInfo(Integer deptid);
 
     Clubinfo getClubInfoByDeptid(Integer deptid);

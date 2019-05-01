@@ -23,13 +23,6 @@ public interface IDeptService extends IService<Dept> {
 
 
     /**
-     * 查询该社团的下属部门
-     * @param deptid 父id
-     * @return
-     */
-    List<Dept> club_son(Integer deptid);
-
-    /**
      * 获取ztree的节点列表
      */
     List<ZTreeNode> tree();
