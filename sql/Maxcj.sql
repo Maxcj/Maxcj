@@ -275,7 +275,7 @@ INSERT INTO `sys_dept` VALUES (42, 4, 24, '[0],[24],', '宣传部', '宣传部',
 INSERT INTO `sys_dept` VALUES (43, 5, 24, '[0],[24],', '财务部', '财务部', '', NULL);
 INSERT INTO `sys_dept` VALUES (44, 6, 24, '[0],[24],', '组织部', '组织部', '', NULL);
 INSERT INTO `sys_dept` VALUES (45, 7, 24, '[0],[24],', '公关部', '公关部', '', NULL);
-INSERT INTO `sys_dept` VALUES (46, NULL, 38, '[0],[38],', '爱心社', '爱心社', '', NULL);
+INSERT INTO `sys_dept` VALUES (39, NULL, 38, '[0],[38],', '爱心社', '爱心社', '', NULL);
 INSERT INTO `sys_dept` VALUES (47, NULL, 38, '[0],[38],', '星星羽毛球协会', '星星羽毛球协会', '', NULL);
 INSERT INTO `sys_dept` VALUES (48, NULL, 38, '[0],[38],', '体育健身俱乐部', '体育健身俱乐部', '', NULL);
 INSERT INTO `sys_dept` VALUES (49, NULL, 38, '[0],[38],', '地平线轮滑社', '地平线轮滑社', '', NULL);
