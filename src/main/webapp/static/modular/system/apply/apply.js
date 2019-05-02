@@ -42,13 +42,14 @@ Apply.check = function () {
 Apply.agree = function () {
     if (this.check()) {
         var operation = function () {
+            var id = Apply.seItem.id;
             var ajax = new $ax(Feng.ctxPath + "/apply/agree", function (data) {
                 Feng.success("通过申请成功!");
                 Apply.table.refresh();
             }, function (data) {
                 Feng.error("通过申请失败!" + data.responseJSON.message + "!");
             });
-            ajax.set("applyId", this.seItem.id);
+            ajax.set("applyId", id);
             ajax.start();
         };
         Feng.confirm("是否允许加入社团?", operation);
@@ -78,13 +79,14 @@ Apply.agree_all = function () {
 Apply.disagree = function () {
     if (this.check()) {
         var operation = function () {
+            var id = Apply.seItem.id;
             var ajax = new $ax(Feng.ctxPath + "/apply/disagree", function (data) {
                 Feng.success("拒绝申请成功!");
                 Apply.table.refresh();
             }, function (data) {
                 Feng.error("拒绝申请失败!" + data.responseJSON.message + "!");
             });
-            ajax.set("applyId", this.seItem.id);
+            ajax.set("applyId", id);
             ajax.start();
         };
         Feng.confirm("是否拒绝加入社团? ", operation);

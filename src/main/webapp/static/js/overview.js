@@ -1,14 +1,3 @@
-function noticeNum() {
-    $.ajax({
-        url: "/notice/getNum",
-        dataType: "json",
-        async: false,
-        success: function (data) {
-            $("#noticeNum_id").text(data+"");
-        }
-    });
-};
-
 
 //活动总计
 function activityTotal() {

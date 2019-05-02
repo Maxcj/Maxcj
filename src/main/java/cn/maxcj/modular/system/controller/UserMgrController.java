@@ -84,7 +84,7 @@ public class UserMgrController extends BaseController {
      * 跳转到角色分配页面
      */
     //@RequiresPermissions("/mgr/role_assign")  //利用shiro自带的权限检查
-    @Permission
+    //@Permission
     @RequestMapping("/role_assign/{userId}")
     public String roleAssign(@PathVariable Integer userId, Model model) {
         if (ToolUtil.isEmpty(userId)) {
@@ -99,13 +99,13 @@ public class UserMgrController extends BaseController {
     /**
      * 跳转到编辑管理员页面
      */
-    @Permission
+    //@Permission
     @RequestMapping("/user_edit/{userId}")
     public String userEdit(@PathVariable Integer userId, Model model) {
         if (ToolUtil.isEmpty(userId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }
-        assertAuth(userId);
+        //assertAuth(userId);
         User user = this.userService.selectById(userId);
         model.addAttribute(user);
         model.addAttribute("roleName", ConstantFactory.me().getRoleName(user.getRoleid()));
@@ -166,7 +166,6 @@ public class UserMgrController extends BaseController {
      * 查询所有人员列表（管理员或者社联人员）
      */
     @RequestMapping("/list")
-    @Permission
     @ResponseBody
     public Object list(@RequestParam(required = false) String name, @RequestParam(required = false) String beginTime, @RequestParam(required = false) String endTime, @RequestParam(required = false) Integer deptid) {
         if (ShiroKit.isAdmin() || (userService.isSheLian(ShiroKit.getUser().getId())== 24)) {
@@ -215,7 +214,7 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/add")
     @BussinessLog(value = "添加人员", key = "account", dict = UserDict.class)
-    @Permission(Const.ADMIN_NAME)
+    //@Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData add(@Valid UserDto user, BindingResult result) {
         if (result.hasErrors()) {
@@ -250,11 +249,11 @@ public class UserMgrController extends BaseController {
         }
         User oldUser = userService.selectById(user.getId());
 
-        if (ShiroKit.hasRole(Const.ADMIN_NAME)) {
+        if (ShiroKit.hasRole(Const.ADMIN_NAME) || (userService.isSheLian(ShiroKit.getUser().getId())== 24)) {
             this.userService.updateById(UserFactory.editUser(user, oldUser));
             return SUCCESS_TIP;
         } else {
-            assertAuth(user.getId());
+            //assertAuth(user.getId());
             ShiroUser shiroUser = ShiroKit.getUser();
             if (shiroUser.getId().equals(user.getId())) {
                 this.userService.updateById(UserFactory.editUser(user, oldUser));
@@ -270,7 +269,7 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/delete")
     @BussinessLog(value = "删除人员", key = "userId", dict = UserDict.class)
-    @Permission
+    //@Permission
     @ResponseBody
     public ResponseData delete(@RequestParam Integer userId) {
         if (ToolUtil.isEmpty(userId)) {
@@ -280,7 +279,7 @@ public class UserMgrController extends BaseController {
         if (userId.equals(Const.ADMIN_ID)) {
             throw new ServiceException(BizExceptionEnum.CANT_DELETE_ADMIN);
         }
-        assertAuth(userId);
+        //assertAuth(userId);
         this.userService.setStatus(userId, ManagerStatus.DELETED.getCode());
         return SUCCESS_TIP;
     }
@@ -294,7 +293,7 @@ public class UserMgrController extends BaseController {
         if (ToolUtil.isEmpty(userId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }
-        assertAuth(userId);
+        //assertAuth(userId);
         return this.userService.selectById(userId);
     }
 
@@ -303,13 +302,13 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/reset")
     @BussinessLog(value = "重置用户密码", key = "userId", dict = UserDict.class)
-    @Permission(Const.ADMIN_NAME)
+    //@Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData reset(@RequestParam Integer userId) {
         if (ToolUtil.isEmpty(userId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }
-        assertAuth(userId);
+        //assertAuth(userId);
         User user = this.userService.selectById(userId);
         user.setSalt(ShiroKit.getRandomSalt(5));
         user.setPassword(ShiroKit.md5(Const.DEFAULT_PWD, user.getSalt()));
@@ -322,7 +321,7 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/freeze")
     @BussinessLog(value = "冻结用户", key = "userId", dict = UserDict.class)
-    @Permission(Const.ADMIN_NAME)
+    //@Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData freeze(@RequestParam Integer userId) {
         if (ToolUtil.isEmpty(userId)) {
@@ -332,7 +331,7 @@ public class UserMgrController extends BaseController {
         if (userId.equals(Const.ADMIN_ID)) {
             throw new ServiceException(BizExceptionEnum.CANT_FREEZE_ADMIN);
         }
-        assertAuth(userId);
+        //assertAuth(userId);
         this.userService.setStatus(userId, ManagerStatus.FREEZED.getCode());
         return SUCCESS_TIP;
     }
@@ -342,13 +341,13 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/unfreeze")
     @BussinessLog(value = "解除冻结用户", key = "userId", dict = UserDict.class)
-    @Permission(Const.ADMIN_NAME)
+    //@Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData unfreeze(@RequestParam Integer userId) {
         if (ToolUtil.isEmpty(userId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }
-        assertAuth(userId);
+        //assertAuth(userId);
         this.userService.setStatus(userId, ManagerStatus.OK.getCode());
         return SUCCESS_TIP;
     }
@@ -360,7 +359,7 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/setRole")
     @BussinessLog(value = "分配角色", key = "userId,roleIds", dict = UserDict.class)
-    @Permission(Const.ADMIN_NAME)
+    //@Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData setRole(@RequestParam("userId") Integer userId, @RequestParam("roleIds") String roleIds) {
         if (ToolUtil.isOneEmpty(userId, roleIds)) {
@@ -370,7 +369,7 @@ public class UserMgrController extends BaseController {
         if (userId.equals(Const.ADMIN_ID)) {
             throw new ServiceException(BizExceptionEnum.CANT_CHANGE_ADMIN);
         }
-        assertAuth(userId);
+        //assertAuth(userId);
         this.userService.setRoles(userId, roleIds);
         return SUCCESS_TIP;
     }

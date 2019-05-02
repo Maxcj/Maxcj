@@ -1,8 +1,14 @@
 @layout("/common/_container.html"){
 <div class="container-fluid" style="padding: 0 !important;">
     <div class="row">
-        <div class="col-sm-12">
-            @if(noticeList != null){
+        <div class="col-sm-12" id="wall">
+            @if(tool.isEmpty(noticeList)){
+                <div class="alert alert-success alert-dismissable">
+                    <span><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></span>
+                    暂无公告！
+                </div>
+            @}
+            @else {
                 @for(notice in noticeList){
                 <div class="alert alert-success alert-dismissable">
                     <span><strong id="createtime">${trim(notice.createtime,'yyyy-MM-dd')}</strong><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></span>
@@ -10,14 +16,14 @@
                 </div>
                 @}
             @}
-            @else {
-                <div class="alert alert-success alert-dismissable">
-                    <span><button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></span>
-                    暂无数据
-                </div>
-            @}
         </div>
     </div>
 </div>
+<script>
+    $(function(){
+
+    });
+</script>
+
 
 @}

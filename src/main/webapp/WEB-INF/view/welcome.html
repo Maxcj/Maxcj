@@ -57,8 +57,8 @@
 							<li onclick="getNotice();">公告</li>
 							<!--<li onclick="goMessage();">留言板</li>-->
 							<li>|</li>
-							<li><a href="/login">登录</a></li>
-							<li><a href="/register">注册</a></li>
+							<li><a href="${ctxPath}/login">登录</a></li>
+							<li><a href="${ctxPath}/register">注册</a></li>
 						</ul>
 						<div class="search">
 							<input placeholder="搜索" type="text" id="search" />
@@ -105,7 +105,7 @@
 			var html = '';
 			$("#club_wall").html(html);
 			$.ajax({
-				url: "/welcome/clublist",
+				url: "${ctxPath}/welcome/clublist",
 				type: "POST",
 				data : {condition:d},
 				dataType: "json",
@@ -118,11 +118,11 @@
                                         '<div class="imgShow">' +
                                             '<img class="imgShowBg" src="${ctxPath}/static/modular/system/welcome/1.png" />' +
                                             '<div class="imgShowHover">' +
-                                                '<a class="aui" href="/welcome/clubdetil/'+data[i].id+'" target="_blank" class="imgShowLink"></a>' +
+                                                '<a class="aui" href="${ctxPath}/welcome/clubdetil/'+data[i].id+'" target="_blank" class="imgShowLink"></a>' +
                                             '</div>' +
                                         '</div>' +
                                         '<div class="movieTitle">' +
-                                            '<a class="aui" href="/welcome/clubdetil/'+data[i].id+'" target="_blank">'+data[i].fullname+'</a>' +
+                                            '<a class="aui" href="${ctxPath}/welcome/clubdetil/'+data[i].id+'" target="_blank">'+data[i].fullname+'</a>' +
                                         '</div>' +
 									'</div>';
 						}
@@ -144,7 +144,7 @@
                 var html = '';
                 $("#club_wall").html(html);
                 $.ajax({
-                    url: "/welcome/clublist/category/"+categoryId,
+                    url: "${ctxPath}/welcome/clublist/category/"+categoryId,
                     dataType: "json",
                     data : {categoryId,condition},
                     async: true,
@@ -156,11 +156,11 @@
                                         '<div class="imgShow">' +
                                         '<img class="imgShowBg" src="${ctxPath}/static/modular/system/welcome/1.png" />' +
                                         '<div class="imgShowHover">' +
-                                        '<a class="aui" href="/welcome/clubdetil/'+data[i].id+'" target="_blank" class="imgShowLink"></a>' +
+                                        '<a class="aui" href="${ctxPath}/welcome/clubdetil/'+data[i].id+'" target="_blank" class="imgShowLink"></a>' +
                                         '</div>' +
                                         '</div>' +
                                         '<div class="movieTitle">' +
-                                        '<a class="aui" href="/welcome/clubdetil/'+data[i].id+'" target="_blank">'+data[i].fullname+'</a>' +
+                                        '<a class="aui" href="${ctxPath}/welcome/clubdetil/'+data[i].id+'" target="_blank">'+data[i].fullname+'</a>' +
                                         '</div>' +
                                         '</div>';
                             }
@@ -187,7 +187,7 @@
 			var html = '';
 			$("#club_wall").html(html);
 			$.ajax({
-				url: "/welcome/list",
+				url: "${ctxPath}/welcome/list",
 				dataType: "json",
 				async: true,
 				success: function (data) {

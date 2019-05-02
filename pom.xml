@@ -11,7 +11,6 @@
 
     <groupId>cn.maxcj</groupId>
     <artifactId>Maxcj</artifactId>
-    <version>1.0.0</version>
 
     <name>Maxcj</name>
     <description>社团信息化管理系统</description>
@@ -229,6 +228,7 @@
     </dependencies>
 
     <build>
+        <finalName>Maxcj</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
