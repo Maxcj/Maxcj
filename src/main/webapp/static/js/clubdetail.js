@@ -27,7 +27,7 @@ Activity.initColumn = function () {
 $(function () {
     var deptid = $("#dept_input").val();
     $.ajax({
-        url: "${ctxPath}/welcome/club/"+deptid,
+        url: "/welcome/club/"+deptid,
         dataType: "json",
         data : deptid,
         async: true,
@@ -40,7 +40,7 @@ $(function () {
         }
     });
     var defaultColunms = Activity.initColumn();
-    var table = new BSTable(Activity.id, "${ctxPath}/welcome/clubactivity/"+deptid, defaultColunms);
+    var table = new BSTable(Activity.id, "/welcome/clubactivity/"+deptid, defaultColunms);
     table.setData(deptid);
     table.setPaginationType("client");
     Activity.table = table.init();

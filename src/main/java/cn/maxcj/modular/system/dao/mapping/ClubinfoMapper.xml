@@ -19,7 +19,7 @@
 
     <select id="queryClubInfo" parameterType="java.lang.Integer" resultType="map">
         SELECT
-            d.id,d.fullname,i.club_category,i.culb_create_time,i.club_number,i.club_infomation
+            d.id,d.fullname,i.club_category,i.culb_create_time,(select count(u.id) from sys_user u where u.status = "1" and u.deptid = #{deptid}) as club_number,i.club_infomation
         FROM
             sys_dept d
         LEFT JOIN sys_clubinfo i ON d.id = i.deptid
