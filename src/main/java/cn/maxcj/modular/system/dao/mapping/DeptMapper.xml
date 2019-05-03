@@ -68,7 +68,9 @@
     </select>
 
     <select id="allclub" resultType="map">
-        select * from sys_dept d LEFT JOIN sys_clubinfo i ON d.id = i.deptid where d.pid = "38"
+        select d.*, i.club_category, i.culb_create_time,
+            ( SELECT count( u.id ) FROM sys_user u WHERE u.STATUS = "1" AND u.deptid = d.id ) AS club_number
+        from sys_dept d LEFT JOIN sys_clubinfo i ON d.id = i.deptid where d.pid = "38"
         <if test="condition != null and condition != ''">
             and d.simplename like CONCAT('%',#{condition},'%') or d.fullname like CONCAT('%',#{condition},'%')
         </if>
