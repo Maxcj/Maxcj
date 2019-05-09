@@ -50,9 +50,12 @@ public class LoginLogController extends BaseController {
     @RequestMapping("/list")
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
-    public Object list(@RequestParam(required = false) String beginTime, @RequestParam(required = false) String endTime, @RequestParam(required = false) String logName) {
+    public Object list(@RequestParam(required = false) String beginTime,
+                       @RequestParam(required = false) String endTime,
+                       @RequestParam(required = false) String logName) {
         Page<LoginLog> page = new PageFactory<LoginLog>().defaultPage();
-        List<Map<String, Object>> result = loginLogService.getLoginLogs(page, beginTime, endTime, logName, page.getOrderByField(), page.isAsc());
+        List<Map<String, Object>> result = loginLogService.getLoginLogs(page, beginTime, endTime,
+                logName, page.getOrderByField(), page.isAsc());
         page.setRecords(new LogWarpper(result).wrap());
         return new PageInfoBT<>(page);
     }

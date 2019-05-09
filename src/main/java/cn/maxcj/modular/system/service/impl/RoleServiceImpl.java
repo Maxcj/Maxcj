@@ -32,7 +32,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     private RelationMapper relationMapper;
 
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void setAuthority(Integer roleId, String ids) {
         // 删除该角色所有的权限
         this.roleMapper.deleteRolesById(roleId);
@@ -46,7 +46,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements IR
     }
 
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void delRoleById(Integer roleId) {
         //删除角色
         this.roleMapper.deleteById(roleId);

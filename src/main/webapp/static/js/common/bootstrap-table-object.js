@@ -71,7 +71,7 @@
                         //ignoreColumn: [0,0],            //忽略某一列的索引
                         fileName: '数据导出',              //文件名称设置
                         worksheetName: 'Sheet1',          //表格工作区名称
-                        tableName: '商品数据表',
+                        tableName: '数据表',
                         excelstyles: ['background-color', 'color', 'font-size', 'font-weight'],
                         //onMsoNumberFormat: DoOnMsoNumberFormat
                     },

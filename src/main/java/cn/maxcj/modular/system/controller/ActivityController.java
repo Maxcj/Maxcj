@@ -78,7 +78,9 @@ public class ActivityController extends BaseController {
      */
     @RequestMapping(value = "/list")
     @ResponseBody
-    public Object list(@RequestParam(required = false) String condition, @RequestParam(required = false) String activity_category,@RequestParam(required = false) String beginTime) {
+    public Object list(@RequestParam(required = false) String condition,
+                       @RequestParam(required = false) String activity_category,
+                       @RequestParam(required = false) String beginTime) {
         List<Map<String, Object>> activity_list = this.activityService.activity_list(condition, activity_category, beginTime);
         return super.warpObject(new ActivityWarpper(activity_list));
     }

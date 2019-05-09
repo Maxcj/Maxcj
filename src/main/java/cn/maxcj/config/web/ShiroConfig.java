@@ -115,7 +115,8 @@ public class ShiroConfig {
     public SimpleCookie rememberMeCookie() {
         SimpleCookie simpleCookie = new SimpleCookie("rememberMe");
         simpleCookie.setHttpOnly(true);
-        simpleCookie.setMaxAge(7 * 24 * 60 * 60);//7天
+        //  7天
+        simpleCookie.setMaxAge(7 * 24 * 60 * 60);
         return simpleCookie;
     }
 

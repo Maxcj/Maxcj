@@ -16,16 +16,12 @@ public interface IConstantFactory {
     /**
      * 根据用户id获取用户名称
      *
-     * @author stylefeng
-     * @date 2018/5/9 23:41
      */
     String getUserNameById(Integer userId);
 
     /**
      * 根据用户id获取用户账号
      *
-     * @author stylefeng
-     * @date 2019年5月16日21:55:371
      */
     String getUserAccountById(Integer userId);
 

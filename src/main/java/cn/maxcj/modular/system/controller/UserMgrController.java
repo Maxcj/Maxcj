@@ -167,7 +167,8 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/list")
     @ResponseBody
-    public Object list(@RequestParam(required = false) String name, @RequestParam(required = false) String beginTime, @RequestParam(required = false) String endTime, @RequestParam(required = false) Integer deptid) {
+    public Object list(@RequestParam(required = false) String name, @RequestParam(required = false) String beginTime,
+                       @RequestParam(required = false) String endTime, @RequestParam(required = false) Integer deptid) {
         if (ShiroKit.isAdmin() || (userService.isSheLian(ShiroKit.getUser().getId())== 24)) {
             List<Map<String, Object>> users = userService.selectUsers(null, name, beginTime, endTime, deptid);
             return new UserWarpper(users).wrap();
@@ -214,7 +215,6 @@ public class UserMgrController extends BaseController {
      */
     @RequestMapping("/add")
     @BussinessLog(value = "添加人员", key = "account", dict = UserDict.class)
-    //@Permission(Const.ADMIN_NAME)
     @ResponseBody
     public ResponseData add(@Valid UserDto user, BindingResult result) {
         if (result.hasErrors()) {
