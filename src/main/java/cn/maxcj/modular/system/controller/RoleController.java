@@ -190,7 +190,8 @@ public class RoleController extends BaseController {
     @BussinessLog(value = "配置权限", key = "roleId,ids", dict = RoleDict.class)
     @Permission(Const.ADMIN_NAME)
     @ResponseBody
-    public ResponseData setAuthority(@RequestParam("roleId") Integer roleId, @RequestParam("ids") String ids) {
+    public ResponseData setAuthority(@RequestParam("roleId") Integer roleId,
+                                     @RequestParam("ids") String ids) {
         if (ToolUtil.isOneEmpty(roleId)) {
             throw new ServiceException(BizExceptionEnum.REQUEST_NULL);
         }

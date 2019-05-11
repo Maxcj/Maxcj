@@ -50,7 +50,6 @@ public class BlackboardController extends BaseController {
 
     /**
      * 跳转到通讯录界面
-     * @return
      */
     @RequestMapping("/contacts")
     public String contacts(Model model){

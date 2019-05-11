@@ -117,7 +117,8 @@ public class MenuController extends BaseController {
     @Permission(Const.ADMIN_NAME)
     @RequestMapping(value = "/list")
     @ResponseBody
-    public Object list(@RequestParam(required = false) String menuName, @RequestParam(required = false) String level) {
+    public Object list(@RequestParam(required = false) String menuName,
+                       @RequestParam(required = false) String level) {
         List<Map<String, Object>> menus = this.menuService.selectMenus(menuName, level);
         return super.warpObject(new MenuWarpper(menus));
     }

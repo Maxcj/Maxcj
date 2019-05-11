@@ -62,7 +62,11 @@ public class DeptController extends BaseController {
      * 跳转到社团一览页面
      */
     @RequestMapping("/club")
-    public String allclub() {
+    public String allclub(Model model) {
+        Integer Acadmy = userService.selectById(ShiroKit.getUser().getId()).getAcademy();
+        if (Acadmy == null){
+            model.addAttribute("academy",Acadmy);
+        }
         return PREFIX + "allclub.html";
     }
 
