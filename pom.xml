@@ -13,7 +13,7 @@
     <artifactId>Maxcj</artifactId>
 
     <name>Maxcj</name>
-    <description>社团信息化管理系统</description>
+    <description>社团管理系统</description>
     <packaging>war</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

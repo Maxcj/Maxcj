@@ -233,6 +233,7 @@ public class UserMgrController extends BaseController {
         user.setStatus(ManagerStatus.OK.getCode());
         user.setCreatetime(new Date());
         user.setRoleid("21");
+        user.setDeptid(38);
         this.userService.insert(UserFactory.createUser(user));
         return SUCCESS_TIP;
     }

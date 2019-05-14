@@ -16,7 +16,7 @@
                         <span class="clear">
                             <span class="block m-t-xs"><strong class="font-bold">${shiro.getUser().name}</strong></span>
                             <span class="text-muted text-xs block">
-                                @if(tool.isEmpty(shiro.getUser().deptName)){
+                                @if(strutil.contain (shiro.getUser().deptName,"社团")){
                                     [普通用户]
                                 @}else{
                                     ${shiro.getUser().deptName}
@@ -36,7 +36,12 @@
                 <div class="logo-element">Maxcj
                 </div>
             </li>
-
+            <li>
+                <a href="${ctxPath}/welcome" target="_blank">
+                    <i class="fa fa-home"></i>
+                    <span class="nav-label">首页</span>
+                </a>
+            </li>
             @for(title in titles){
             @if(tool.isEmpty(title.children)){
             <li>

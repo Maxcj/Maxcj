@@ -3,6 +3,10 @@ package cn.maxcj.modular.system.controller;
 import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.core.shiro.ShiroKit;
+import cn.maxcj.modular.sms.SendSms;
+import cn.maxcj.modular.system.model.User;
+import cn.maxcj.modular.system.service.IDeptService;
+import cn.maxcj.modular.system.service.IUserService;
 import cn.maxcj.modular.system.warpper.ActivityWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import org.springframework.stereotype.Controller;
@@ -35,6 +39,11 @@ public class ActivityController extends BaseController {
     @Autowired
     private IActivityService activityService;
 
+    @Autowired
+    private IUserService userService;
+
+    @Autowired
+    private IDeptService deptService;
 
 
     /**
@@ -197,10 +206,14 @@ public class ActivityController extends BaseController {
     @BussinessLog(value = "审批社团活动（通过）", key = "activityId")
     @RequestMapping(value = "/apply_agree")
     @ResponseBody
-    public Object apply_agree(Integer activityId) {
+    public Object apply_agree(Integer activityId) throws Exception {
         Activity activity = activityService.selectById(activityId);
         activity.setActivityState(3);
         activityService.updateById(activity);
+        SendSms sendSms = new SendSms();
+        User smsUser = userService.selectById(activity.getActivityPerson());
+        boolean s = sendSms.sendSms(smsUser.getPhone(),smsUser.getName(),
+                deptService.selectById(activity.getActivityClub()).getSimplename(),"活动","审批通过");
         return SUCCESS_TIP;
     }
 
@@ -210,10 +223,14 @@ public class ActivityController extends BaseController {
     @BussinessLog(value = "审批社团活动（拒绝）", key = "activityId")
     @RequestMapping(value = "/apply_refuse")
     @ResponseBody
-    public Object apply_activity(Integer activityId) {
+    public Object apply_activity(Integer activityId) throws Exception {
         Activity activity = activityService.selectById(activityId);
         activity.setActivityState(4);
         activityService.updateById(activity);
+        SendSms sendSms = new SendSms();
+        User smsUser = userService.selectById(activity.getActivityPerson());
+        boolean s = sendSms.sendSms(smsUser.getPhone(),smsUser.getName(),
+                deptService.selectById(activity.getActivityClub()).getSimplename(),"活动","审批未通过");
         return SUCCESS_TIP;
     }
 

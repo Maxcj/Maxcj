@@ -4,7 +4,12 @@ import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.common.constant.dictmap.DeptDict;
 import cn.maxcj.core.common.constant.dictmap.FinanceDict;
 import cn.maxcj.core.shiro.ShiroKit;
+import cn.maxcj.modular.sms.SendSms;
+import cn.maxcj.modular.system.model.Activity;
+import cn.maxcj.modular.system.model.User;
 import cn.maxcj.modular.system.service.IActivityService;
+import cn.maxcj.modular.system.service.IDeptService;
+import cn.maxcj.modular.system.service.IUserService;
 import cn.maxcj.modular.system.warpper.FinanceWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
 import io.swagger.models.auth.In;
@@ -38,6 +43,12 @@ public class FinanceController extends BaseController {
 
     @Autowired
     private IFinanceService financeService;
+
+    @Autowired
+    private IUserService userService;
+
+    @Autowired
+    private IDeptService deptService;
 
     @Autowired
     private IActivityService activityService;
@@ -163,11 +174,16 @@ public class FinanceController extends BaseController {
     @BussinessLog(value = "拒绝财务申请", key = "financeId")
     @RequestMapping(value = "/apply_refuse")
     @ResponseBody
-    public Object apply_refuse(Integer financeId) {
+    public Object apply_refuse(Integer financeId) throws Exception {
         Finance finance = financeService.selectById(financeId);
         finance.setAgree(4);
         finance.setAgreetime(new Date());
         financeService.updateById(finance);
+        SendSms sendSms = new SendSms();
+        Activity activity = activityService.selectById(finance.getActivityid());
+        User smsUser = userService.selectById(activity.getActivityPerson());
+        boolean s = sendSms.sendSms(smsUser.getPhone(),smsUser.getName(),
+                deptService.selectById(activity.getActivityClub()).getSimplename(),"财务","审批未通过");
         return SUCCESS_TIP;
     }
 
@@ -179,11 +195,16 @@ public class FinanceController extends BaseController {
     @BussinessLog(value = "通过财务申请", key = "financeId")
     @RequestMapping(value = "/apply_agree")
     @ResponseBody
-    public Object apply_agree(Integer financeId) {
+    public Object apply_agree(Integer financeId) throws Exception {
         Finance finance = financeService.selectById(financeId);
         finance.setAgree(3);
         finance.setAgreetime(new Date());
         financeService.updateById(finance);
+        SendSms sendSms = new SendSms();
+        Activity activity = activityService.selectById(finance.getActivityid());
+        User smsUser = userService.selectById(activity.getActivityPerson());
+        boolean s = sendSms.sendSms(smsUser.getPhone(),smsUser.getName(),
+                deptService.selectById(activity.getActivityClub()).getSimplename(),"财务","审批通过");
         return SUCCESS_TIP;
     }
 

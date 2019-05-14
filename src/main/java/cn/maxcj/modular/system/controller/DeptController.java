@@ -64,9 +64,7 @@ public class DeptController extends BaseController {
     @RequestMapping("/club")
     public String allclub(Model model) {
         Integer Acadmy = userService.selectById(ShiroKit.getUser().getId()).getAcademy();
-        if (Acadmy == null){
-            model.addAttribute("academy",Acadmy);
-        }
+        model.addAttribute("academy",Acadmy);
         return PREFIX + "allclub.html";
     }
 
