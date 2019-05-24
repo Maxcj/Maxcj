@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.maxcj.modular.system.dao.JoinMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.maxcj.modular.system.model.Join">
+        <id column="id" property="id" />
+        <result column="activity_id" property="activityId" />
+        <result column="userid" property="userid" />
+        <result column="join_time" property="joinTime" />
+        <result column="join_state" property="joinState" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, activity_id, userid, join_time, join_state
+    </sql>
+
+    <select id="myJoin" parameterType="java.lang.Integer" resultType="map">
+        select <include refid="Base_Column_List"></include> from sys_join where 1 = 1
+        and userid = #{userid}
+    </select>
+
+</mapper>

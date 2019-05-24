@@ -20,6 +20,7 @@ Activity.initColumn = function () {
         {title: '活动地点', field: 'activity_place', visible: true, align: 'center', valign: 'middle'},
         {title: '活动开始时间', field: 'activity_start_time', visible: true, align: 'center', valign: 'middle'},
         {title: '活动结束时间', field: 'activity_end_time', visible: true, align: 'center', valign: 'middle'},
+        {title: '报名人数', field: 'activity_number', visible: true, align: 'center', valign: 'middle'},
         {title: '活动负责人', field: 'activity_createName', visible: true, align: 'center', valign: 'middle'},
         {title: '活动发起时间', field: 'activity_creat_time', visible: false, align: 'center', valign: 'middle'},
         {title: '活动类别', field: 'activity_categoryName', visible: true, align: 'center', valign: 'middle'},

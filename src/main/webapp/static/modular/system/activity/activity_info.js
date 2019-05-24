@@ -109,7 +109,7 @@ ActivityInfoDlg.addSubmit = function () {
 
     //提交信息
     var ajax = new $ax(Feng.ctxPath + "/activity/add", function (data) {
-        Feng.success("添加成功!");
+        Feng.success("添加成功!等待审核。");
         window.parent.Activity.table.refresh();
         ActivityInfoDlg.close();
     }, function (data) {
@@ -126,7 +126,6 @@ ActivityInfoDlg.editSubmit = function () {
 
     this.clearData();
     this.collectData();
-
     if (!this.validate()) {
         return;
     }

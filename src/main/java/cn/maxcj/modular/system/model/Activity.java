@@ -75,6 +75,12 @@ public class Activity extends Model<Activity> {
     @TableField("activity_state")
     private Integer activityState;
 
+    /**
+     * 活动报名人数
+     */
+    @TableField("activity_number")
+    private Integer activity_number;
+
 
     public Integer getActivityId() {
         return activityId;
@@ -156,6 +162,14 @@ public class Activity extends Model<Activity> {
         this.activityState = activityState;
     }
 
+    public Integer getActivity_number() {
+        return activity_number;
+    }
+
+    public void setActivity_number(Integer activity_number) {
+        this.activity_number = activity_number;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.activityId;
@@ -164,16 +178,17 @@ public class Activity extends Model<Activity> {
     @Override
     public String toString() {
         return "Activity{" +
-                ", activityId=" + activityId +
+                "activityId=" + activityId +
                 ", activityCategory=" + activityCategory +
-                ", activityName=" + activityName +
-                ", activityPlace=" + activityPlace +
+                ", activityName='" + activityName + '\'' +
+                ", activityPlace='" + activityPlace + '\'' +
                 ", activityStartTime=" + activityStartTime +
                 ", activityEndTime=" + activityEndTime +
-                ", activityClub=" + activityClub +
+                ", activityClub='" + activityClub + '\'' +
                 ", activityPerson=" + activityPerson +
                 ", activityCreatTime=" + activityCreatTime +
                 ", activityState=" + activityState +
-                "}";
+                ", activity_number=" + activity_number +
+                '}';
     }
 }

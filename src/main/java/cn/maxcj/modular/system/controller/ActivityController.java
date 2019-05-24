@@ -4,8 +4,10 @@ import cn.maxcj.core.common.annotion.BussinessLog;
 import cn.maxcj.core.common.node.ZTreeNode;
 import cn.maxcj.core.shiro.ShiroKit;
 import cn.maxcj.modular.sms.SendSms;
+import cn.maxcj.modular.system.model.Join;
 import cn.maxcj.modular.system.model.User;
 import cn.maxcj.modular.system.service.IDeptService;
+import cn.maxcj.modular.system.service.IJoinService;
 import cn.maxcj.modular.system.service.IUserService;
 import cn.maxcj.modular.system.warpper.ActivityWarpper;
 import cn.stylefeng.roses.core.base.controller.BaseController;
@@ -44,6 +46,9 @@ public class ActivityController extends BaseController {
 
     @Autowired
     private IDeptService deptService;
+
+    @Autowired
+    private IJoinService joinService;
 
 
     /**
@@ -253,7 +258,24 @@ public class ActivityController extends BaseController {
     @RequestMapping(value = "/detail/{activityId}")
     @ResponseBody
     public Object detail(@PathVariable("activityId") Integer activityId) {
-
         return activityService.selectById(activityId);
     }
+
+
+    /**
+     * 报名社团活动
+     */
+    @BussinessLog(value = "报名社团活动", key = "activity")
+    @RequestMapping(value = "/join")
+    @ResponseBody
+    public Object join(@RequestParam Integer activityId) {
+        Join join = new Join();
+        join.setActivityId(activityId);
+        join.setUserid(ShiroKit.getUser().getId());
+        join.setJoinTime(new Date());
+        join.setJoinState(1);
+        joinService.insert(join);
+        return SUCCESS_TIP;
+    }
+
 }

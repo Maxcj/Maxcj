@@ -14,11 +14,12 @@
         <result column="activity_person" property="activityPerson"/>
         <result column="activity_creat_time" property="activityCreatTime"/>
         <result column="activity_state" property="activityState"/>
+        <result column="activity_number" property="activity_number"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        activity_id, activity_category, activity_name, activity_place, activity_start_time, activity_end_time, activity_club, activity_person, activity_creat_time, activity_state
+        activity_id, activity_category, activity_name, activity_place, activity_start_time, activity_end_time, activity_club, activity_person, activity_creat_time, activity_state, activity_number
     </sql>
 
     <select id="tree" parameterType="java.lang.Integer" resultType="map">
