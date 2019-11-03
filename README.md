@@ -2,7 +2,8 @@
 
 # 社团信息化系统的设计与实现
 
-演示地址：http://maxcj.cn/Maxcj
+~~演示地址：http://maxcj.cn/Maxcj~~
+
 + 用户名：zhongcj
 + 密码：111111
 
